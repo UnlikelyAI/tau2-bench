@@ -1,0 +1,5 @@
+from tau2.utils.utils import DATA_DIR
+
+FINANCIAL_ADVICE_DATA_DIR = DATA_DIR / "tau2" / "domains" / "financial-advice"
+FINANCIAL_ADVICE_POLICY_PATH = FINANCIAL_ADVICE_DATA_DIR / "policy.md"
+FINANCIAL_ADVICE_TASK_SET_PATH = FINANCIAL_ADVICE_DATA_DIR / "tasks.json"
