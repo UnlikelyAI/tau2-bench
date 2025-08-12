@@ -128,7 +128,7 @@ def run_domain(config: RunConfig) -> Results:
         max_errors=config.max_errors,
         save_to=save_to,
         console_display=True,
-        evaluation_type=EvaluationType.ALL,
+        evaluation_type=EvaluationType(config.evaluation_type),
         max_concurrency=config.max_concurrency,
         seed=config.seed,
         log_level=config.log_level,

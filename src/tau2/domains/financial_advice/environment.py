@@ -5,7 +5,6 @@ from typing import Optional
 from tau2.data_model.tasks import Task
 from tau2.domains.financial_advice.tools import FinancialAdviceTools
 from tau2.domains.financial_advice.utils import (
-    FINANCIAL_ADVICE_DB_PATH,
     FINANCIAL_ADVICE_POLICY_PATH,
     FINANCIAL_ADVICE_TASK_SET_PATH,
 )

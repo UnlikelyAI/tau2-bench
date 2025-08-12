@@ -18,16 +18,7 @@
         },
         "initial_state": null,
         "evaluation_criteria": {
-            "actions": [
-                {
-                    "action_id": "0_0",
-                    "name": "get_product_details",
-                    "arguments": {
-                        "product_id": "1"
-                    },
-                    "info": null
-                }
-            ],
+            "actions": [],
             "communicate_info": [],
             "nl_assertions": [
                 "Agent should provide information about ISAs"
