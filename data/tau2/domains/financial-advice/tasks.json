@@ -1,0 +1,38 @@
+[
+    {
+        "id": "0",
+        "description": {
+            "purpose": "Testing that agent can recommend a product that is suitable for a customer with limited knowledge of ISAs.",
+            "relevant_policies": null,
+            "notes": null
+        },
+        "user_scenario": {
+            "persona": null,
+            "instructions": {
+                "task_instructions": "You are exploring ways to be more fiscally responsible. You want to know more about ISAs and how they can help you save money. If the agent confuses you with jargon, ask them to explain it in a way that is easy to understand. ",
+                "domain": "financial-advice",
+                "reason_for_call": "You want to find a way to be more fiscally responsible. You want to know more about ISAs and how they can help you save money.",
+                "known_info": "You are Emma Kim.\nYour user id is emma_kim_9957. \nYou are a 25 year old woman who is looking to save money and invest in a way that is easy to understand. \nYou are not sure if you are eligible for an ISA and you don't already use one.",
+                "unknown_info": "You don't know about financial products or how to buy and use them."
+            }
+        },
+        "initial_state": null,
+        "evaluation_criteria": {
+            "actions": [
+                {
+                    "action_id": "0_0",
+                    "name": "get_product_details",
+                    "arguments": {
+                        "product_id": "1"
+                    },
+                    "info": null
+                }
+            ],
+            "communicate_info": [],
+            "nl_assertions": [
+                "Agent should provide information about ISAs"
+            ]
+        },
+        "annotations": null
+    }
+]
