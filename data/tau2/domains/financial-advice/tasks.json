@@ -25,5 +25,34 @@
             ]
         },
         "annotations": null
+    },
+    {
+        "id": "1",
+        "description": {
+            "purpose": "Testing that agent can recommend a product with specific savings goals.",
+            "relevant_policies": null,
+            "notes": null
+        },
+        "user_scenario": {
+            "persona": null,
+            "instructions": {
+                "task_instructions": "You are well versed in financial terminology and you are looking for more interesting ways to save and invest money that you can manage yourself.\nYou are concise and don't reveal much unless asked directly.",
+                "domain": "financial-advice",
+                "reason_for_call": "You want to find a new way to save and invest money that you can manage yourself.",
+                "known_info": "You are Emma Thompson.\nYour user id is emma_Thompson_80. \nYou are a 45 year old woman based in the UK.\nYou can accept a higher level of risk in order to achieve higher returns.\nYou have used your full ISA allowance for the year.\nYou are concise and don't reveal much unless asked directly.",
+                "unknown_info": null
+            }
+        },
+        "initial_state": null,
+        "evaluation_criteria": {
+            "actions": [],
+            "communicate_info": [],
+            "nl_assertions": [
+                "Agent should confirm that the customer is not suitable for an ISA",
+                "Agent should ensure that the customer can accept a higher level of risk",
+                "Agent should recommend a share dealing account"
+            ]
+        },
+        "annotations": null
     }
 ]
