@@ -153,6 +153,13 @@ class RunConfig(BaseModel):
             default=DEFAULT_LOG_LEVEL,
         ),
     ]
+    evaluation_type: Annotated[
+        Optional[str],
+        Field(
+            description="The type of evaluation to use for the simulation",
+            default="all",
+        ),
+    ]
 
     def validate(self) -> None:
         """

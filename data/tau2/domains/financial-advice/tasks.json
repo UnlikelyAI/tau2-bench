@@ -1,0 +1,58 @@
+[
+    {
+        "id": "0",
+        "description": {
+            "purpose": "Testing that agent can recommend a product that is suitable for a customer with limited knowledge of ISAs.",
+            "relevant_policies": null,
+            "notes": null
+        },
+        "user_scenario": {
+            "persona": null,
+            "instructions": {
+                "task_instructions": "You are exploring ways to be more fiscally responsible. You want to know more about ISAs and how they can help you save money. If the agent confuses you with jargon, ask them to explain it in a way that is easy to understand. ",
+                "domain": "financial-advice",
+                "reason_for_call": "You want to find a way to be more fiscally responsible. You want to know more about ISAs and how they can help you save money.",
+                "known_info": "You are Emma Kim.\nYour user id is emma_kim_9957. \nYou are a 25 year old woman who is looking to save money and invest in a way that is easy to understand. \nYou are not sure if you are eligible for an ISA and you don't already use one.",
+                "unknown_info": "You don't know about financial products or how to buy and use them."
+            }
+        },
+        "initial_state": null,
+        "evaluation_criteria": {
+            "actions": [],
+            "communicate_info": [],
+            "nl_assertions": [
+                "Agent should provide information about ISAs"
+            ]
+        },
+        "annotations": null
+    },
+    {
+        "id": "1",
+        "description": {
+            "purpose": "Testing that agent can recommend a product with specific savings goals.",
+            "relevant_policies": null,
+            "notes": null
+        },
+        "user_scenario": {
+            "persona": null,
+            "instructions": {
+                "task_instructions": "You are well versed in financial terminology and you are looking for more interesting ways to save and invest money that you can manage yourself.\nYou are concise and don't reveal much unless asked directly.",
+                "domain": "financial-advice",
+                "reason_for_call": "You want to find a new way to save and invest money that you can manage yourself.",
+                "known_info": "You are Emma Thompson.\nYour user id is emma_Thompson_80. \nYou are a 45 year old woman based in the UK.\nYou can accept a higher level of risk in order to achieve higher returns.\nYou have used your full ISA allowance for the year.\nYou are concise and don't reveal much unless asked directly.",
+                "unknown_info": null
+            }
+        },
+        "initial_state": null,
+        "evaluation_criteria": {
+            "actions": [],
+            "communicate_info": [],
+            "nl_assertions": [
+                "Agent should confirm that the customer is not suitable for an ISA",
+                "Agent should ensure that the customer can accept a higher level of risk",
+                "Agent should recommend a share dealing account"
+            ]
+        },
+        "annotations": null
+    }
+]

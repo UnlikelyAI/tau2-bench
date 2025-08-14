@@ -15,6 +15,7 @@ from tau2.config import (
     DEFAULT_USER_IMPLEMENTATION,
 )
 from tau2.data_model.simulation import RunConfig
+from tau2.evaluator.evaluator import EvaluationType
 from tau2.run import get_options, run_domain
 
 
@@ -127,6 +128,13 @@ def add_run_args(parser):
         default=DEFAULT_LOG_LEVEL,
         help=f"The log level to use for the simulation. Default is {DEFAULT_LOG_LEVEL}.",
     )
+    parser.add_argument(
+        "--evaluation-type",
+        type=str,
+        default="all",
+        help=f"The type of evaluation to use for the simulation. Default is {EvaluationType.ALL.value}.",
+        choices=[e.value for e in EvaluationType],
+    )
 
 
 def main():
@@ -156,6 +164,7 @@ def main():
                 max_concurrency=args.max_concurrency,
                 seed=args.seed,
                 log_level=args.log_level,
+                evaluation_type=args.evaluation_type,
             )
         )
     )
