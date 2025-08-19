@@ -91,3 +91,14 @@ class LocalAgent(BaseAgent[AgentState]):
         super().__init__()
         self.tools = tools
         self.domain_policy = domain_policy
+
+
+class RemoteAgent(BaseAgent[AgentState]):
+    """
+    Remote agent implementation
+    """
+
+    def __init__(self, tools: list[Tool], domain_policy: str):
+        super().__init__()
+        self.tools = tools
+        self.domain_policy = domain_policy
