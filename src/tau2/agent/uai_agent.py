@@ -3,8 +3,7 @@ from httpx import Client
 from pydantic import BaseModel
 
 from tau2.agent.base import (
-    AgentState,
-    RemoteAgent,
+    LocalAgent,
     ValidAgentInputMessage,
     is_valid_agent_history_message,
 )
@@ -46,7 +45,7 @@ class UAIAgentResponse(BaseModel):
     tool_calls: list[dict[str, Any]]
 
 
-class UAIAgent(RemoteAgent[UAIAgentState]):
+class UAIAgent(LocalAgent[UAIAgentState]):
     """
     UAI agent implementation
     """
