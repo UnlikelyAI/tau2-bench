@@ -23,6 +23,7 @@ class UAIAgentState(BaseModel):
     UAI agent state
     """
 
+    session_id: str | None
     system_messages: list[SystemMessage]
     messages: list[APICompatibleMessage]
 
@@ -32,6 +33,7 @@ class UAIAgentRequest(BaseModel):
     UAI agent request
     """
 
+    session_id: str | None
     messages: list[APICompatibleMessage]
     tools: list[dict[str, Any]]
 
@@ -41,6 +43,7 @@ class UAIAgentResponse(BaseModel):
     UAI agent response
     """
 
+    session_id: str
     message_content: str
     tool_calls: list[dict[str, Any]]
 
@@ -95,6 +98,7 @@ class UAIAgent(LocalAgent[UAIAgentState]):
         messages = state.system_messages + state.messages
 
         request = UAIAgentRequest(
+            session_id=state.session_id,
             messages=messages,
             tools=[t.openai_schema for t in self.tools],
         )
@@ -127,6 +131,10 @@ class UAIAgent(LocalAgent[UAIAgentState]):
             tool_calls=tool_calls,
         )
 
+        if response_data.session_id is None:
+            raise Exception("Session ID is None")
+
+        state.session_id = response_data.session_id
         state.messages.append(assistant_message)
 
         return assistant_message, state
@@ -148,6 +156,7 @@ class UAIAgent(LocalAgent[UAIAgentState]):
             is_valid_agent_history_message(m) for m in message_history
         ), "Message history must contain only AssistantMessage, UserMessage, or ToolMessage to Agent."
         return UAIAgentState(
+            session_id=None,
             system_messages=[SystemMessage(role="system", content=self.system_prompt)],
             messages=message_history,
         )
