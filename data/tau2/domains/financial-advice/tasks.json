@@ -2,44 +2,17 @@
     {
         "id": "0",
         "description": {
-            "purpose": "Testing that agent can recommend a product that is suitable for a customer with limited knowledge of ISAs.",
+            "purpose": "Testing the agent can recommend a complex product with a knowledgable user",
             "relevant_policies": null,
             "notes": null
         },
         "user_scenario": {
             "persona": null,
             "instructions": {
-                "task_instructions": "You are exploring ways to be more fiscally responsible. You want to know more about ISAs and how they can help you save money. If the agent confuses you with jargon, ask them to explain it in a way that is easy to understand. ",
-                "domain": "financial-advice",
-                "reason_for_call": "You want to find a way to be more fiscally responsible. You want to know more about ISAs and how they can help you save money.",
-                "known_info": "You are Emma Kim.\nYour user id is emma_kim_9957. \nYou are a 25 year old woman who is looking to save money and invest in a way that is easy to understand. \nYou are not sure if you are eligible for an ISA and you don't already use one.",
-                "unknown_info": "You don't know about financial products or how to buy and use them."
-            }
-        },
-        "initial_state": null,
-        "evaluation_criteria": {
-            "actions": [],
-            "communicate_info": [],
-            "nl_assertions": [
-                "Agent should provide information about ISAs"
-            ]
-        },
-        "annotations": null
-    },
-    {
-        "id": "1",
-        "description": {
-            "purpose": "Testing that agent can recommend a product with specific savings goals.",
-            "relevant_policies": null,
-            "notes": null
-        },
-        "user_scenario": {
-            "persona": null,
-            "instructions": {
-                "task_instructions": "You are well versed in financial terminology and you are looking for more interesting ways to save and invest money that you can manage yourself.\nYou are concise and don't reveal much unless asked directly.",
+                "task_instructions": "You are well versed in financial terminology and you are looking for ways to save and invest money. You think you are probably best suited to a share dealing account or ISA. \nYou are concise and don't reveal much unless asked directly.",
                 "domain": "financial-advice",
                 "reason_for_call": "You want to find a new way to save and invest money that you can manage yourself.",
-                "known_info": "You are Emma Thompson.\nYour user id is emma_Thompson_80. \nYou are a 45 year old woman based in the UK.\nYou can accept a higher level of risk in order to achieve higher returns.\nYou have used your full ISA allowance for the year.\nYou are concise and don't reveal much unless asked directly.",
+                "known_info": "You are Emma Thompson.\nYour user id is emma_Thompson_80. \nYou are a 45 year old woman based in the UK.\nYou can accept a higher level of risk in order to achieve higher returns.\nYou have used your full ISA allowance for the year. you like to manage your own investments.\nYou are concise and don't reveal much unless asked directly.",
                 "unknown_info": null
             }
         },
@@ -48,7 +21,68 @@
             "actions": [],
             "communicate_info": [],
             "nl_assertions": [
-                "Agent should confirm that the customer is not suitable for an ISA",
+                "Customer should state they have used their full ISA allowance for the year",
+                "Customer should state they aren't happy with lower returns on investment or they want high growth",
+                "Customer should state or confirm they like to manage their own investments",
+                "Agent should ensure that the customer can accept a higher level of risk",
+                "Agent should recommend a share dealing account"
+            ]
+        },
+        "annotations": null
+    },
+    {
+        "id": "1",
+        "description": {
+            "purpose": "Test the agent can recommend a product when the user is not suitable for their first choice",
+            "relevant_policies": null,
+            "notes": null
+        },
+        "user_scenario": {
+            "persona": null,
+            "instructions": {
+                "task_instructions": "You are well versed in financial terminology and you think you'd like a stocks account. \nYou are concise and don't reveal much unless asked directly.",
+                "domain": "financial-advice",
+                "reason_for_call": "You want to find a new way to save and invest money that you can manage yourself.",
+                "known_info": "You are Emma Thompson.\nYour user id is emma_Thompson_80. \nYou are a 45 year old woman based in the UK.\nYou have all your essentials covered but not real savings and so you are not open to a variable rate of interest.\nYou have used only 10% of your ISA allownace. you like to manage your own investments.\nYou are concise and don't reveal much unless asked directly.",
+                "unknown_info": null
+            }
+        },
+        "initial_state": null,
+        "evaluation_criteria": {
+            "actions": [],
+            "communicate_info": [],
+            "nl_assertions": [
+                "The agent should recommend an easy saver",
+                "The agent should inform the customer they have a low risk tolerance"
+            ]
+        },
+        "annotations": null
+    },
+    {
+        "id": "2",
+        "description": {
+            "purpose": "Test the agent can recommend a product when the user is suitable for a complex product but is unfamiliar with the questions and terminology",
+            "relevant_policies": null,
+            "notes": null
+        },
+        "user_scenario": {
+            "persona": null,
+            "instructions": {
+                "task_instructions": "You are the daugher of a rich mining tycoon and don't know much about financial products at all. If a question contains any technical jargon, you ask for clarification. \nYou are concise and don't reveal much unless asked directly.",
+                "domain": "financial-advice",
+                "reason_for_call": "You want to find a new way to save and invest money that you can manage yourself.",
+                "known_info": "You are Emma Thompson.\nYour user id is emma_Thompson_80. \nYou are a 21 year old woman based in the UK.\nYou are studying and daddy pays you 10k a month as a stipend. Your living expenses are 1k a month. You have 100k in the bank. Your ISA allowance has been maxed out. Although you are uncomfortable with the terminology, you don't mind variable interest rates and you can easily afford to lose 20% of your income in one year. You will pick your own investments over a managed fund. Your dad says you should be getting 8% return a year and you want to make him happy. \nYou are concise and don't reveal much unless asked directly.",
+                "unknown_info": null
+            }
+        },
+        "initial_state": null,
+        "evaluation_criteria": {
+            "actions": [],
+            "communicate_info": [],
+            "nl_assertions": [
+                "Customer should state they have used their full ISA allowance for the year",
+                "Customer should state they aren't happy with lower returns on investment or they want high growth",
+                "Customer should state or confirm they like to manage their own investments",
                 "Agent should ensure that the customer can accept a higher level of risk",
                 "Agent should recommend a share dealing account"
             ]
