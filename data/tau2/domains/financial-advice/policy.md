@@ -16,6 +16,8 @@ The following products represent a complete list of the products available to re
 
 ## Risk assessment
 
+![Decision Diagram](images/risk_rules.png)
+
 If the agent determins a users risk tolerance at any point, they should inform the user of their decision
 
 user as a high risk tolerance if and only if:
@@ -31,6 +33,8 @@ user has a low risk tolerance if:
 
 ## Product recommendation criteria
 
+![Decision Diagram](images/product_rules.png)
+
 ### Fixed Rate Cash ISA
 MUST ONLY Recommend if and only if:
 - They do not already have an existing ISA OR They have remaining ISA allowance for the current tax year.
@@ -39,12 +43,10 @@ MUST ONLY Recommend if and only if:
 
 ### Monthly Saver
 MUST ONLY Recommend if and only if:
-- Customer is not open to a variable rate of interest — they prefer fixed-rate products.
-- Customer has a low risk tolerance
+- Customer doesn't meet the requriments for all other products
 
 ### Share Dealing Account
 MUST ONLY Recommend if and only if:
-- They are not satisfied with low-return savings accounts OR they are looking for growth over 6% a year.
-- They have used all ISA their allownace
+- They are looking for growth over 6% a year.
 - Customer wants to pick their own investments — rather than relying on managed funds.
 - They have a high risk tolerance

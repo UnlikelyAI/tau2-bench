@@ -9,10 +9,10 @@
         "user_scenario": {
             "persona": null,
             "instructions": {
-                "task_instructions": "You are well versed in financial terminology and you are looking for ways to save and invest money. You think you are probably best suited to a share dealing account or ISA. \nYou are concise and don't reveal much unless asked directly.",
+                "task_instructions": "You are well versed in financial terminology and you are looking for ways to save and invest money. You think you are pretty sure you are suited to an ISA. \nYou are concise and don't reveal much unless asked directly.",
                 "domain": "financial-advice",
                 "reason_for_call": "You want to find a new way to save and invest money that you can manage yourself.",
-                "known_info": "You are Emma Thompson.\nYour user id is emma_Thompson_80. \nYou are a 45 year old woman based in the UK.\nYou can accept a higher level of risk in order to achieve higher returns.\nYou have used your full ISA allowance for the year. you like to manage your own investments.\nYou are concise and don't reveal much unless asked directly.",
+                "known_info": "You are Emma Thompson.\nYour user id is emma_Thompson_80. \nYou are a 45 year old woman based in the UK. You can accept a higher level of risk in order to achieve higher returns, 8% returns are what you are aiming for. 20% loss in a year is acceptable. You have used your full ISA allowance for the year. You have covered essentials and have 100k in the bank to invest. You like to manage your own investments. You would like a fixed rate but can do open if needed. You are concise and don't reveal much unless asked directly.",
                 "unknown_info": null
             }
         },
@@ -21,11 +21,10 @@
             "actions": [],
             "communicate_info": [],
             "nl_assertions": [
-                "Customer should state they have used their full ISA allowance for the year",
-                "Customer should state they aren't happy with lower returns on investment or they want high growth",
-                "Customer should state or confirm they like to manage their own investments",
-                "Agent should ensure that the customer can accept a higher level of risk",
-                "Agent should recommend a share dealing account"
+                "Agent should make a clear recommendation for a product",
+                "Agent does not recommend a monthly saver or a fixed rate cash ISA",
+                "Agent recommends a share dealing account",
+                "Agent confirms the user has a high risk tolerance"
             ]
         },
         "annotations": null
@@ -43,7 +42,7 @@
                 "task_instructions": "You are well versed in financial terminology and you think you'd like a stocks account. \nYou are concise and don't reveal much unless asked directly.",
                 "domain": "financial-advice",
                 "reason_for_call": "You want to find a new way to save and invest money that you can manage yourself.",
-                "known_info": "You are Emma Thompson.\nYour user id is emma_Thompson_80. \nYou are a 45 year old woman based in the UK.\nYou have all your essentials covered but not real savings and so you are not open to a variable rate of interest.\nYou have used only 10% of your ISA allownace. you like to manage your own investments.\nYou are concise and don't reveal much unless asked directly.",
+                "known_info": "You are Emma Thompson.\nYour user id is emma_Thompson_80. \nYou are a 45 year old woman based in the UK.\nYou have all your essentials covered but no real savings and so you are not open to a variable rate of interest.\nYou have used only 10% of your ISA allownace. you like to manage your own investments.\nYou are concise and don't reveal much unless asked directly.",
                 "unknown_info": null
             }
         },
@@ -52,8 +51,10 @@
             "actions": [],
             "communicate_info": [],
             "nl_assertions": [
-                "The agent should recommend an easy saver",
-                "The agent should inform the customer they have a low risk tolerance"
+                "Agent should make a clear recommendation for a product",
+                "The agent recommends an monthly saver",
+                "The agent does not recommend a fixed rate cash ISA or a share dealing account",
+                "The agent informs the customer they have a low risk tolerance"
             ]
         },
         "annotations": null
@@ -71,7 +72,7 @@
                 "task_instructions": "You are the daugher of a rich mining tycoon and don't know much about financial products at all. If a question contains any technical jargon, you ask for clarification. \nYou are concise and don't reveal much unless asked directly.",
                 "domain": "financial-advice",
                 "reason_for_call": "You want to find a new way to save and invest money that you can manage yourself.",
-                "known_info": "You are Emma Thompson.\nYour user id is emma_Thompson_80. \nYou are a 21 year old woman based in the UK.\nYou are studying and daddy pays you 10k a month as a stipend. Your living expenses are 1k a month. You have 100k in the bank. Your ISA allowance has been maxed out. Although you are uncomfortable with the terminology, you don't mind variable interest rates and you can easily afford to lose 20% of your income in one year. You will pick your own investments over a managed fund. Your dad says you should be getting 8% return a year and you want to make him happy. \nYou are concise and don't reveal much unless asked directly.",
+                "known_info": "You are Emma Thompson.\nYour user id is emma_Thompson_80. You are a 21 year old woman based in the UK. You are studying and daddy pays you 10k a month as a stipend. Your living expenses are 1k a month. You have 100k in the bank. You have some ISA allowance left. Although you are uncomfortable with the terminology, you don't mind variable interest rates and you can easily afford to lose 20% of your income in one year. You will pick your own investments over a managed fund. Your dad says you should be getting 8% return a year and you want to make him happy. You are concise and don't reveal much unless asked directly.",
                 "unknown_info": null
             }
         },
@@ -80,11 +81,10 @@
             "actions": [],
             "communicate_info": [],
             "nl_assertions": [
-                "Customer should state they have used their full ISA allowance for the year",
-                "Customer should state they aren't happy with lower returns on investment or they want high growth",
-                "Customer should state or confirm they like to manage their own investments",
-                "Agent should ensure that the customer can accept a higher level of risk",
-                "Agent should recommend a share dealing account"
+                "Agent should make a clear recommendation for a product",
+                "Agent does not recommend a monthly saver or a fixed rate cash ISA",
+                "Agent confirms the user has a high risk tolerance",
+                "Agent recommends a share dealing account"
             ]
         },
         "annotations": null
