@@ -241,10 +241,10 @@
         "user_scenario": {
             "persona": null,
             "instructions": {
-                "task_instructions": "You think you want a share dealing account because you want good returns, but you actually prefer having experts manage your investments. \nYou are concise and don't reveal much unless asked directly.",
+                "task_instructions": "You think you want a share dealing account because you want good returns. \nYou are concise and don't reveal much unless asked directly.",
                 "domain": "financial-advice",
                 "reason_for_call": "You want to invest for good returns but don't want to manage investments yourself.",
-                "known_info": "You are Robert Davis.\nYour user id is robert_davis_42. \nYou are a 42 year old man based in the UK. You have covered your essentials and have 5 months of income saved. You can tolerate losing 20% of your income in one year. You prefer managed funds over picking your own investments. You are looking for growth over 7% a year. You have £25,000 to invest. You are concise and don't reveal much unless asked directly.",
+                "known_info": "You are Robert Davis.\nYour user id is robert_davis_42. \nYou are a 42 year old man based in the UK. You have covered your essentials and have 5 months of income saved. You can tolerate losing 20% of your income in one year. You prefer managed funds over picking your own investments. You are looking for growth over 7% a year but needs a fixed rate. You have £25,000 to invest. You have some unutilised ISA allownace. You are concise and don't reveal much unless asked directly.",
                 "unknown_info": null
             }
         },
@@ -254,8 +254,8 @@
             "communicate_info": [],
             "nl_assertions": [
                 "Agent should make a clear recommendation for a product",
-                "Agent recommends a monthly saver",
-                "Agent does not recommend a share dealing account or Fixed Rate Cash ISA"
+                "Agent recommends a Fixed Rate Cash ISA",
+                "Agent does not recommend a share dealing account or monthly saver"
             ]
         },
         "annotations": null
