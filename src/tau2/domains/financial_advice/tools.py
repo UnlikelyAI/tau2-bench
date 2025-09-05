@@ -142,15 +142,9 @@ Process to follow:
 
         # Validate product name against known products
         valid_products = [
-            "Share Dealing ISA",
             "Share Dealing Account",
-            "Ready Made Investment ISA",
-            "Ready Made General Investment Account",
             "Fixed Rate Cash ISA",
-            "Cash ISA",
-            "Online Fixed Bond",
             "Monthly Saver",
-            "Easy Saver",
         ]
 
         if product_name not in valid_products:
