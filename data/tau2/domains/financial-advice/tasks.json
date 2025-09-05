@@ -23,8 +23,7 @@
             "nl_assertions": [
                 "Agent should make a clear recommendation for a product",
                 "Agent does not recommend a monthly saver or a fixed rate cash ISA",
-                "Agent recommends a share dealing account",
-                "Agent confirms the user has a high risk tolerance"
+                "Agent recommends a share dealing account"
             ]
         },
         "annotations": null
@@ -53,8 +52,7 @@
             "nl_assertions": [
                 "Agent should make a clear recommendation for a product",
                 "The agent recommends an monthly saver",
-                "The agent does not recommend a fixed rate cash ISA or a share dealing account",
-                "The agent informs the customer they have a low risk tolerance"
+                "The agent does not recommend a fixed rate cash ISA or a share dealing account"
             ]
         },
         "annotations": null
@@ -83,8 +81,210 @@
             "nl_assertions": [
                 "Agent should make a clear recommendation for a product",
                 "Agent does not recommend a monthly saver or a fixed rate cash ISA",
-                "Agent confirms the user has a high risk tolerance",
                 "Agent recommends a share dealing account"
+            ]
+        },
+        "annotations": null
+    },
+    {
+        "id": "3",
+        "description": {
+            "purpose": "Test agent recommends monthly saver when user thinks they want Fixed Rate Cash ISA but lacks ISA allowance",
+            "relevant_policies": null,
+            "notes": null
+        },
+        "user_scenario": {
+            "persona": null,
+            "instructions": {
+                "task_instructions": "You think you want a Fixed Rate Cash ISA because you prefer fixed rates and have heard ISAs are good. \nYou are concise and don't reveal much unless asked directly.",
+                "domain": "financial-advice",
+                "reason_for_call": "You want to find a safe fixed-rate savings product.",
+                "known_info": "You are James Wilson.\nYour user id is james_wilson_45. \nYou are a 35 year old man based in the UK. You have covered your essentials and have 3 months of income saved, but you have already used your full ISA allowance for the year. You prefer fixed-rate products and are not comfortable with variable rates. You have £5,000 to invest. You are concise and don't reveal much unless asked directly.",
+                "unknown_info": null
+            }
+        },
+        "initial_state": null,
+        "evaluation_criteria": {
+            "actions": [],
+            "communicate_info": [],
+            "nl_assertions": [
+                "Agent should make a clear recommendation for a product",
+                "Agent recommends a monthly saver",
+                "Agent does not recommend a Fixed Rate Cash ISA or share dealing account"
+            ]
+        },
+        "annotations": null
+    },
+    {
+        "id": "4",
+        "description": {
+            "purpose": "Test agent recommends Fixed Rate Cash ISA when user thinks they want share dealing account but has low risk tolerance",
+            "relevant_policies": null,
+            "notes": null
+        },
+        "user_scenario": {
+            "persona": null,
+            "instructions": {
+                "task_instructions": "You think you want a share dealing account because you've heard about people making money from stocks. \nYou are concise and don't reveal much unless asked directly.",
+                "domain": "financial-advice",
+                "reason_for_call": "You want to start investing in stocks to grow your money.",
+                "known_info": "You are Sarah Martinez.\nYour user id is sarah_martinez_28. \nYou are a 28 year old woman based in the UK. You have covered your essentials and have 3 months of income saved. You have remaining ISA allowance. You prefer fixed-rate products and are not comfortable with variable rates. You cannot tolerate losing 20% of your income in one year. You have £10,000 to invest. You are concise and don't reveal much unless asked directly.",
+                "unknown_info": null
+            }
+        },
+        "initial_state": null,
+        "evaluation_criteria": {
+            "actions": [],
+            "communicate_info": [],
+            "nl_assertions": [
+                "Agent should make a clear recommendation for a product",
+                "Agent recommends a Fixed Rate Cash ISA",
+                "Agent does not recommend a share dealing account or monthly saver"
+            ]
+        },
+        "annotations": null
+    },
+    {
+        "id": "5",
+        "description": {
+            "purpose": "Test agent recommends monthly saver when user thinks they want share dealing account but lacks sufficient savings",
+            "relevant_policies": null,
+            "notes": null
+        },
+        "user_scenario": {
+            "persona": null,
+            "instructions": {
+                "task_instructions": "You think you want a share dealing account because you want high returns and heard about people making money from stocks. \nYou are concise and don't reveal much unless asked directly.",
+                "domain": "financial-advice",
+                "reason_for_call": "You want to invest in stocks for high returns.",
+                "known_info": "You are Michael Chen.\nYour user id is michael_chen_32. \nYou are a 32 year old man based in the UK. You have covered your essentials but only have 1 month of income saved. You are comfortable with variable rates and can tolerate losing 20% of your income in one year. You want to pick your own investments and are looking for growth over 6% a year. You have £2,000 to invest. You are concise and don't reveal much unless asked directly.",
+                "unknown_info": null
+            }
+        },
+        "initial_state": null,
+        "evaluation_criteria": {
+            "actions": [],
+            "communicate_info": [],
+            "nl_assertions": [
+                "Agent should make a clear recommendation for a product",
+                "Agent recommends a monthly saver",
+                "Agent does not recommend a share dealing account or Fixed Rate Cash ISA"
+            ]
+        },
+        "annotations": null
+    },
+    {
+        "id": "6",
+        "description": {
+            "purpose": "Test agent recommends share dealing account when user thinks they want Fixed Rate Cash ISA but is actually high risk",
+            "relevant_policies": null,
+            "notes": null
+        },
+        "user_scenario": {
+            "persona": null,
+            "instructions": {
+                "task_instructions": "You think you want a Fixed Rate Cash ISA because you want something safe and have heard ISAs are tax-efficient. \nYou are concise and don't reveal much unless asked directly.",
+                "domain": "financial-advice",
+                "reason_for_call": "You want a safe, tax-efficient way to save money.",
+                "known_info": "You are David Thompson.\nYour user id is david_thompson_50. \nYou are a 50 year old man based in the UK. You have covered your essentials and have 6 months of income saved. You have remaining ISA allowance. You can tolerate losing 20% of your income in one year. You want to pick your own investments and are looking for growth over 8% a year. You have £50,000 to invest. You are concise and don't reveal much unless asked directly.",
+                "unknown_info": null
+            }
+        },
+        "initial_state": null,
+        "evaluation_criteria": {
+            "actions": [],
+            "communicate_info": [],
+            "nl_assertions": [
+                "Agent should make a clear recommendation for a product",
+                "Agent recommends a share dealing account",
+                "Agent does not recommend a Fixed Rate Cash ISA or monthly saver"
+            ]
+        },
+        "annotations": null
+    },
+    {
+        "id": "7",
+        "description": {
+            "purpose": "Test agent recommends Fixed Rate Cash ISA when user thinks they want monthly saver but actually qualifies for ISA",
+            "relevant_policies": null,
+            "notes": null
+        },
+        "user_scenario": {
+            "persona": null,
+            "instructions": {
+                "task_instructions": "You think you want a monthly saver because you want to save a fixed amount each month and think it's the safest option. \nYou are concise and don't reveal much unless asked directly.",
+                "domain": "financial-advice",
+                "reason_for_call": "You want a safe way to save money each month.",
+                "known_info": "You are Lisa Roberts.\nYour user id is lisa_roberts_38. \nYou are a 38 year old woman based in the UK. You have covered your essentials and have 4 months of income saved. You have remaining ISA allowance. You prefer fixed-rate products and are not comfortable with variable rates. You cannot tolerate losing 20% of your income in one year. You have £15,000 to invest initially. You are concise and don't reveal much unless asked directly.",
+                "unknown_info": null
+            }
+        },
+        "initial_state": null,
+        "evaluation_criteria": {
+            "actions": [],
+            "communicate_info": [],
+            "nl_assertions": [
+                "Agent should make a clear recommendation for a product",
+                "Agent recommends a Fixed Rate Cash ISA",
+                "Agent does not recommend a monthly saver or share dealing account"
+            ]
+        },
+        "annotations": null
+    },
+    {
+        "id": "8",
+        "description": {
+            "purpose": "Test agent recommends monthly saver when user thinks they want share dealing account but prefers managed funds",
+            "relevant_policies": null,
+            "notes": null
+        },
+        "user_scenario": {
+            "persona": null,
+            "instructions": {
+                "task_instructions": "You think you want a share dealing account because you want good returns. \nYou are concise and don't reveal much unless asked directly.",
+                "domain": "financial-advice",
+                "reason_for_call": "You want to invest for good returns but don't want to manage investments yourself.",
+                "known_info": "You are Robert Davis.\nYour user id is robert_davis_42. \nYou are a 42 year old man based in the UK. You have covered your essentials and have 5 months of income saved. You can tolerate losing 20% of your income in one year. You prefer managed funds over picking your own investments. You are looking for growth over 7% a year but needs a fixed rate. You have £25,000 to invest. You have some unutilised ISA allownace. You are concise and don't reveal much unless asked directly.",
+                "unknown_info": null
+            }
+        },
+        "initial_state": null,
+        "evaluation_criteria": {
+            "actions": [],
+            "communicate_info": [],
+            "nl_assertions": [
+                "Agent should make a clear recommendation for a product",
+                "Agent recommends a Fixed Rate Cash ISA",
+                "Agent does not recommend a share dealing account or monthly saver"
+            ]
+        },
+        "annotations": null
+    },
+    {
+        "id": "9",
+        "description": {
+            "purpose": "Test agent recommends share dealing account when user thinks they want monthly saver but actually has high risk tolerance and growth needs",
+            "relevant_policies": null,
+            "notes": null
+        },
+        "user_scenario": {
+            "persona": null,
+            "instructions": {
+                "task_instructions": "You think you want a monthly saver because it sounds safe and simple, but you actually want high returns. \nYou are concise and don't reveal much unless asked directly.",
+                "domain": "financial-advice",
+                "reason_for_call": "You want a simple way to grow your money safely.",
+                "known_info": "You are Jennifer Adams.\nYour user id is jennifer_adams_29. \nYou are a 29 year old woman based in the UK. You have covered your essentials and have 4 months of income saved. You can tolerate losing 20% of your income in one year. You want to pick your own investments and are looking for growth over 8% a year. You have remaining ISA allowance but are comfortable with variable rates. You have £30,000 to invest. You are concise and don't reveal much unless asked directly.",
+                "unknown_info": null
+            }
+        },
+        "initial_state": null,
+        "evaluation_criteria": {
+            "actions": [],
+            "communicate_info": [],
+            "nl_assertions": [
+                "Agent should make a clear recommendation for a product",
+                "Agent recommends a share dealing account",
+                "Agent does not recommend a monthly saver or Fixed Rate Cash ISA"
             ]
         },
         "annotations": null
