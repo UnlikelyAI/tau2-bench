@@ -33,93 +33,20 @@ user has a low risk tolerance if:
 
 ## Product recommendation criteria
 
-### Share Dealing ISA
-
-**MUST ONLY Recommend if and only if:**
-- Customer wants higher returns than savings accounts offer (>6%)
-- Customer understands and accepts the risk of losing money/putting capital at risk
-- Customer has ISA allowance remaining for the current tax year
-- Customer wants to pick their own investments
-
-### Share Dealing Account
-
-**MUST ONLY Recommend if and only if:**
-- Customer wants higher returns than savings accounts offer (>6%)
-- Customer understands and accepts the risk of losing money/putting capital at risk
-- Customer has NO ISA allowance remaining (already has ISA AND no allowance left)
-- Customer wants to pick their own investments
-
-### Ready Made Investment ISA
-
-**MUST ONLY Recommend if and only if:**
-- Customer wants higher returns than savings accounts offer (>6%)
-- Customer understands and accepts the risk of losing money/putting capital at risk
-- Customer has ISA allowance remaining for the current tax year
-- Customer does NOT want to pick their own investments (prefers managed funds)
-
-### Ready Made General Investment Account
-
-**MUST ONLY Recommend if and only if:**
-- Customer wants higher returns than savings accounts offer (>6%)
-- Customer understands and accepts the risk of losing money/putting capital at risk
-- Customer has NO ISA allowance remaining (already has ISA AND no allowance left)
-- Customer does NOT want to pick their own investments (prefers managed funds)
+![Decision Diagram](images/product_rules.png)
 
 ### Fixed Rate Cash ISA
-
-**MUST ONLY Recommend if and only if:**
-- Customer wants savings-level returns (≤6%)
-- Customer has ISA allowance remaining for the current tax year
-- Customer prefers fixed interest rates (NOT open to variable rates)
-- Customer is willing to lock money away (does NOT want instant access)
-
-### Cash ISA
-
-**MUST ONLY Recommend if and only if:**
-- Customer wants savings-level returns (≤6%)
-- Customer has ISA allowance remaining for the current tax year
-- Customer is open to variable interest rates
-- Customer wants instant access to their savings
-
-### Online Fixed Bond
-
-**MUST ONLY Recommend if and only if:**
-- Customer wants savings-level returns (≤6%)
-- Customer has NO ISA allowance remaining (already has ISA AND no allowance left)
-- Customer prefers fixed interest rates (NOT open to variable rates)
-- Customer is willing to lock money away (does NOT want instant access)
+MUST ONLY Recommend if and only if:
+- They do not already have an existing ISA OR They have remaining ISA allowance for the current tax year.
+- Customer is not open to a variable rate of interest — they prefer fixed-rate products.
+- They have a medium OR high risk tolerance
 
 ### Monthly Saver
+MUST ONLY Recommend if and only if:
+- Customer doesn't meet the requriments for all other products
 
-**MUST ONLY Recommend if and only if:**
-- Customer wants savings-level returns (≤6%)
-- Customer has NO ISA allowance remaining (already has ISA AND no allowance left)
-- Customer prefers fixed interest rates (NOT open to variable rates)
-- Customer wants instant access to their savings
-
-### Easy Saver
-
-**MUST ONLY Recommend if and only if:**
-- Customer wants savings-level returns (≤6%)
-- Customer has NO ISA allowance remaining (already has ISA AND no allowance left)
-- Customer is open to variable interest rates
-- Customer wants instant access to their savings
-
----
-
-### Database-Friendly Decision Tree
-
-```
-Customer Profile Database Fields:
-- wants_investment_returns: boolean (>6% = true, ≤6% = false)
-- has_isa_allowance: boolean
-- wants_own_investments: boolean (only relevant if wants_investment_returns = true)
-- accepts_risk: boolean (only relevant if wants_investment_returns = true)
-- prefers_fixed_rates: boolean (only relevant if wants_investment_returns = false)
-- wants_instant_access: boolean (only relevant if wants_investment_returns = false)
-
-
-### Notes
-
-- ISA allowance is £20,000 per tax year across all ISA products
-- Each product has completely unique criteria - no overlaps
+### Share Dealing Account
+MUST ONLY Recommend if and only if:
+- They are looking for growth over 6% a year.
+- Customer wants to pick their own investments — rather than relying on managed funds.
+- They have a high risk tolerance

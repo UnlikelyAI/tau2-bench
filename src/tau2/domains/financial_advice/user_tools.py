@@ -1,5 +1,6 @@
 """User tools for the financial advice domain."""
 
+from typing import Literal
 from tau2.environment.toolkit import ToolKitBase, ToolType, is_tool
 from tau2.domains.financial_advice.data_model import FinancialAdviceDB
 
@@ -39,118 +40,64 @@ class FinancialAdviceUserTools(ToolKitBase):
             raise ValueError(f"User {user_id} not found")
         return user
 
-    @is_tool(ToolType.READ)
-    def get_financial_situation_information(self, user_id: str) -> str:
+    @is_tool(ToolType.WRITE)
+    def update_recommended_product(
+        self,
+        user_id: str,
+        product_name: Literal[
+            "Share Dealing ISA",
+            "Share Dealing Account",
+            "Ready Made Investment ISA",
+            "Ready Made General Investment Account",
+            "Fixed Rate Cash ISA",
+            "Cash ISA",
+            "Online Fixed Bond",
+            "Monthly Saver",
+            "Easy Saver",
+        ],
+    ) -> str:
         """
-        Get the user's financial situtation information including their preferences and situation.
-        This includes information about their risk tolerance, ISA allowance,
-        investment preferences, and other criteria used for product recommendations.
+        Update the recommended product for a user. This should be called when the assistant
+        makes an explicit product recommendation based on the user's financial profile and the policy criteria.
 
         Args:
-            user_id: The user ID to get the financial profile for.
+            user_id: The user ID to update the recommendation for.
+            product_name: The name of the product being recommended.
 
         Returns:
-            A formatted string containing the user's financial profile information.
+            A confirmation message indicating the recommendation has been updated.
+
+        Raises:
+            ValueError: If user is not found or product name is invalid.
         """
-        user = self._get_user(user_id)
-        financial_profile = user.financial_profile
+        print(f"Updating recommended product for user {user_id} to {product_name}")
 
-        # Format the financial profile information
-        profile_info = []
-        profile_info.append(
-            f"Financial Profile for {user.name.first_name} {user.name.last_name}:"
-        )
-        profile_info.append("")
-
-        # Investment vs Savings preference
-        if financial_profile.wants_investment_returns:
-            profile_info.append(
-                "• Investment Goals: Wants higher returns than savings accounts (>6%)"
-            )
-        else:
-            profile_info.append("• Investment Goals: Wants savings-level returns (≤6%)")
-
-        # ISA allowance status
-        if financial_profile.has_isa_allowance:
-            profile_info.append(
-                "• ISA Status: Has ISA allowance remaining for current tax year"
-            )
-        else:
-            profile_info.append(
-                "• ISA Status: No ISA allowance remaining (already has ISA and no allowance left)"
-            )
-
-        # Investment management preference (only relevant for investment products)
-        if financial_profile.wants_investment_returns:
-            if financial_profile.wants_own_investments:
-                profile_info.append(
-                    "• Investment Management: Wants to pick own investments"
-                )
-            else:
-                profile_info.append("• Investment Management: Prefers managed funds")
-
-        # Risk acceptance (only relevant for investment products)
-        if financial_profile.wants_investment_returns:
-            if financial_profile.accepts_risk:
-                profile_info.append(
-                    "• Risk Tolerance: Accepts risk of losing money/putting capital at risk"
-                )
-            else:
-                profile_info.append(
-                    "• Risk Tolerance: Does not accept risk of losing money"
-                )
-
-        # Interest rate preference (only relevant for savings products)
-        if not financial_profile.wants_investment_returns:
-            if financial_profile.prefers_fixed_rates:
-                profile_info.append(
-                    "• Interest Rate Preference: Prefers fixed interest rates"
-                )
-            else:
-                profile_info.append(
-                    "• Interest Rate Preference: Open to variable interest rates"
-                )
-
-        # Access preference (only relevant for savings products)
-        if not financial_profile.wants_investment_returns:
-            if financial_profile.wants_instant_access:
-                profile_info.append(
-                    "• Access Preference: Wants instant access to savings"
-                )
-            else:
-                profile_info.append("• Access Preference: Willing to lock money away")
-
-        return "\n".join(profile_info)
-
-    @is_tool(ToolType.READ)
-    def get_user_basic_info(self, user_id: str) -> str:
-        """
-        Get basic user information including name, address, and contact details.
-
-        Args:
-            user_id: The user ID to get basic information for.
-
-        Returns:
-            A formatted string containing the user's basic information.
-        """
         user = self._get_user(user_id)
 
-        info = []
-        info.append(f"User Information for {user_id}:")
-        info.append("")
-        info.append(f"Name: {user.name.first_name} {user.name.last_name}")
-        info.append(f"Email: {user.email}")
-        info.append(f"Date of Birth: {user.dob}")
-        info.append("")
-        info.append("Address:")
-        info.append(f"  {user.address.address1}")
-        if user.address.address2:
-            info.append(f"  {user.address.address2}")
-        info.append(f"  {user.address.city}")
-        info.append(f"  {user.address.postcode}")
-        info.append(f"  {user.address.country}")
+        # Validate product name against known products
+        valid_products = [
+            "Share Dealing ISA",
+            "Share Dealing Account",
+            "Ready Made Investment ISA",
+            "Ready Made General Investment Account",
+            "Fixed Rate Cash ISA",
+            "Cash ISA",
+            "Online Fixed Bond",
+            "Monthly Saver",
+            "Easy Saver",
+        ]
 
-        return "\n".join(info)
+        if product_name not in valid_products:
+            raise ValueError(
+                f"Invalid product name: {product_name}. Valid products are: {', '.join(valid_products)}"
+            )
+
+        # Update the recommended product
+        success = self.db.update_user_recommendation(user_id, product_name)
+        if not success:
+            raise ValueError(f"Failed to update recommendation for user {user_id}")
+
+        return f"Successfully updated recommended product for {user.name.first_name} {user.name.last_name} to: {product_name}"
 
     @is_tool(ToolType.WRITE)
     def set_current_user_id(self, user_id: str) -> str:
