@@ -33,7 +33,7 @@
             "actions": [
                 {
                     "action_id": "update_recommendation_0",
-                    "requestor": "user",
+                    "requestor": "assistant",
                     "name": "update_recommended_product",
                     "arguments": {
                         "user_id": "alex_murphy_0",
@@ -93,7 +93,7 @@
             "actions": [
                 {
                     "action_id": "update_recommendation_0",
-                    "requestor": "user",
+                    "requestor": "assistant",
                     "name": "update_recommended_product",
                     "arguments": {
                         "user_id": "rachel_taylor_1",
@@ -153,7 +153,7 @@
             "actions": [
                 {
                     "action_id": "update_recommendation_0",
-                    "requestor": "user",
+                    "requestor": "assistant",
                     "name": "update_recommended_product",
                     "arguments": {
                         "user_id": "emma_thompson_2",
@@ -213,7 +213,7 @@
             "actions": [
                 {
                     "action_id": "update_recommendation_0",
-                    "requestor": "user",
+                    "requestor": "assistant",
                     "name": "update_recommended_product",
                     "arguments": {
                         "user_id": "james_wilson_3",
@@ -273,7 +273,7 @@
             "actions": [
                 {
                     "action_id": "update_recommendation_0",
-                    "requestor": "user",
+                    "requestor": "assistant",
                     "name": "update_recommended_product",
                     "arguments": {
                         "user_id": "sarah_martinez_4",
@@ -333,7 +333,7 @@
             "actions": [
                 {
                     "action_id": "update_recommendation_0",
-                    "requestor": "user",
+                    "requestor": "assistant",
                     "name": "update_recommended_product",
                     "arguments": {
                         "user_id": "michael_chen_5",
@@ -393,7 +393,7 @@
             "actions": [
                 {
                     "action_id": "update_recommendation_0",
-                    "requestor": "user",
+                    "requestor": "assistant",
                     "name": "update_recommended_product",
                     "arguments": {
                         "user_id": "david_thompson_6",
@@ -453,7 +453,7 @@
             "actions": [
                 {
                     "action_id": "update_recommendation_0",
-                    "requestor": "user",
+                    "requestor": "assistant",
                     "name": "update_recommended_product",
                     "arguments": {
                         "user_id": "lisa_roberts_7",
@@ -513,7 +513,7 @@
             "actions": [
                 {
                     "action_id": "update_recommendation_0",
-                    "requestor": "user",
+                    "requestor": "assistant",
                     "name": "update_recommended_product",
                     "arguments": {
                         "user_id": "robert_davis_8",
@@ -573,7 +573,7 @@
             "actions": [
                 {
                     "action_id": "update_recommendation_0",
-                    "requestor": "user",
+                    "requestor": "assistant",
                     "name": "update_recommended_product",
                     "arguments": {
                         "user_id": "jennifer_adams_9",

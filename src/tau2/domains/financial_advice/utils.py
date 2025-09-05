@@ -9,17 +9,17 @@ FINANCIAL_ADVICE_DB_PATH = FINANCIAL_ADVICE_DATA_DIR / "db.json"
 KNOWLEDGE_BASE_PATH = FINANCIAL_ADVICE_DATA_DIR / "knowledge_base_md"
 PRODUCT_FILES = [
     # Ready-Made Investment ISA / Ready-Made Investment Account
-    "investing/text/ready-made-investments.md",
-    "investing/pdf/ready-made-investments-kfd-isa-17998217.md",
-    "investing/pdf/ready-made-investments-kfd-gia-a7478096.md",
-    "investing/pdf/rmi-fund-range-711f7e2c.md",
+    # "investing/text/ready-made-investments.md",
+    # "investing/pdf/ready-made-investments-kfd-isa-17998217.md",
+    # "investing/pdf/ready-made-investments-kfd-gia-a7478096.md",
+    # "investing/pdf/rmi-fund-range-711f7e2c.md",
     # Share Dealing ISA / Share Dealing Account
-    "investing/text/share-dealing-isa.md",
+    # "investing/text/share-dealing-isa.md",
     "investing/text/share-dealing-account.md",
     "investing/text/share-dealing-services.md",
     "investing/text/charges.md",
-    "investing/text/ways-to-invest.md",
-    "investing/text/what-is-a-stocks-and-shares-isa.md",
+    # "investing/text/ways-to-invest.md",
+    # "investing/text/what-is-a-stocks-and-shares-isa.md",
     # Investment taxes
     "investing/text/tax-changes.md",
     "investing/text/tax-efficient-investing.md",
@@ -31,11 +31,11 @@ PRODUCT_FILES = [
     "savings/text/isa-top-up.md",
     "savings/text/isa-allowance.md",
     # Easy Saver
-    "savings/text/easy-saver.md",
+    # "savings/text/easy-saver.md",
     # Monthly Saver
     "savings/text/monthly-saver.md",
     # Online Fixed Bond
-    "savings/text/online-fixed-bonds.md",
+    # "savings/text/online-fixed-bonds.md",
 ]
 
 

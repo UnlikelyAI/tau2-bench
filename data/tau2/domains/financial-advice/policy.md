@@ -43,7 +43,7 @@ MUST ONLY Recommend if and only if:
 
 ### Monthly Saver
 MUST ONLY Recommend if and only if:
-- Customer doesn't meet the requriments for all other products
+- Customer only has a low risk tolerance
 
 ### Share Dealing Account
 MUST ONLY Recommend if and only if:

@@ -45,19 +45,13 @@ class FinancialAdviceUserTools(ToolKitBase):
         self,
         user_id: str,
         product_name: Literal[
-            "Share Dealing ISA",
             "Share Dealing Account",
-            "Ready Made Investment ISA",
-            "Ready Made General Investment Account",
             "Fixed Rate Cash ISA",
-            "Cash ISA",
-            "Online Fixed Bond",
             "Monthly Saver",
-            "Easy Saver",
         ],
     ) -> str:
         """
-        Update the recommended product for a user. This should be called when the assistant
+        Update your recommended product. This should be called when the assistant
         makes an explicit product recommendation based on the user's financial profile and the policy criteria.
 
         Args:

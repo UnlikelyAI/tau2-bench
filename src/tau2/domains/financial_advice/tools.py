@@ -110,12 +110,67 @@ Process to follow:
         """
         return self._get_product(query)
 
-    # @is_tool(ToolType.READ)
-    # def get_current_user_id(self) -> str:
-    #     """
-    #     Get the current user ID.
-    #     """
-    #     return self.db.current_user_id
+    @is_tool(ToolType.WRITE)
+    def update_recommended_product(
+        self,
+        user_id: str,
+        product_name: Literal[
+            "Share Dealing Account",
+            "Fixed Rate Cash ISA",
+            "Monthly Saver",
+        ],
+    ) -> str:
+        """
+        Update the recommended product of the current user. This should be called when the assistant
+        makes an explicit product recommendation based on the user's financial profile and the policy criteria.
+
+        Only call this when giving the product recommendation specifically, it should NOT be called if the user is requesting information about products.
+
+        Args:
+            user_id: The user ID to update the recommendation for.
+            product_name: The name of the product being recommended.
+
+        Returns:
+            A confirmation message indicating the recommendation has been updated.
+
+        Raises:
+            ValueError: If user is not found or product name is invalid.
+        """
+        print(f"Updating recommended product for user {user_id} to {product_name}")
+
+        user = self._get_user(user_id)
+
+        # Validate product name against known products
+        valid_products = [
+            "Share Dealing ISA",
+            "Share Dealing Account",
+            "Ready Made Investment ISA",
+            "Ready Made General Investment Account",
+            "Fixed Rate Cash ISA",
+            "Cash ISA",
+            "Online Fixed Bond",
+            "Monthly Saver",
+            "Easy Saver",
+        ]
+
+        if product_name not in valid_products:
+            raise ValueError(
+                f"Invalid product name: {product_name}. Valid products are: {', '.join(valid_products)}"
+            )
+
+        # Update the recommended product
+        success = self.db.update_user_recommendation(user_id, product_name)
+        if not success:
+            raise ValueError(f"Failed to update recommendation for user {user_id}")
+
+        return f"Successfully updated recommended product for {user.name.first_name} {user.name.last_name} to: {product_name}"
+
+    @is_tool(ToolType.READ)
+    def get_current_user_id(self) -> str:
+        """
+        Get the current user ID.
+        """
+        return self.db.current_user_id
 
 
 if __name__ == "__main__":
