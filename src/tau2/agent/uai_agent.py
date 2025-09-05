@@ -78,7 +78,7 @@ class UAIAgent(LocalAgent[UAIAgentState]):
 
         self.client = Client(
             base_url="http://localhost:8026/api/v1",
-            timeout=30.0,
+            timeout=60.0,
         )
 
     @property
