@@ -5,6 +5,7 @@ from tau2.utils.utils import DATA_DIR
 FINANCIAL_ADVICE_DATA_DIR = DATA_DIR / "tau2" / "domains" / "financial-advice"
 FINANCIAL_ADVICE_POLICY_PATH = FINANCIAL_ADVICE_DATA_DIR / "policy.md"
 FINANCIAL_ADVICE_TASK_SET_PATH = FINANCIAL_ADVICE_DATA_DIR / "tasks.json"
+FINANCIAL_ADVICE_DB_PATH = FINANCIAL_ADVICE_DATA_DIR / "db.json"
 KNOWLEDGE_BASE_PATH = FINANCIAL_ADVICE_DATA_DIR / "knowledge_base_md"
 PRODUCT_FILES = [
     # Ready-Made Investment ISA / Ready-Made Investment Account

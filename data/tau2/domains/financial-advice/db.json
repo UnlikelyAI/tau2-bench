@@ -1,0 +1,239 @@
+{
+    "users": {
+        "sarah_johnson_001": {
+            "user_id": "sarah_johnson_001",
+            "name": {
+                "first_name": "Sarah",
+                "last_name": "Johnson"
+            },
+            "address": {
+                "address1": "123 Investment Street",
+                "address2": "Apt 4B",
+                "city": "London",
+                "country": "UK",
+                "postcode": "SW1A 1AA"
+            },
+            "email": "sarah.johnson@example.com",
+            "dob": "1985-03-15",
+            "financial_profile": {
+                "wants_investment_returns": true,
+                "has_isa_allowance": true,
+                "wants_own_investments": true,
+                "accepts_risk": true,
+                "prefers_fixed_rates": false,
+                "wants_instant_access": false
+            },
+            "expected_recommended_product": "Share Dealing ISA",
+            "recommended_product": ""
+        },
+        "michael_chen_002": {
+            "user_id": "michael_chen_002",
+            "name": {
+                "first_name": "Michael",
+                "last_name": "Chen"
+            },
+            "address": {
+                "address1": "456 Trading Avenue",
+                "address2": "Unit 12",
+                "city": "Manchester",
+                "country": "UK",
+                "postcode": "M1 1AA"
+            },
+            "email": "michael.chen@example.com",
+            "dob": "1978-07-22",
+            "financial_profile": {
+                "wants_investment_returns": true,
+                "has_isa_allowance": false,
+                "wants_own_investments": true,
+                "accepts_risk": true,
+                "prefers_fixed_rates": false,
+                "wants_instant_access": false
+            },
+            "expected_recommended_product": "Share Dealing Account",
+            "recommended_product": ""
+        },
+        "emma_wilson_003": {
+            "user_id": "emma_wilson_003",
+            "name": {
+                "first_name": "Emma",
+                "last_name": "Wilson"
+            },
+            "address": {
+                "address1": "789 Managed Fund Lane",
+                "address2": "Flat 8",
+                "city": "Birmingham",
+                "country": "UK",
+                "postcode": "B1 1AA"
+            },
+            "email": "emma.wilson@example.com",
+            "dob": "1992-11-08",
+            "financial_profile": {
+                "wants_investment_returns": true,
+                "has_isa_allowance": true,
+                "wants_own_investments": false,
+                "accepts_risk": true,
+                "prefers_fixed_rates": false,
+                "wants_instant_access": false
+            },
+            "expected_recommended_product": "Ready Made Investment ISA",
+            "recommended_product": ""
+        },
+        "david_thompson_004": {
+            "user_id": "david_thompson_004",
+            "name": {
+                "first_name": "David",
+                "last_name": "Thompson"
+            },
+            "address": {
+                "address1": "321 Fund Management Road",
+                "address2": "Suite 15",
+                "city": "Edinburgh",
+                "country": "UK",
+                "postcode": "EH1 1AA"
+            },
+            "email": "david.thompson@example.com",
+            "dob": "1975-05-30",
+            "financial_profile": {
+                "wants_investment_returns": true,
+                "has_isa_allowance": false,
+                "wants_own_investments": false,
+                "accepts_risk": true,
+                "prefers_fixed_rates": false,
+                "wants_instant_access": false
+            },
+            "expected_recommended_product": "Ready Made General Investment Account",
+            "recommended_product": ""
+        },
+        "lisa_patel_005": {
+            "user_id": "lisa_patel_005",
+            "name": {
+                "first_name": "Lisa",
+                "last_name": "Patel"
+            },
+            "address": {
+                "address1": "654 Fixed Rate Close",
+                "address2": "House 3",
+                "city": "Leeds",
+                "country": "UK",
+                "postcode": "LS1 1AA"
+            },
+            "email": "lisa.patel@example.com",
+            "dob": "1988-09-12",
+            "financial_profile": {
+                "wants_investment_returns": false,
+                "has_isa_allowance": true,
+                "wants_own_investments": false,
+                "accepts_risk": false,
+                "prefers_fixed_rates": true,
+                "wants_instant_access": false
+            },
+            "expected_recommended_product": "Fixed Rate Cash ISA",
+            "recommended_product": ""
+        },
+        "james_roberts_006": {
+            "user_id": "james_roberts_006",
+            "name": {
+                "first_name": "James",
+                "last_name": "Roberts"
+            },
+            "address": {
+                "address1": "987 Variable Rate Street",
+                "address2": "Apartment 22",
+                "city": "Liverpool",
+                "country": "UK",
+                "postcode": "L1 1AA"
+            },
+            "email": "james.roberts@example.com",
+            "dob": "1995-01-25",
+            "financial_profile": {
+                "wants_investment_returns": false,
+                "has_isa_allowance": true,
+                "wants_own_investments": false,
+                "accepts_risk": false,
+                "prefers_fixed_rates": false,
+                "wants_instant_access": true
+            },
+            "expected_recommended_product": "Cash ISA",
+            "recommended_product": ""
+        },
+        "sophie_davis_007": {
+            "user_id": "sophie_davis_007",
+            "name": {
+                "first_name": "Sophie",
+                "last_name": "Davis"
+            },
+            "address": {
+                "address1": "147 Bond Street",
+                "address2": "Flat 5",
+                "city": "Glasgow",
+                "country": "UK",
+                "postcode": "G1 1AA"
+            },
+            "email": "sophie.davis@example.com",
+            "dob": "1983-12-03",
+            "financial_profile": {
+                "wants_investment_returns": false,
+                "has_isa_allowance": false,
+                "wants_own_investments": false,
+                "accepts_risk": false,
+                "prefers_fixed_rates": true,
+                "wants_instant_access": false
+            },
+            "expected_recommended_product": "Online Fixed Bond",
+            "recommended_product": ""
+        },
+        "alex_murphy_008": {
+            "user_id": "alex_murphy_008",
+            "name": {
+                "first_name": "Alex",
+                "last_name": "Murphy"
+            },
+            "address": {
+                "address1": "258 Monthly Saver Way",
+                "address2": "Unit 7",
+                "city": "Bristol",
+                "country": "UK",
+                "postcode": "BS1 1AA"
+            },
+            "email": "alex.murphy@example.com",
+            "dob": "1990-06-18",
+            "financial_profile": {
+                "wants_investment_returns": false,
+                "has_isa_allowance": false,
+                "wants_own_investments": false,
+                "accepts_risk": false,
+                "prefers_fixed_rates": true,
+                "wants_instant_access": true
+            },
+            "expected_recommended_product": "Monthly Saver",
+            "recommended_product": ""
+        },
+        "rachel_taylor_009": {
+            "user_id": "rachel_taylor_009",
+            "name": {
+                "first_name": "Rachel",
+                "last_name": "Taylor"
+            },
+            "address": {
+                "address1": "369 Easy Access Road",
+                "address2": "House 14",
+                "city": "Newcastle",
+                "country": "UK",
+                "postcode": "NE1 1AA"
+            },
+            "email": "rachel.taylor@example.com",
+            "dob": "1987-04-14",
+            "financial_profile": {
+                "wants_investment_returns": false,
+                "has_isa_allowance": false,
+                "wants_own_investments": false,
+                "accepts_risk": false,
+                "prefers_fixed_rates": false,
+                "wants_instant_access": true
+            },
+            "expected_recommended_product": "Easy Saver",
+            "recommended_product": ""
+        }
+    },
+    "current_user_id": ""
+}
