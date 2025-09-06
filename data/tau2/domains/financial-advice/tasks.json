@@ -33,7 +33,7 @@
             "actions": [
                 {
                     "action_id": "update_recommendation_0",
-                    "requestor": "user",
+                    "requestor": "assistant",
                     "name": "update_recommended_product",
                     "arguments": {
                         "user_id": "michael_chen_5",
@@ -43,17 +43,7 @@
                     "compare_args": null
                 }
             ],
-            "env_assertions": [
-                {
-                    "env_type": "user",
-                    "func_name": "assert_recommendation_matches_expected",
-                    "arguments": {
-                        "user_id": "michael_chen_5"
-                    },
-                    "assert_value": true,
-                    "message": null
-                }
-            ],
+            "reward_basis": ["ACTION"],
             "communicate_info": [],
             "nl_assertions": null
         },
@@ -93,7 +83,7 @@
             "actions": [
                 {
                     "action_id": "update_recommendation_0",
-                    "requestor": "user",
+                    "requestor": "assistant",
                     "name": "update_recommended_product",
                     "arguments": {
                         "user_id": "david_thompson_6",
@@ -103,17 +93,7 @@
                     "compare_args": null
                 }
             ],
-            "env_assertions": [
-                {
-                    "env_type": "user",
-                    "func_name": "assert_recommendation_matches_expected",
-                    "arguments": {
-                        "user_id": "david_thompson_6"
-                    },
-                    "assert_value": true,
-                    "message": null
-                }
-            ],
+            "reward_basis": ["ACTION"],
             "communicate_info": [],
             "nl_assertions": null
         },
@@ -153,7 +133,7 @@
             "actions": [
                 {
                     "action_id": "update_recommendation_0",
-                    "requestor": "user",
+                    "requestor": "assistant",
                     "name": "update_recommended_product",
                     "arguments": {
                         "user_id": "lisa_roberts_7",
@@ -163,17 +143,7 @@
                     "compare_args": null
                 }
             ],
-            "env_assertions": [
-                {
-                    "env_type": "user",
-                    "func_name": "assert_recommendation_matches_expected",
-                    "arguments": {
-                        "user_id": "lisa_roberts_7"
-                    },
-                    "assert_value": true,
-                    "message": null
-                }
-            ],
+            "reward_basis": ["ACTION"],
             "communicate_info": [],
             "nl_assertions": null
         },
@@ -213,7 +183,7 @@
             "actions": [
                 {
                     "action_id": "update_recommendation_0",
-                    "requestor": "user",
+                    "requestor": "assistant",
                     "name": "update_recommended_product",
                     "arguments": {
                         "user_id": "robert_davis_8",
@@ -223,17 +193,7 @@
                     "compare_args": null
                 }
             ],
-            "env_assertions": [
-                {
-                    "env_type": "user",
-                    "func_name": "assert_recommendation_matches_expected",
-                    "arguments": {
-                        "user_id": "robert_davis_8"
-                    },
-                    "assert_value": true,
-                    "message": null
-                }
-            ],
+            "reward_basis": ["ACTION"],
             "communicate_info": [],
             "nl_assertions": null
         },
@@ -273,7 +233,7 @@
             "actions": [
                 {
                     "action_id": "update_recommendation_0",
-                    "requestor": "user",
+                    "requestor": "assistant",
                     "name": "update_recommended_product",
                     "arguments": {
                         "user_id": "jennifer_adams_9",
@@ -283,17 +243,8 @@
                     "compare_args": null
                 }
             ],
-            "env_assertions": [
-                {
-                    "env_type": "user",
-                    "func_name": "assert_recommendation_matches_expected",
-                    "arguments": {
-                        "user_id": "jennifer_adams_9"
-                    },
-                    "assert_value": true,
-                    "message": null
-                }
-            ],
+            "reward_basis": ["ACTION"],
+            "env_assertions": null,
             "communicate_info": [],
             "nl_assertions": null
         },

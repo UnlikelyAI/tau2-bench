@@ -14,6 +14,8 @@ You should only make one tool call at a time, and if you make a tool call, you s
 
 The following products represent a complete list of the products available to recommend to customers wherever suitable.
 
+Every user should add their user id to the database
+
 ## Risk assessment
 
 ![Decision Diagram](images/risk_rules.png)
