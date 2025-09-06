@@ -29,6 +29,17 @@ product_file_contents = load_product_file_contents(KNOWLEDGE_BASE_PATH, PRODUCT_
 product_files_str = product_files_as_str(product_file_contents)
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
+class EmptyTools(ToolKitBase):
+    """Empty tools for the financial advice domain."""
+
+    def __init__(self, db: FinancialAdviceDB) -> None:
+        """
+        Initialize the financial advice tools with a database instance.
+
+        Args:
+            db: The financial advice database containing user information.
+        """
+        super().__init__(db)
 
 class FinancialAdviceTools(ToolKitBase):  # Tools
     """All the tools for the financial advice domain."""
