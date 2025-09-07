@@ -1,5 +1,255 @@
 [
     {
+        "id": "0",
+        "description": {
+            "purpose": "Testing the agent can recommend a complex product with a knowledgeable user",
+            "relevant_policies": null,
+            "notes": null
+        },
+        "user_scenario": {
+            "persona": "You are well versed in financial terminology and you are looking for ways to save and invest money. You think you are pretty sure you are suited to an ISA. \nYou are concise and don't reveal much unless asked directly.",
+            "instructions": {
+                "task_instructions": "You want a recommendation for a financial product, once you recieve one, your goal is complete.",
+                "domain": "financial-advice",
+                "reason_for_call": "You want to find a new way to save and invest money that you can manage yourself.",
+                "known_info": "You are Alex Murphy.\nYour user id is alex_murphy_0. \nYou are a 45 year old man based in the UK. You can accept a higher level of risk in order to achieve higher returns, 8% returns are what you are aiming for. 20% loss in a year is acceptable. You have used your full ISA allowance for the year. You have covered essentials and have 100k in the bank to invest. You like to manage your own investments. You would like a fixed rate but can do open if needed. You are concise and don't reveal much unless asked directly.",
+                "unknown_info": null
+            }
+        },
+        "initial_state": {
+            "initialization_data": null,
+            "initialization_actions": [
+                {
+                    "env_type": "user",
+                    "func_name": "set_current_user_id",
+                    "arguments": {
+                        "user_id": "alex_murphy_0"
+                    }
+                }
+            ],
+            "message_history": null
+        },
+        "evaluation_criteria": {
+            "actions": [
+                {
+                    "action_id": "update_recommendation_0",
+                    "requestor": "assistant",
+                    "name": "update_recommended_product",
+                    "arguments": {
+                        "user_id": "alex_murphy_0",
+                        "product_name": "Share Dealing Account"
+                    },
+                    "info": null,
+                    "compare_args": null
+                }
+            ],
+            "communicate_info": [],
+            "reward_basis": ["ACTION"],
+            "nl_assertions": null
+        },
+        "annotations": null
+    },
+    {
+        "id": "1",
+        "description": {
+            "purpose": "Testing the agent can recommend a complex product with a knowledgeable user",
+            "relevant_policies": null,
+            "notes": null
+        },
+        "user_scenario": {
+            "persona": "You are well versed in financial terminology and you think you'd like a stocks account. \nYou are concise and don't reveal much unless asked directly.",
+            "instructions": {
+                "task_instructions": "You want a recommendation for a financial product, once you recieve one, your goal is complete.",
+                "domain": "financial-advice",
+                "reason_for_call": "You want to get a financial product recommendation", 
+                "known_info": "You are Rachel Taylor.\nYour user id is rachel_taylor_1. \nYou are a 45 year old woman based in the UK.\nYou have all your essentials covered but no real savings and so you are not open to a variable rate of interest.\nYou have used only 10% of your ISA allowance. you like to manage your own investments.\nYou are concise and don't reveal much unless asked directly.",
+                "unknown_info": null
+            }
+        },
+        "initial_state": {
+            "initialization_data": null,
+            "initialization_actions": [
+                {
+                    "env_type": "user",
+                    "func_name": "set_current_user_id",
+                    "arguments": {
+                        "user_id": "rachel_taylor_1"
+                    }
+                }
+            ],
+            "message_history": null
+        },
+        "evaluation_criteria": {
+            "actions": [
+                {
+                    "action_id": "update_recommendation_0",
+                    "requestor": "assistant",
+                    "name": "update_recommended_product",
+                    "arguments": {
+                        "user_id": "rachel_taylor_1",
+                        "product_name": "Monthly Saver"
+                    },
+                    "info": null,
+                    "compare_args": null
+                }
+            ],
+            "reward_basis": ["ACTION"],
+            "communicate_info": [],
+            "nl_assertions": null
+        },
+        "annotations": null
+    },
+    {
+        "id": "2",
+        "description": {
+            "purpose": "Testing the agent can recommend a complex product with a knowledgeable user",
+            "relevant_policies": null,
+            "notes": null
+        },
+        "user_scenario": {
+            "persona": "You are the daughter of a rich mining tycoon and don't know much about financial products at all. If a question contains any technical jargon, you ask for clarification. \nYou are concise and don't reveal much unless asked directly.",
+            "instructions": {
+                "task_instructions": "You want a recommendation for a financial product, once you recieve one, your goal is complete.",
+                "domain": "financial-advice",
+                "reason_for_call": "You want to get a financial product recommendation",
+                "known_info": "You are Emma Thompson.\nYour user id is emma_thompson_2. You are a 21 year old woman based in the UK. You are studying and daddy pays you 10k a month as a stipend. Your living expenses are 1k a month. You have 100k in the bank. You have some ISA allowance left. Although you are uncomfortable with the terminology, you don't mind variable interest rates and you can easily afford to lose 20% of your income in one year. You will pick your own investments over a managed fund. Your dad says you should be getting 8% return a year and you want to make him happy. You are concise and don't reveal much unless asked directly.",
+                "unknown_info": null
+            }
+        },
+        "initial_state": {
+            "initialization_data": null,
+            "initialization_actions": [
+                {
+                    "env_type": "user",
+                    "func_name": "set_current_user_id",
+                    "arguments": {
+                        "user_id": "emma_thompson_2"
+                    }
+                }
+            ],
+            "message_history": null
+        },
+        "evaluation_criteria": {
+            "actions": [
+                {
+                    "action_id": "update_recommendation_0",
+                    "requestor": "assistant",
+                    "name": "update_recommended_product",
+                    "arguments": {
+                        "user_id": "emma_thompson_2",
+                        "product_name": "Share Dealing Account"
+                    },
+                    "info": null,
+                    "compare_args": null
+                }
+            ],
+            "reward_basis": ["ACTION"],
+            "communicate_info": [],
+            "nl_assertions": null
+        },
+        "annotations": null
+    },
+    {
+        "id": "3",
+        "description": {
+            "purpose": "Test agent recommends monthly saver when user thinks they want Fixed Rate Cash ISA but lacks ISA allowance",
+            "relevant_policies": null,
+            "notes": null
+        },
+        "user_scenario": {
+            "persona": "You think you want a Fixed Rate Cash ISA because you prefer fixed rates and have heard ISAs are good. \nYou are concise and don't reveal much unless asked directly.",
+            "instructions": {
+                "task_instructions": "You want a recommendation for a financial product, once you recieve one, your goal is complete.",
+                "domain": "financial-advice",
+                "reason_for_call": "You want to get a financial product recommendation",
+                "known_info": "You are James Wilson.\nYour user id is james_wilson_3. \nYou are a 35 year old man based in the UK. You have covered your essentials and have 3 months of income saved, but you have already used your full ISA allowance for the year. You prefer fixed-rate products and are not comfortable with variable rates. You have £5,000 to invest. You are concise and don't reveal much unless asked directly.",
+                "unknown_info": null
+            }
+        },
+        "initial_state": {
+            "initialization_data": null,
+            "initialization_actions": [
+                {
+                    "env_type": "user",
+                    "func_name": "set_current_user_id",
+                    "arguments": {
+                        "user_id": "james_wilson_3"
+                    }
+                }
+            ],
+            "message_history": null
+        },
+        "evaluation_criteria": {
+            "actions": [
+                {
+                    "action_id": "update_recommendation_0",
+                    "requestor": "assistant",
+                    "name": "update_recommended_product",
+                    "arguments": {
+                        "user_id": "james_wilson_3",
+                        "product_name": "Monthly Saver"
+                    },
+                    "info": null,
+                    "compare_args": null
+                }
+            ],
+            "reward_basis": ["ACTION"],
+            "communicate_info": [],
+            "nl_assertions": null
+        },
+        "annotations": null
+    },
+    {
+        "id": "4",
+        "description": {
+            "purpose": "Test agent recommends Fixed Rate Cash ISA when user thinks they want share dealing account but has low risk tolerance",
+            "relevant_policies": null,
+            "notes": null
+        },
+        "user_scenario": {
+            "persona": "You think you want a share dealing account because you've heard about people making money from stocks. \nYou are concise and don't reveal much unless asked directly.",
+            "instructions": {
+                "task_instructions": "You want a recommendation for a financial product, once you recieve one, your goal is complete.",
+                "domain": "financial-advice",
+                "reason_for_call": "You want to get a financial product recommendation",
+                "known_info": "You are Sarah Martinez.\nYour user id is sarah_martinez_4. \nYou are a 28 year old woman based in the UK. You have covered your essentials and have 3 months of income saved. You have remaining ISA allowance. You prefer fixed-rate products and are not comfortable with variable rates. You cannot tolerate losing 20% of your income in one year. You have £10,000 to invest. You are concise and don't reveal much unless asked directly.",
+                "unknown_info": null
+            }
+        },
+        "initial_state": {
+            "initialization_data": null,
+            "initialization_actions": [
+                {
+                    "env_type": "user",
+                    "func_name": "set_current_user_id",
+                    "arguments": {
+                        "user_id": "sarah_martinez_4"
+                    }
+                }
+            ],
+            "message_history": null
+        },
+        "evaluation_criteria": {
+            "actions": [
+                {
+                    "action_id": "update_recommendation_0",
+                    "requestor": "assistant",
+                    "name": "update_recommended_product",
+                    "arguments": {
+                        "user_id": "sarah_martinez_4",
+                        "product_name": "Fixed Rate Cash ISA"
+                    },
+                    "info": null,
+                    "compare_args": null
+                }
+            ],
+            "reward_basis": ["ACTION"],
+            "communicate_info": [],
+            "nl_assertions": null
+        },
+        "annotations": null
+    },
+    {
         "id": "5",
         "description": {
             "purpose": "Test agent recommends monthly saver when user thinks they want share dealing account but lacks sufficient savings",

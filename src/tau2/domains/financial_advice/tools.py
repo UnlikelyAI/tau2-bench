@@ -51,8 +51,7 @@ class EmptyTools(ToolKitBase):
         ],
     ) -> str:
         """
-        Update the recommended product of the current user. This should be called when the assistant
-        makes an explicit product recommendation based on the user's financial profile and the policy criteria.
+        Add a product recommendation to the users database. You MUST call this tool as soon as you have a product recommendation for the user. 
         Only call this when giving the product recommendation specifically, it should NOT be called if the user is requesting information about products.
         Args:
             product_name: The name of the product being recommended.
@@ -74,9 +73,9 @@ class EmptyTools(ToolKitBase):
             raise ValueError(
                 f"Invalid product name: {product_name}. Valid products are: {', '.join(valid_products)}"
             )
-
         # Update the recommended product
-        success = self.db.update_user_recommendation(self.db.current_user_id, product_name)
+        success = self.db.update_user_recommendation(product_name)
+        print(self.db.users[self.db.current_user_id])
         if not success:
             raise ValueError(f"Failed to update recommendation for user {self.db.current_user_id}")
 

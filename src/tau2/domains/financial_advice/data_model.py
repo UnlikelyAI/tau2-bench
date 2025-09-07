@@ -136,10 +136,10 @@ class FinancialAdviceDB(DB):
         """Add a new user to the database."""
         self.users[user.user_id] = user
 
-    def update_user_recommendation(self, user_id: str, product_name: str) -> bool:
+    def update_user_recommendation(self, product_name: str) -> bool:
         """Update the recommended product for a user."""
-        if user_id in self.users:
-            self.users[user_id].recommended_product = product_name
+        if self.current_user_id in self.users:
+            self.users[self.current_user_id].recommended_product = product_name
             return True
         return False
 
