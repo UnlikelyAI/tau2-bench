@@ -29,57 +29,6 @@ product_file_contents = load_product_file_contents(KNOWLEDGE_BASE_PATH, PRODUCT_
 product_files_str = product_files_as_str(product_file_contents)
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
-class EmptyTools(ToolKitBase):
-    """Empty tools for the financial advice domain."""
-
-    def __init__(self, db: FinancialAdviceDB) -> None:
-        """
-        Initialize the financial advice tools with a database instance.
-
-        Args:
-            db: The financial advice database containing user information.
-        """
-        super().__init__(db)
-
-    @is_tool(ToolType.WRITE)
-    def update_recommended_product(
-        self,
-        product_name: Literal[
-            "Share Dealing Account",
-            "Fixed Rate Cash ISA",
-            "Monthly Saver",
-        ],
-    ) -> str:
-        """
-        Add a product recommendation to the users database. You MUST call this tool as soon as you have a product recommendation for the user. 
-        Only call this when giving the product recommendation specifically, it should NOT be called if the user is requesting information about products.
-        Args:
-            product_name: The name of the product being recommended.
-        Returns:
-            A confirmation message indicating the recommendation has been updated.
-        Raises:
-            ValueError: If user is not found or product name is invalid.
-        """
-        print(f"Updating recommended product for user {self.db.current_user_id} to {product_name}")
-
-        # Validate product name against known products
-        valid_products = [
-            "Share Dealing Account",
-            "Fixed Rate Cash ISA",
-            "Monthly Saver",
-        ]
-
-        if product_name not in valid_products:
-            raise ValueError(
-                f"Invalid product name: {product_name}. Valid products are: {', '.join(valid_products)}"
-            )
-        # Update the recommended product
-        success = self.db.update_user_recommendation(product_name)
-        print(self.db.users[self.db.current_user_id])
-        if not success:
-            raise ValueError(f"Failed to update recommendation for user {self.db.current_user_id}")
-
-        return f"Successfully updated recommended product for {self.db.current_user_id} to: {product_name}"
 
 class FinancialAdviceTools(ToolKitBase):  # Tools
     """All the tools for the financial advice domain."""
@@ -148,25 +97,58 @@ Process to follow:
             raise ValueError(f"User {user_id} not found")
         return user
 
-    @is_tool(ToolType.READ)
-    def get_product_details(self, query: str) -> str:
-        """
-        Lookup product information from the Lloyds Bank website on the topic of the query.
-
-        Args:
-            query: The query to get the product details.
-
-        Returns:
-            A string that contains the product details.
-        """
-        return self._get_product(query)
-
     # @is_tool(ToolType.READ)
-    # def get_current_user_id(self) -> str:
+    # def get_product_details(self, query: str) -> str:
     #     """
-    #     Get the current user ID.
+    #     Lookup product information from the Lloyds Bank website on the topic of the query.
+
+    #     Args:
+    #         query: The query to get the product details.
+
+    #     Returns:
+    #         A string that contains the product details.
     #     """
-    #     return self.db.current_user_id
+    #     return self._get_product(query)
+
+    @is_tool(ToolType.WRITE)
+    def update_recommended_product(
+        self,
+        product_name: Literal[
+            "Share Dealing Account",
+            "Fixed Rate Cash ISA",
+            "Monthly Saver",
+        ],
+    ) -> str:
+        """
+        Add a product recommendation to the users database. You MUST call this tool as soon as you have a product recommendation for the user.
+        Only call this when giving the product recommendation specifically, it should NOT be called if the user is requesting information about products.
+        Args:
+            product_name: The name of the product being recommended.
+        Returns:
+            A confirmation message indicating the recommendation has been updated.
+        Raises:
+            ValueError: If user is not found or product name is invalid.
+        """
+
+        # Validate product name against known products
+        valid_products = [
+            "Share Dealing Account",
+            "Fixed Rate Cash ISA",
+            "Monthly Saver",
+        ]
+
+        if product_name not in valid_products:
+            raise ValueError(
+                f"Invalid product name: {product_name}. Valid products are: {', '.join(valid_products)}"
+            )
+        # Update the recommended product
+        success = self.db.update_user_recommendation(product_name)
+        if not success:
+            raise ValueError(
+                f"Failed to update recommendation for user {self.db.current_user_id}"
+            )
+
+        return f"Successfully updated recommended product for {self.db.current_user_id} to: {product_name}"
 
 
 if __name__ == "__main__":

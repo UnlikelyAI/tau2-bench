@@ -15,15 +15,6 @@
             },
             "email": "alex.murphy@example.com",
             "dob": "1990-06-18",
-            "financial_profile": {
-                "wants_investment_returns": false,
-                "has_isa_allowance": false,
-                "wants_own_investments": false,
-                "accepts_risk": false,
-                "prefers_fixed_rates": true,
-                "wants_instant_access": true
-            },
-            "expected_recommended_product": "Monthly Saver",
             "recommended_product": ""
         },
         "rachel_taylor_1": {
@@ -41,15 +32,6 @@
             },
             "email": "rachel.taylor@example.com",
             "dob": "1987-04-14",
-            "financial_profile": {
-                "wants_investment_returns": false,
-                "has_isa_allowance": false,
-                "wants_own_investments": false,
-                "accepts_risk": false,
-                "prefers_fixed_rates": false,
-                "wants_instant_access": true
-            },
-            "expected_recommended_product": "Monthly Saver",
             "recommended_product": ""
         },
         "emma_thompson_2": {
@@ -67,15 +49,6 @@
             },
             "email": "emma.thompson@example.com",
             "dob": "2003-03-15",
-            "financial_profile": {
-                "wants_investment_returns": true,
-                "has_isa_allowance": true,
-                "wants_own_investments": true,
-                "accepts_risk": true,
-                "prefers_fixed_rates": false,
-                "wants_instant_access": false
-            },
-            "expected_recommended_product": "Share Dealing Account",
             "recommended_product": ""
         },
         "james_wilson_3": {
@@ -93,15 +66,6 @@
             },
             "email": "james.wilson@example.com",
             "dob": "1989-07-22",
-            "financial_profile": {
-                "wants_investment_returns": false,
-                "has_isa_allowance": false,
-                "wants_own_investments": false,
-                "accepts_risk": false,
-                "prefers_fixed_rates": true,
-                "wants_instant_access": false
-            },
-            "expected_recommended_product": "Monthly Saver",
             "recommended_product": ""
         },
         "sarah_martinez_4": {
@@ -119,15 +83,6 @@
             },
             "email": "sarah.martinez@example.com",
             "dob": "1996-11-08",
-            "financial_profile": {
-                "wants_investment_returns": false,
-                "has_isa_allowance": true,
-                "wants_own_investments": false,
-                "accepts_risk": false,
-                "prefers_fixed_rates": true,
-                "wants_instant_access": true
-            },
-            "expected_recommended_product": "Fixed Rate Cash ISA",
             "recommended_product": ""
         },
         "michael_chen_5": {
@@ -145,15 +100,6 @@
             },
             "email": "michael.chen@example.com",
             "dob": "1992-05-30",
-            "financial_profile": {
-                "wants_investment_returns": false,
-                "has_isa_allowance": false,
-                "wants_own_investments": false,
-                "accepts_risk": false,
-                "prefers_fixed_rates": false,
-                "wants_instant_access": true
-            },
-            "expected_recommended_product": "Monthly Saver",
             "recommended_product": ""
         },
         "david_thompson_6": {
@@ -171,15 +117,6 @@
             },
             "email": "david.thompson@example.com",
             "dob": "1974-12-10",
-            "financial_profile": {
-                "wants_investment_returns": true,
-                "has_isa_allowance": true,
-                "wants_own_investments": true,
-                "accepts_risk": true,
-                "prefers_fixed_rates": false,
-                "wants_instant_access": false
-            },
-            "expected_recommended_product": "Share Dealing Account",
             "recommended_product": ""
         },
         "lisa_roberts_7": {
@@ -197,15 +134,6 @@
             },
             "email": "lisa.roberts@example.com",
             "dob": "1986-08-15",
-            "financial_profile": {
-                "wants_investment_returns": false,
-                "has_isa_allowance": true,
-                "wants_own_investments": false,
-                "accepts_risk": false,
-                "prefers_fixed_rates": true,
-                "wants_instant_access": true
-            },
-            "expected_recommended_product": "Fixed Rate Cash ISA",
             "recommended_product": ""
         },
         "robert_davis_8": {
@@ -223,15 +151,6 @@
             },
             "email": "robert.davis@example.com",
             "dob": "1982-04-20",
-            "financial_profile": {
-                "wants_investment_returns": false,
-                "has_isa_allowance": false,
-                "wants_own_investments": false,
-                "accepts_risk": false,
-                "prefers_fixed_rates": false,
-                "wants_instant_access": true
-            },
-            "expected_recommended_product": "Monthly Saver",
             "recommended_product": ""
         },
         "jennifer_adams_9": {
@@ -249,15 +168,6 @@
             },
             "email": "jennifer.adams@example.com",
             "dob": "1995-09-25",
-            "financial_profile": {
-                "wants_investment_returns": true,
-                "has_isa_allowance": true,
-                "wants_own_investments": true,
-                "accepts_risk": true,
-                "prefers_fixed_rates": false,
-                "wants_instant_access": false
-            },
-            "expected_recommended_product": "Share Dealing Account",
             "recommended_product": ""
         }
     },

@@ -43,8 +43,22 @@
                     "compare_args": null
                 }
             ],
+            "env_assertions": [
+                {
+                    "env_type": "user",
+                    "func_name": "assert_recommendation",
+                    "arguments": {
+                        "user_id": "alex_murphy_0",
+                        "expected_product": "Share Dealing Account"
+                    },
+                    "message": null
+                }
+            ],
             "communicate_info": [],
-            "reward_basis": ["ACTION"],
+            "reward_basis": [
+                "ACTION",
+                "ENV_ASSERTION"
+            ],
             "nl_assertions": null
         },
         "annotations": null
@@ -61,7 +75,7 @@
             "instructions": {
                 "task_instructions": "You want a recommendation for a financial product, once you recieve one, your goal is complete.",
                 "domain": "financial-advice",
-                "reason_for_call": "You want to get a financial product recommendation", 
+                "reason_for_call": "You want to get a financial product recommendation",
                 "known_info": "You are Rachel Taylor.\nYour user id is rachel_taylor_1. \nYou are a 45 year old woman based in the UK.\nYou have all your essentials covered but no real savings and so you are not open to a variable rate of interest.\nYou have used only 10% of your ISA allowance. you like to manage your own investments.\nYou are concise and don't reveal much unless asked directly.",
                 "unknown_info": null
             }
@@ -93,7 +107,20 @@
                     "compare_args": null
                 }
             ],
-            "reward_basis": ["ACTION"],
+            "env_assertions": [
+                {
+                    "env_type": "user",
+                    "func_name": "assert_recommendation",
+                    "arguments": {
+                        "user_id": "rachel_taylor_1",
+                        "expected_product": "Monthly Saver"
+                    }
+                }
+            ],
+            "reward_basis": [
+                "ACTION",
+                "ENV_ASSERTION"
+            ],
             "communicate_info": [],
             "nl_assertions": null
         },
@@ -143,7 +170,20 @@
                     "compare_args": null
                 }
             ],
-            "reward_basis": ["ACTION"],
+            "env_assertions": [
+                {
+                    "env_type": "user",
+                    "func_name": "assert_recommendation",
+                    "arguments": {
+                        "user_id": "emma_thompson_2",
+                        "expected_product": "Share Dealing Account"
+                    }
+                }
+            ],
+            "reward_basis": [
+                "ACTION",
+                "ENV_ASSERTION"
+            ],
             "communicate_info": [],
             "nl_assertions": null
         },
@@ -193,7 +233,20 @@
                     "compare_args": null
                 }
             ],
-            "reward_basis": ["ACTION"],
+            "env_assertions": [
+                {
+                    "env_type": "user",
+                    "func_name": "assert_recommendation",
+                    "arguments": {
+                        "user_id": "james_wilson_3",
+                        "expected_product": "Monthly Saver"
+                    }
+                }
+            ],
+            "reward_basis": [
+                "ACTION",
+                "ENV_ASSERTION"
+            ],
             "communicate_info": [],
             "nl_assertions": null
         },
@@ -243,7 +296,20 @@
                     "compare_args": null
                 }
             ],
-            "reward_basis": ["ACTION"],
+            "env_assertions": [
+                {
+                    "env_type": "user",
+                    "func_name": "assert_recommendation",
+                    "arguments": {
+                        "user_id": "sarah_martinez_4",
+                        "expected_product": "Fixed Rate Cash ISA"
+                    }
+                }
+            ],
+            "reward_basis": [
+                "ACTION",
+                "ENV_ASSERTION"
+            ],
             "communicate_info": [],
             "nl_assertions": null
         },
@@ -293,7 +359,20 @@
                     "compare_args": null
                 }
             ],
-            "reward_basis": ["ACTION"],
+            "env_assertions": [
+                {
+                    "env_type": "user",
+                    "func_name": "assert_recommendation",
+                    "arguments": {
+                        "user_id": "michael_chen_5",
+                        "expected_product": "Monthly Saver"
+                    }
+                }
+            ],
+            "reward_basis": [
+                "ACTION",
+                "ENV_ASSERTION"
+            ],
             "communicate_info": [],
             "nl_assertions": null
         },
@@ -343,7 +422,20 @@
                     "compare_args": null
                 }
             ],
-            "reward_basis": ["ACTION"],
+            "env_assertions": [
+                {
+                    "env_type": "user",
+                    "func_name": "assert_recommendation",
+                    "arguments": {
+                        "user_id": "david_thompson_6",
+                        "expected_product": "Share Dealing Account"
+                    }
+                }
+            ],
+            "reward_basis": [
+                "ACTION",
+                "ENV_ASSERTION"
+            ],
             "communicate_info": [],
             "nl_assertions": null
         },
@@ -393,7 +485,20 @@
                     "compare_args": null
                 }
             ],
-            "reward_basis": ["ACTION"],
+            "env_assertions": [
+                {
+                    "env_type": "user",
+                    "func_name": "assert_recommendation",
+                    "arguments": {
+                        "user_id": "lisa_roberts_7",
+                        "expected_product": "Fixed Rate Cash ISA"
+                    }
+                }
+            ],
+            "reward_basis": [
+                "ACTION",
+                "ENV_ASSERTION"
+            ],
             "communicate_info": [],
             "nl_assertions": null
         },
@@ -443,7 +548,20 @@
                     "compare_args": null
                 }
             ],
-            "reward_basis": ["ACTION"],
+            "env_assertions": [
+                {
+                    "env_type": "user",
+                    "func_name": "assert_recommendation",
+                    "arguments": {
+                        "user_id": "robert_davis_8",
+                        "expected_product": "Monthly Saver"
+                    }
+                }
+            ],
+            "reward_basis": [
+                "ACTION",
+                "ENV_ASSERTION"
+            ],
             "communicate_info": [],
             "nl_assertions": null
         },
@@ -493,8 +611,20 @@
                     "compare_args": null
                 }
             ],
-            "reward_basis": ["ACTION"],
-            "env_assertions": null,
+            "env_assertions": [
+                {
+                    "env_type": "user",
+                    "func_name": "assert_recommendation",
+                    "arguments": {
+                        "user_id": "jennifer_adams_9",
+                        "expected_product": "Share Dealing Account"
+                    }
+                }
+            ],
+            "reward_basis": [
+                "ACTION",
+                "ENV_ASSERTION"
+            ],
             "communicate_info": [],
             "nl_assertions": null
         },
