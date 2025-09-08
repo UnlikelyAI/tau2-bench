@@ -16,6 +16,7 @@ from tau2.data_model.message import (
     ToolCall,
 )
 from tau2.environment.tool import Tool
+import asyncio
 
 
 class UAIAgentState(BaseModel):
@@ -76,17 +77,11 @@ class UAIAgent(LocalAgent[UAIAgentState]):
 
         messages = state.system_messages + state.messages
 
-        # last_user_message = [m for m in messages if m.role == "user"][-1]
-
-        # print(f"Last user message: {last_user_message.content}")
-
         request = UAIAgentRequest(
             session_id=state.session_id,
             messages=messages,
             tools=[t.openai_schema for t in self.tools],
         )
-
-        import asyncio
 
         async def _make_request():
             return self.client.post(
@@ -114,9 +109,7 @@ class UAIAgent(LocalAgent[UAIAgentState]):
             tool_calls=tool_calls,
         )
 
-        # print(f"Assistant message: {assistant_message.content}")
-
-        if response_data.session_id is None:
+        if not response_data.session_id:
             raise Exception("Session ID is None")
 
         state.session_id = response_data.session_id

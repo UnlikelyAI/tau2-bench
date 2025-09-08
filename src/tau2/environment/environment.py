@@ -328,10 +328,10 @@ class Environment:
                 expected_content = json.loads(expected_response.content)
             except json.JSONDecodeError:
                 expected_content = expected_response.content
-            # if content != expected_content:
-            #     raise ValueError(
-            #         f"Tool call:\n{tool_call}\n\nReturned:\n{response}\n\nExpected:\n{expected_response}"
-            #     )
+            if content != expected_content:
+                raise ValueError(
+                    f"Tool call:\n{tool_call}\n\nReturned:\n{response}\n\nExpected:\n{expected_response}"
+                )
         self.sync_tools()
 
     @classmethod
