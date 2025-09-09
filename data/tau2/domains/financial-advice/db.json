@@ -1,0 +1,175 @@
+{
+    "users": {
+        "alex_murphy_0": {
+            "user_id": "alex_murphy_0",
+            "name": {
+                "first_name": "Alex",
+                "last_name": "Murphy"
+            },
+            "address": {
+                "address1": "258 Monthly Saver Way",
+                "address2": "Unit 7",
+                "city": "Bristol",
+                "country": "UK",
+                "postcode": "BS1 1AA"
+            },
+            "email": "alex.murphy@example.com",
+            "dob": "1990-06-18",
+            "recommended_product": ""
+        },
+        "rachel_taylor_1": {
+            "user_id": "rachel_taylor_1",
+            "name": {
+                "first_name": "Rachel",
+                "last_name": "Taylor"
+            },
+            "address": {
+                "address1": "369 Easy Access Road",
+                "address2": "House 14",
+                "city": "Newcastle",
+                "country": "UK",
+                "postcode": "NE1 1AA"
+            },
+            "email": "rachel.taylor@example.com",
+            "dob": "1987-04-14",
+            "recommended_product": ""
+        },
+        "emma_thompson_2": {
+            "user_id": "emma_thompson_2",
+            "name": {
+                "first_name": "Emma",
+                "last_name": "Thompson"
+            },
+            "address": {
+                "address1": "123 Investment Street",
+                "address2": "Apt 4B",
+                "city": "London",
+                "country": "UK",
+                "postcode": "SW1A 1AA"
+            },
+            "email": "emma.thompson@example.com",
+            "dob": "2003-03-15",
+            "recommended_product": ""
+        },
+        "james_wilson_3": {
+            "user_id": "james_wilson_3",
+            "name": {
+                "first_name": "James",
+                "last_name": "Wilson"
+            },
+            "address": {
+                "address1": "456 Savings Lane",
+                "address2": "Unit 8",
+                "city": "Manchester",
+                "country": "UK",
+                "postcode": "M1 1AA"
+            },
+            "email": "james.wilson@example.com",
+            "dob": "1989-07-22",
+            "recommended_product": ""
+        },
+        "sarah_martinez_4": {
+            "user_id": "sarah_martinez_4",
+            "name": {
+                "first_name": "Sarah",
+                "last_name": "Martinez"
+            },
+            "address": {
+                "address1": "789 Safe Street",
+                "address2": "Flat 12",
+                "city": "Birmingham",
+                "country": "UK",
+                "postcode": "B1 1AA"
+            },
+            "email": "sarah.martinez@example.com",
+            "dob": "1996-11-08",
+            "recommended_product": ""
+        },
+        "michael_chen_5": {
+            "user_id": "michael_chen_5",
+            "name": {
+                "first_name": "Michael",
+                "last_name": "Chen"
+            },
+            "address": {
+                "address1": "321 Growth Avenue",
+                "address2": "Suite 5",
+                "city": "Edinburgh",
+                "country": "UK",
+                "postcode": "EH1 1AA"
+            },
+            "email": "michael.chen@example.com",
+            "dob": "1992-05-30",
+            "recommended_product": ""
+        },
+        "david_thompson_6": {
+            "user_id": "david_thompson_6",
+            "name": {
+                "first_name": "David",
+                "last_name": "Thompson"
+            },
+            "address": {
+                "address1": "654 Investment Road",
+                "address2": "House 3",
+                "city": "Glasgow",
+                "country": "UK",
+                "postcode": "G1 1AA"
+            },
+            "email": "david.thompson@example.com",
+            "dob": "1974-12-10",
+            "recommended_product": ""
+        },
+        "lisa_roberts_7": {
+            "user_id": "lisa_roberts_7",
+            "name": {
+                "first_name": "Lisa",
+                "last_name": "Roberts"
+            },
+            "address": {
+                "address1": "987 Conservative Close",
+                "address2": "Apartment 7",
+                "city": "Leeds",
+                "country": "UK",
+                "postcode": "LS1 1AA"
+            },
+            "email": "lisa.roberts@example.com",
+            "dob": "1986-08-15",
+            "recommended_product": ""
+        },
+        "robert_davis_8": {
+            "user_id": "robert_davis_8",
+            "name": {
+                "first_name": "Robert",
+                "last_name": "Davis"
+            },
+            "address": {
+                "address1": "147 Managed Way",
+                "address2": "Unit 9",
+                "city": "Liverpool",
+                "country": "UK",
+                "postcode": "L1 1AA"
+            },
+            "email": "robert.davis@example.com",
+            "dob": "1982-04-20",
+            "recommended_product": ""
+        },
+        "jennifer_adams_9": {
+            "user_id": "jennifer_adams_9",
+            "name": {
+                "first_name": "Jennifer",
+                "last_name": "Adams"
+            },
+            "address": {
+                "address1": "258 Growth Street",
+                "address2": "Flat 15",
+                "city": "Newcastle",
+                "country": "UK",
+                "postcode": "NE1 1AA"
+            },
+            "email": "jennifer.adams@example.com",
+            "dob": "1995-09-25",
+            "recommended_product": ""
+        }
+    },
+    "current_user_id": ""
+}

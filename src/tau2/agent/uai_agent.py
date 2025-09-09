@@ -16,6 +16,7 @@ from tau2.data_model.message import (
     ToolCall,
 )
 from tau2.environment.tool import Tool
+import asyncio
 
 
 class UAIAgentState(BaseModel):
@@ -48,26 +49,6 @@ class UAIAgentResponse(BaseModel):
     tool_calls: list[dict[str, Any]]
 
 
-AGENT_INSTRUCTION = """
-You are a customer service agent that helps the user according to the <policy> provided below.
-In each turn you can either:
-- Send a message to the user.
-- Make a tool call.
-You cannot do both at the same time.
-
-Try to be helpful and always follow the policy. Always make sure you generate valid JSON only.
-""".strip()
-
-SYSTEM_PROMPT = """
-<instructions>
-{agent_instruction}
-</instructions>
-<policy>
-{domain_policy}
-</policy>
-""".strip()
-
-
 class UAIAgent(LocalAgent[UAIAgentState]):
     """
     UAI agent implementation
@@ -78,14 +59,13 @@ class UAIAgent(LocalAgent[UAIAgentState]):
 
         self.client = Client(
             base_url="http://localhost:8026/api/v1",
-            timeout=30.0,
+            timeout=120,
         )
 
     @property
     def system_prompt(self) -> str:
-        return SYSTEM_PROMPT.format(
-            domain_policy=self.domain_policy, agent_instruction=AGENT_INSTRUCTION
-        )
+        # No system prompt for UAI agent
+        return ""
 
     def generate_next_message(
         self, message: ValidAgentInputMessage, state: UAIAgentState
@@ -102,8 +82,6 @@ class UAIAgent(LocalAgent[UAIAgentState]):
             messages=messages,
             tools=[t.openai_schema for t in self.tools],
         )
-
-        import asyncio
 
         async def _make_request():
             return self.client.post(
@@ -131,7 +109,7 @@ class UAIAgent(LocalAgent[UAIAgentState]):
             tool_calls=tool_calls,
         )
 
-        if response_data.session_id is None:
+        if not response_data.session_id:
             raise Exception("Session ID is None")
 
         state.session_id = response_data.session_id
@@ -157,6 +135,6 @@ class UAIAgent(LocalAgent[UAIAgentState]):
         ), "Message history must contain only AssistantMessage, UserMessage, or ToolMessage to Agent."
         return UAIAgentState(
             session_id=None,
-            system_messages=[SystemMessage(role="system", content=self.system_prompt)],
+            system_messages=[],
             messages=message_history,
         )
