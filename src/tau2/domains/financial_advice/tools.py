@@ -18,24 +18,6 @@ class FinancialAdviceTools(ToolKitBase):  # Tools
         """
         super().__init__(db)
 
-    def _get_user(self, user_id: str):
-        """
-        Get user information from the database.
-
-        Args:
-            user_id: The user ID to look up.
-
-        Returns:
-            User information object.
-
-        Raises:
-            ValueError: If user is not found.
-        """
-        user = self.db.get_user_by_id(user_id)
-        if user is None:
-            raise ValueError(f"User {user_id} not found")
-        return user
-
     @is_tool(ToolType.WRITE)
     def update_recommended_product(
         self,
