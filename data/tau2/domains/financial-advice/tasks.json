@@ -9,10 +9,10 @@
         "user_scenario": {
             "persona": "You are new to investing and very cautious about your money. You need instant access to your savings and cannot tolerate any decline. \nYou are concise and don't reveal much unless asked directly.",
             "instructions": {
-                "task_instructions": "You want a recommendation for a financial product, once you receive one, your goal is complete.",
+                "task_instructions": "You want a recommendation for a financial product, once you receive one, your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
                 "domain": "financial-advice",
-                "reason_for_call": "You want to find a way to save money safely",
-                "known_info": "You are Sarah Johnson.\nYour user id is sarah_johnson_001. \nYou are a 28 year old woman based in the UK who has just started your career. Financial details: You have only 3 months of income saved (not 6+ months). You do not currently have any investment accounts. You cannot tolerate a 20% decline in savings. You do not need access to savings in the next 3 years. You cannot tolerate any decline in savings at all. You need instant access to savings. You have never held any investment products in the last 3 years. You do not put money into investments regularly. You have never held high-risk investment products in the last 3 years. You are not a Club Lloyds member. You do not want more help managing investments as you have no investments. You do not regularly seek professional advice. You are concise and don't reveal much unless asked directly.",
+                "reason_for_call": "You want advice on your financial situation",
+                "known_info": "You are Sarah Johnson.\nYour user id is sarah_johnson_001. \nYou are a 28 year old woman based in the UK who has just started your career. Financial details: You have only 3 months of income saved (not 6+ months). You do not currently hold any investment products. You cannot tolerate a 20% decline in savings. You need access to savings in the next 3 years. You cannot tolerate any decline in savings at all. You need instant access to savings. You have never held any investment products in the last 3 years. You do not put money into investments regularly. You have never held high-risk investment products in the last 3 years. You are not a Club Lloyds member. You do not want more help managing investments as you have no investments. You do not regularly seek professional advice. You are concise and don't reveal much unless asked directly.",
                 "unknown_info": null
             }
         },
@@ -46,10 +46,12 @@
             "env_assertions": [
                 {
                     "env_type": "user",
-                    "func_name": "assert_recommendation",
+                    "func_name": "assert_recommendations",
                     "arguments": {
                         "user_id": "sarah_johnson_001",
-                        "expected_product": "Monthly Saver"
+                        "expected_products": [
+                            "Monthly Saver"
+                        ]
                     },
                     "message": null
                 }
@@ -68,15 +70,15 @@
         "description": {
             "purpose": "Testing DisengagedClubLloydsSegment - FutureInvestorSituation with Club Lloyds membership",
             "relevant_policies": null,
-            "notes": "User is 35, Club Lloyds member, 8 months income saved, low risk tolerance"
+            "notes": "User is 35, Club Lloyds member, 2 months income saved, low risk tolerance"
         },
         "user_scenario": {
             "persona": "You are a Club Lloyds member looking for safe savings options. You cannot tolerate any decline in your savings and need instant access. \nYou are concise and don't reveal much unless asked directly.",
             "instructions": {
-                "task_instructions": "You want a recommendation for a financial product, once you receive one, your goal is complete.",
+                "task_instructions": "You want a recommendation for a financial product, once you receive one, your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
                 "domain": "financial-advice",
-                "reason_for_call": "You want to find a savings product that's suitable for Club Lloyds members",
-                "known_info": "You are John Williams.\nYour user id is john_williams_002. \nYou are a 35 year old man based in the UK with a stable job. Financial details: You have 8 months of income saved (more than 6 months). You do not currently have any investment accounts. You cannot tolerate a 20% decline in savings. You do not need access to savings in the next 3 years. You cannot tolerate any decline in savings. You need instant access to savings. You have never held any investment products in the last 3 years. You do not put money into investments regularly. You have never held high-risk investment products in the last 3 years. You are a Club Lloyds member. You do not want more help managing investments as you have no investments. You do not regularly seek professional advice. You are concise and don't reveal much unless asked directly.",
+                "reason_for_call": "You want advice on your financial situation",
+                "known_info": "You are John Williams.\nYour user id is john_williams_002. \nYou are a 35 year old man based in the UK with a stable job. Financial details: You have 2 months of income saved (less than 6 months). You do not currently hold any investment products. You cannot tolerate a 20% decline in savings. You do not need access to savings in the next 3 years. You cannot tolerate any decline in savings. You need instant access to savings. You have never held any investment products in the last 3 years. You do not put money into investments regularly. You have never held high-risk investment products in the last 3 years. You are a Club Lloyds member. You do not want more help managing investments as you have no investments. You do not regularly seek professional advice. You are concise and don't reveal much unless asked directly.",
                 "unknown_info": null
             }
         },
@@ -110,10 +112,12 @@
             "env_assertions": [
                 {
                     "env_type": "user",
-                    "func_name": "assert_recommendation",
+                    "func_name": "assert_recommendations",
                     "arguments": {
                         "user_id": "john_williams_002",
-                        "expected_product": "Club Lloyds Advantage Saver ISA"
+                        "expected_products": [
+                            "Club Lloyds Advantage Saver ISA"
+                        ]
                     },
                     "message": null
                 }
@@ -137,10 +141,10 @@
         "user_scenario": {
             "persona": "You have been diligent about saving but haven't invested yet. You're risk-averse and prefer to keep your money safe. \nYou are concise and don't reveal much unless asked directly.",
             "instructions": {
-                "task_instructions": "You want a recommendation for a financial product, once you receive one, your goal is complete.",
+                "task_instructions": "You want a recommendation for a financial product, once you receive one, your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
                 "domain": "financial-advice",
-                "reason_for_call": "You want to explore options for your savings",
-                "known_info": "You are Maria Garcia.\nYour user id is maria_garcia_003. \nYou are a 45 year old woman based in the UK who has been diligent about saving. Financial details: You have 12 months of income saved (more than 6 months). You do not have any investment accounts. You cannot tolerate a 20% decline in savings. You do not need access to savings in the next 3 years. You cannot tolerate any decline in savings. You need instant access to savings. You have never held any investment products in the last 3 years. You do not put money into investments regularly. You have never held high-risk investment products in the last 3 years. You are not a Club Lloyds member. You do not want more help managing investments. You do not regularly seek professional advice. You are concise and don't reveal much unless asked directly.",
+                "reason_for_call": "You want advice on your financial situation",
+                "known_info": "You are Maria Garcia.\nYour user id is maria_garcia_003. \nYou are a 45 year old woman based in the UK who has been diligent about saving. Financial details: You have 12 months of income saved (more than 6 months). You do not currently hold any investment products. You cannot tolerate a 20% decline in savings. You do not need access to savings in the next 3 years. You cannot tolerate any decline in savings. You need instant access to savings. You have never held any investment products in the last 3 years. You do not put money into investments regularly. You have never held high-risk investment products in the last 3 years. You are not a Club Lloyds member. You do not want more help managing investments. You do not regularly seek professional advice. You are concise and don't reveal much unless asked directly.",
                 "unknown_info": null
             }
         },
@@ -174,10 +178,12 @@
             "env_assertions": [
                 {
                     "env_type": "user",
-                    "func_name": "assert_recommendation",
+                    "func_name": "assert_recommendations",
                     "arguments": {
                         "user_id": "maria_garcia_003",
-                        "expected_product": "Ready Made Pension"
+                        "expected_products": [
+                            "Ready Made Pension"
+                        ]
                     },
                     "message": null
                 }
@@ -201,10 +207,10 @@
         "user_scenario": {
             "persona": "You are interested in starting to invest and are comfortable with risk. You understand that higher returns come with accepting potential losses. \nYou are concise and don't reveal much unless asked directly.",
             "instructions": {
-                "task_instructions": "You want a recommendation for a financial product, once you receive one, your goal is complete.",
+                "task_instructions": "You want a recommendation for a financial product, once you receive one, your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
                 "domain": "financial-advice",
-                "reason_for_call": "You want to start investing with a high-risk, high-return approach",
-                "known_info": "You are David Brown.\nYour user id is david_brown_004. \nYou are a 38 year old man based in the UK interested in starting to invest. Financial details: You have 10 months of income saved (more than 6 months). You do not currently have any investment accounts. You can tolerate a 20% decline in savings in one year. You do not need access to savings in the next 3 years. You can tolerate some decline in savings. You do not need instant access to savings. You have never held any investment products in the last 3 years. You do not put money into investments regularly as you have no investments yet. You have never held high-risk investment products in the last 3 years. You are not a Club Lloyds member. You would not like more help managing investments as you prefer independence. You do not regularly seek professional advice. You are concise and don't reveal much unless asked directly.",
+                "reason_for_call": "You want advice on your financial situation",
+                "known_info": "You are David Brown.\nYour user id is david_brown_004. \nYou are a 38 year old man based in the UK interested in starting to invest. Financial details: You have 10 months of income saved (more than 6 months). You do not currently hold any investment products. You can tolerate a 20% decline in savings in one year. You do not need access to savings in the next 3 years. You can tolerate some decline in savings. You do not need instant access to savings. You have never held any investment products in the last 3 years. You do not put money into investments regularly as you have no investments yet. You have never held high-risk investment products in the last 3 years. You are not a Club Lloyds member. You would not like more help managing investments as you prefer independence. You do not regularly seek professional advice. You are concise and don't reveal much unless asked directly.",
                 "unknown_info": null
             }
         },
@@ -238,10 +244,12 @@
             "env_assertions": [
                 {
                     "env_type": "user",
-                    "func_name": "assert_recommendation",
+                    "func_name": "assert_recommendations",
                     "arguments": {
                         "user_id": "david_brown_004",
-                        "expected_product": "Self Invested Personal Pension"
+                        "expected_products": [
+                            "Self Invested Personal Pension"
+                        ]
                     },
                     "message": null
                 }
@@ -265,10 +273,10 @@
         "user_scenario": {
             "persona": "You have some investment experience but don't invest regularly. You would like professional help managing your investments. \nYou are concise and don't reveal much unless asked directly.",
             "instructions": {
-                "task_instructions": "You want a recommendation for a financial product, once you receive one, your goal is complete.",
+                "task_instructions": "You want a recommendation for a financial product, once you receive one, your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
                 "domain": "financial-advice",
-                "reason_for_call": "You want help with managing your investments more effectively",
-                "known_info": "You are Emma Wilson.\nYour user id is emma_wilson_005. \nYou are a 42 year old woman based in the UK with some investing experience. Financial details: You have 8 months of income saved (more than 6 months). You currently have investment accounts with standard mutual funds and bonds. You cannot tolerate a 20% decline in savings. You need access to savings in the next 3 years. You can tolerate some decline in savings but not large ones. You do not need instant access to savings. You have held investment products in the last 3 years including mutual funds. You do not put money into investments on a regular cadence - only occasionally. You have never held high-risk investment products in the last 3 years. You are not a Club Lloyds member. You would like more help managing investments. You do not regularly seek professional advice currently but are interested in support. You are concise and don't reveal much unless asked directly.",
+                "reason_for_call": "You want advice on your financial situation",
+                "known_info": "You are Emma Wilson.\nYour user id is emma_wilson_005. \nYou are a 42 year old woman based in the UK with some investing experience. Financial details: You have 8 months of income saved (more than 6 months). You currently hold investment products with standard mutual funds and bonds. You cannot tolerate a 20% decline in savings. You need access to savings in the next 3 years. You can tolerate some decline in savings but not large ones. You do not need instant access to savings. You have held investment products in the last 3 years including mutual funds. You do not put money into investments on a regular cadence - only occasionally. You have never held high-risk investment products in the last 3 years. You are not a Club Lloyds member. You would like more help managing investments. You do not regularly seek professional advice currently but are interested in support. You are concise and don't reveal much unless asked directly.",
                 "unknown_info": null
             }
         },
@@ -302,10 +310,12 @@
             "env_assertions": [
                 {
                     "env_type": "user",
-                    "func_name": "assert_recommendation",
+                    "func_name": "assert_recommendations",
                     "arguments": {
                         "user_id": "emma_wilson_005",
-                        "expected_product": "Ready Made Investment"
+                        "expected_products": [
+                            "Ready Made Investment"
+                        ]
                     },
                     "message": null
                 }
@@ -329,10 +339,10 @@
         "user_scenario": {
             "persona": "You have investments but they're too conservative for your actual risk tolerance. You'd like professional help to better align your portfolio with your goals. \nYou are concise and don't reveal much unless asked directly.",
             "instructions": {
-                "task_instructions": "You want a recommendation for a financial product, once you receive one, your goal is complete.",
+                "task_instructions": "You want a recommendation for a financial product, once you receive one, your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
                 "domain": "financial-advice",
-                "reason_for_call": "You want to make your investment portfolio more aggressive with professional guidance",
-                "known_info": "You are James Anderson.\nYour user id is james_anderson_006. \nYou are a 50 year old man based in the UK with conservative investments that don't match your risk tolerance. Financial details: You have 15 months of income saved (more than 6 months). You currently have investment accounts with conservative bonds and savings products. You can tolerate a 20% decline in savings. You do not need access to savings in the next 3 years. You can tolerate declines in savings. You do not need instant access to savings. You have held investment products in the last 3 years but only low-risk ones. You do not put money into investments regularly - just occasionally rebalance. You have never held high-risk investment products in the last 3 years. You are not a Club Lloyds member. You would like more help managing investments to align your portfolio with your actual risk appetite. You regularly seek professional advice for your investments. You are concise and don't reveal much unless asked directly.",
+                "reason_for_call": "You want advice on your financial situation",
+                "known_info": "You are James Anderson.\nYour user id is james_anderson_006. \nYou are a 50 year old man based in the UK with conservative investments that don't match your risk tolerance. Financial details: You have 15 months of income saved (more than 6 months). You currently hold investment products with conservative bonds and savings products. You can tolerate a 20% decline in savings. You do not need access to savings in the next 3 years. You can tolerate declines in savings. You do not need instant access to savings. You have held investment products in the last 3 years but only low-risk ones. You do not put money into investments regularly - just occasionally rebalance. You have never held high-risk investment products in the last 3 years. You are not a Club Lloyds member. You would like more help managing investments to align your portfolio with your actual risk appetite. You regularly seek professional advice for your investments. You are concise and don't reveal much unless asked directly.",
                 "unknown_info": null
             }
         },
@@ -361,15 +371,29 @@
                     },
                     "info": null,
                     "compare_args": null
+                },
+                {
+                    "action_id": "update_recommendation_1",
+                    "requestor": "assistant",
+                    "name": "update_recommended_product",
+                    "arguments": {
+                        "user_id": "james_anderson_006",
+                        "product_name": "Ready Made Investment"
+                    },
+                    "info": null,
+                    "compare_args": null
                 }
             ],
             "env_assertions": [
                 {
                     "env_type": "user",
-                    "func_name": "assert_recommendation",
+                    "func_name": "assert_recommendations",
                     "arguments": {
                         "user_id": "james_anderson_006",
-                        "expected_product": "Ready Made Investment ISA"
+                        "expected_products": [
+                            "Ready Made Investment ISA",
+                            "Ready Made Investment"
+                        ]
                     },
                     "message": null
                 }
@@ -393,10 +417,10 @@
         "user_scenario": {
             "persona": "You have investment experience and prefer to manage things yourself. You don't regularly seek professional advice and like to be hands-on with your investments. \nYou are concise and don't reveal much unless asked directly.",
             "instructions": {
-                "task_instructions": "You want a recommendation for a financial product, once you receive one, your goal is complete.",
+                "task_instructions": "You want a recommendation for a financial product, once you receive one, your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
                 "domain": "financial-advice",
-                "reason_for_call": "You want a product that gives you control over your investments",
-                "known_info": "You are Alex Turner.\nYour user id is alex_turner_007. \nYou are a 33 year old man based in the UK who prefers to manage your own investments independently. Financial details: You have 7 months of income saved (more than 6 months). You currently have investment accounts with index funds and ETFs. You cannot tolerate a 20% decline in savings. You need access to savings in the next 3 years for a potential house purchase. You can tolerate some decline in savings but want to be cautious. You do not need instant access to savings. You have held investment products in the last 3 years including various ETFs and index funds. You do not put money into investments regularly - contribute sporadically when you have extra cash. You have never held high-risk investment products in the last 3 years. You are not a Club Lloyds member. You do not want more help managing investments as you enjoy doing it yourself. You do not regularly seek professional advice - prefer to research independently. You are concise and don't reveal much unless asked directly.",
+                "reason_for_call": "You want advice on your financial situation",
+                "known_info": "You are Alex Turner.\nYour user id is alex_turner_007. \nYou are a 33 year old man based in the UK who prefers to manage your own investments independently. Financial details: You have 7 months of income saved (more than 6 months). You currently hold investment products with index funds and ETFs. You cannot tolerate a 20% decline in savings. You need access to savings in the next 3 years for a potential house purchase. You can tolerate some decline in savings but want to be cautious. You do not need instant access to savings. You have held investment products in the last 3 years including various ETFs and index funds. You do not put money into investments regularly - contribute sporadically when you have extra cash. You have never held high-risk investment products in the last 3 years. You are not a Club Lloyds member. You do not want more help managing investments as you enjoy doing it yourself. You do not regularly seek professional advice - prefer to research independently. You are concise and don't reveal much unless asked directly.",
                 "unknown_info": null
             }
         },
@@ -430,10 +454,12 @@
             "env_assertions": [
                 {
                     "env_type": "user",
-                    "func_name": "assert_recommendation",
+                    "func_name": "assert_recommendations",
                     "arguments": {
                         "user_id": "alex_turner_007",
-                        "expected_product": "Share Dealing ISA"
+                        "expected_products": [
+                            "Share Dealing ISA"
+                        ]
                     },
                     "message": null
                 }
@@ -457,10 +483,10 @@
         "user_scenario": {
             "persona": "You are very active in investing and hold crypto and other high-risk products, but you're actually very risk-averse and need access to your money. You haven't realized the mismatch. \nYou are concise and don't reveal much unless asked directly.",
             "instructions": {
-                "task_instructions": "You want a recommendation for a financial product, once you receive one, your goal is complete.",
+                "task_instructions": "You want a recommendation for a financial product, once you receive one, your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
                 "domain": "financial-advice",
                 "reason_for_call": "You want advice on your financial situation",
-                "known_info": "You are Lisa Chen.\nYour user id is lisa_chen_008. \nYou are a 29 year old woman based in the UK with risky investments that don't match your conservative risk tolerance. Financial details: You have only 2 months of income saved (not 6+ months). You currently have investment accounts including crypto and CFDs. You cannot tolerate a 20% decline in savings. You need access to savings in the next 3 years. You cannot tolerate any decline in savings - get very anxious about losses. You need instant access to savings for emergencies. You have held high-risk investment products in the last 3 years including Bitcoin, Ethereum, and CFD trading accounts. You do not put money into investments regularly - make impulsive trades. You have held high-risk investment products in the last 3 years. You are not a Club Lloyds member. You do not want more help managing investments - believe you can manage on your own despite poor risk alignment. You do not regularly seek professional advice. You are concise and don't reveal much unless asked directly.",
+                "known_info": "You are Lisa Chen.\nYour user id is lisa_chen_008. \nYou are a 29 year old woman based in the UK with risky investments that don't match your conservative risk tolerance. Financial details: You have only 2 months of income saved (not 6+ months). You currently hold investment products including crypto and CFDs. You cannot tolerate a 20% decline in savings. You need access to savings in the next 3 years. You cannot tolerate any decline in savings - get very anxious about losses. You need instant access to savings for emergencies. You have held high-risk investment products in the last 3 years including Bitcoin, Ethereum, and CFD trading accounts. You do not put money into investments regularly - make impulsive trades. You have held high-risk investment products in the last 3 years. You are not a Club Lloyds member. You do not want more help managing investments - believe you can manage on your own despite poor risk alignment. You do not regularly seek professional advice. You are concise and don't reveal much unless asked directly.",
                 "unknown_info": null
             }
         },
@@ -505,19 +531,13 @@
             "env_assertions": [
                 {
                     "env_type": "user",
-                    "func_name": "assert_recommendation",
+                    "func_name": "assert_recommendations",
                     "arguments": {
                         "user_id": "lisa_chen_008",
-                        "expected_product": "Monthly Saver"
-                    },
-                    "message": null
-                },
-                {
-                    "env_type": "user",
-                    "func_name": "assert_recommendation",
-                    "arguments": {
-                        "user_id": "lisa_chen_008",
-                        "expected_product": "Easy Saver"
+                        "expected_products": [
+                            "Monthly Saver",
+                            "Easy Saver"
+                        ]
                     },
                     "message": null
                 }

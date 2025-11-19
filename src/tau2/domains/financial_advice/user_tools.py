@@ -1,6 +1,6 @@
 """User tools for the financial advice domain."""
 
-from typing import Literal
+from typing import List
 from tau2.environment.toolkit import ToolKitBase, ToolType, is_tool
 from tau2.domains.financial_advice.data_model import FinancialAdviceDB
 
@@ -54,17 +54,20 @@ class FinancialAdviceUserTools(ToolKitBase):
         self.db.current_user_id = user_id
         return f"Current user ID set to {user_id}"
 
-    def assert_recommendation(
-        self, user_id: str, expected_product: str, **kwargs
+    def assert_recommendations(
+        self, user_id: str, expected_products: List[str], **kwargs
     ) -> bool:
         """
-        Assert that a user's current recommendation matches their expected recommendation.
+        Assert that a user's recommended products list exactly matches the expected products.
+        The lists must contain the same items (order doesn't matter), but no extra or missing items.
 
         Args:
             user_id: The user ID to check.
+            expected_products: List of products that should exactly match the recommendations list.
 
         Returns:
-            True if current recommendation matches expected, False otherwise.
+            True if the recommended products exactly match expected products (same items, any order), False otherwise.
         """
         user = self._get_user(user_id)
-        return user.recommended_product == expected_product
+        # Convert both lists to sets to compare regardless of order
+        return set(user.recommended_products) == set(expected_products)

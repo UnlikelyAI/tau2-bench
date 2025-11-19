@@ -35,12 +35,16 @@ class FinancialAdviceTools(ToolKitBase):  # Tools
         ],
     ) -> str:
         """
-        Add a product recommendation to the users database. You MUST call this tool as soon as you have a product recommendation for the user.
+        Add a product recommendation to the user's database. You MUST call this tool as soon as you have a product recommendation for the user.
+        You can recommend multiple products by calling this tool multiple times with different product names.
         Only call this when giving the product recommendation specifically, it should NOT be called if the user is requesting information about products.
+
         Args:
             product_name: The name of the product being recommended.
+
         Returns:
-            A confirmation message indicating the recommendation has been updated.
+            A confirmation message indicating the recommendation has been added.
+
         Raises:
             ValueError: If user is not found or product name is invalid.
         """
@@ -63,14 +67,41 @@ class FinancialAdviceTools(ToolKitBase):  # Tools
             raise ValueError(
                 f"Invalid product name: {product_name}. Valid products are: {', '.join(valid_products)}"
             )
-        # Update the recommended product
+
+        # Get current user
+        if self.db.current_user_id not in self.db.users:
+            raise ValueError(
+                f"Failed to update recommendation - user {self.db.current_user_id} not found"
+            )
+
+        user = self.db.users[self.db.current_user_id]
+
+        # Check if product already recommended
+        already_recommended = product_name in user.recommended_products
+
+        # Add the recommended product
         success = self.db.update_user_recommendation(product_name)
+
+        user = self.db.users[self.db.current_user_id]
+        print(user.recommended_products)
+
         if not success:
             raise ValueError(
                 f"Failed to update recommendation for user {self.db.current_user_id}"
             )
 
-        return f"Successfully updated recommended product for {self.db.current_user_id} to: {product_name}"
+        # Build response message
+        if already_recommended:
+            message = f"Product '{product_name}' was already recommended for {self.db.current_user_id}."
+        else:
+            message = f"Successfully added '{product_name}' to recommendations for {self.db.current_user_id}."
+
+        # Show all current recommendations
+        all_recommendations = user.recommended_products
+        if len(all_recommendations) > 1:
+            message += f" Total recommended products: {', '.join(all_recommendations)}"
+
+        return message
 
 
 if __name__ == "__main__":
@@ -87,7 +118,6 @@ if __name__ == "__main__":
             User,
             UserName,
             UserAddress,
-            FinancialProfile,
         )
 
         user = User(
@@ -96,9 +126,7 @@ if __name__ == "__main__":
             address=UserAddress(**user_data["address"]),
             email=user_data["email"],
             dob=user_data["dob"],
-            financial_profile=FinancialProfile(**user_data["financial_profile"]),
-            expected_recommended_product=user_data["expected_recommended_product"],
-            recommended_product=user_data.get("recommended_product", ""),
+            recommended_products=user_data.get("recommended_products", []),
         )
         db.add_user(user)
 
