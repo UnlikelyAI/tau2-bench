@@ -2,17 +2,17 @@
     {
         "id": "0",
         "description": {
-            "purpose": "Testing the agent can recommend a complex product with a knowledgeable user",
+            "purpose": "Testing DisengagedSegment - FutureInvestorSituation with low savings and low risk tolerance",
             "relevant_policies": null,
-            "notes": null
+            "notes": "User is 28 with 3 months income saved, no investments, low risk tolerance"
         },
         "user_scenario": {
-            "persona": "You are well versed in financial terminology and you are looking for ways to save and invest money. You think you are pretty sure you are suited to an ISA. \nYou are concise and don't reveal much unless asked directly.",
+            "persona": "You are new to investing and very cautious about your money. You need instant access to your savings and cannot tolerate any decline. \nYou are concise and don't reveal much unless asked directly.",
             "instructions": {
-                "task_instructions": "You want a recommendation for a financial product, once you recieve one, your goal is complete.",
+                "task_instructions": "You want a recommendation for a financial product, once you receive one, your goal is complete.",
                 "domain": "financial-advice",
-                "reason_for_call": "You want to find a new way to save and invest money that you can manage yourself.",
-                "known_info": "You are Alex Murphy.\nYour user id is alex_murphy_0. \nYou are a 45 year old man based in the UK. You can accept a higher level of risk in order to achieve higher returns, 8% returns are what you are aiming for. 20% loss in a year is acceptable. You have used your full ISA allowance for the year. You have covered essentials and have 100k in the bank to invest. You like to manage your own investments. You would like a fixed rate but can do open if needed. You are concise and don't reveal much unless asked directly.",
+                "reason_for_call": "You want to find a way to save money safely",
+                "known_info": "You are Sarah Johnson.\nYour user id is sarah_johnson_001. \nYou are a 28 year old woman based in the UK who has just started your career. Financial details: You have only 3 months of income saved (not 6+ months). You do not currently have any investment accounts. You cannot tolerate a 20% decline in savings. You do not need access to savings in the next 3 years. You cannot tolerate any decline in savings at all. You need instant access to savings. You have never held any investment products in the last 3 years. You do not put money into investments regularly. You have never held high-risk investment products in the last 3 years. You are not a Club Lloyds member. You do not want more help managing investments as you have no investments. You do not regularly seek professional advice. You are concise and don't reveal much unless asked directly.",
                 "unknown_info": null
             }
         },
@@ -23,7 +23,7 @@
                     "env_type": "user",
                     "func_name": "set_current_user_id",
                     "arguments": {
-                        "user_id": "alex_murphy_0"
+                        "user_id": "sarah_johnson_001"
                     }
                 }
             ],
@@ -36,8 +36,8 @@
                     "requestor": "assistant",
                     "name": "update_recommended_product",
                     "arguments": {
-                        "user_id": "alex_murphy_0",
-                        "product_name": "Share Dealing Account"
+                        "user_id": "sarah_johnson_001",
+                        "product_name": "Monthly Saver"
                     },
                     "info": null,
                     "compare_args": null
@@ -48,8 +48,8 @@
                     "env_type": "user",
                     "func_name": "assert_recommendation",
                     "arguments": {
-                        "user_id": "alex_murphy_0",
-                        "expected_product": "Share Dealing Account"
+                        "user_id": "sarah_johnson_001",
+                        "expected_product": "Monthly Saver"
                     },
                     "message": null
                 }
@@ -66,17 +66,17 @@
     {
         "id": "1",
         "description": {
-            "purpose": "Testing the agent can recommend a complex product with a knowledgeable user",
+            "purpose": "Testing DisengagedClubLloydsSegment - FutureInvestorSituation with Club Lloyds membership",
             "relevant_policies": null,
-            "notes": null
+            "notes": "User is 35, Club Lloyds member, 8 months income saved, low risk tolerance"
         },
         "user_scenario": {
-            "persona": "You are well versed in financial terminology and you think you'd like a stocks account. \nYou are concise and don't reveal much unless asked directly.",
+            "persona": "You are a Club Lloyds member looking for safe savings options. You cannot tolerate any decline in your savings and need instant access. \nYou are concise and don't reveal much unless asked directly.",
             "instructions": {
-                "task_instructions": "You want a recommendation for a financial product, once you recieve one, your goal is complete.",
+                "task_instructions": "You want a recommendation for a financial product, once you receive one, your goal is complete.",
                 "domain": "financial-advice",
-                "reason_for_call": "You want to get a financial product recommendation",
-                "known_info": "You are Rachel Taylor.\nYour user id is rachel_taylor_1. \nYou are a 45 year old woman based in the UK.\nYou have all your essentials covered but no real savings and so you are not open to a variable rate of interest.\nYou have used only 10% of your ISA allowance. you like to manage your own investments.\nYou are concise and don't reveal much unless asked directly.",
+                "reason_for_call": "You want to find a savings product that's suitable for Club Lloyds members",
+                "known_info": "You are John Williams.\nYour user id is john_williams_002. \nYou are a 35 year old man based in the UK with a stable job. Financial details: You have 8 months of income saved (more than 6 months). You do not currently have any investment accounts. You cannot tolerate a 20% decline in savings. You do not need access to savings in the next 3 years. You cannot tolerate any decline in savings. You need instant access to savings. You have never held any investment products in the last 3 years. You do not put money into investments regularly. You have never held high-risk investment products in the last 3 years. You are a Club Lloyds member. You do not want more help managing investments as you have no investments. You do not regularly seek professional advice. You are concise and don't reveal much unless asked directly.",
                 "unknown_info": null
             }
         },
@@ -87,7 +87,7 @@
                     "env_type": "user",
                     "func_name": "set_current_user_id",
                     "arguments": {
-                        "user_id": "rachel_taylor_1"
+                        "user_id": "john_williams_002"
                     }
                 }
             ],
@@ -100,8 +100,8 @@
                     "requestor": "assistant",
                     "name": "update_recommended_product",
                     "arguments": {
-                        "user_id": "rachel_taylor_1",
-                        "product_name": "Monthly Saver"
+                        "user_id": "john_williams_002",
+                        "product_name": "Club Lloyds Advantage Saver ISA"
                     },
                     "info": null,
                     "compare_args": null
@@ -112,16 +112,17 @@
                     "env_type": "user",
                     "func_name": "assert_recommendation",
                     "arguments": {
-                        "user_id": "rachel_taylor_1",
-                        "expected_product": "Monthly Saver"
-                    }
+                        "user_id": "john_williams_002",
+                        "expected_product": "Club Lloyds Advantage Saver ISA"
+                    },
+                    "message": null
                 }
             ],
+            "communicate_info": [],
             "reward_basis": [
                 "ACTION",
                 "ENV_ASSERTION"
             ],
-            "communicate_info": [],
             "nl_assertions": null
         },
         "annotations": null
@@ -129,17 +130,17 @@
     {
         "id": "2",
         "description": {
-            "purpose": "Testing the agent can recommend a complex product with a knowledgeable user",
+            "purpose": "Testing DisengagedSegment - ExcessSavingsSituation with high savings but no investments",
             "relevant_policies": null,
-            "notes": null
+            "notes": "User is 45 with 12 months income saved, no investments, low risk tolerance"
         },
         "user_scenario": {
-            "persona": "You are the daughter of a rich mining tycoon and don't know much about financial products at all. If a question contains any technical jargon, you ask for clarification. \nYou are concise and don't reveal much unless asked directly.",
+            "persona": "You have been diligent about saving but haven't invested yet. You're risk-averse and prefer to keep your money safe. \nYou are concise and don't reveal much unless asked directly.",
             "instructions": {
-                "task_instructions": "You want a recommendation for a financial product, once you recieve one, your goal is complete.",
+                "task_instructions": "You want a recommendation for a financial product, once you receive one, your goal is complete.",
                 "domain": "financial-advice",
-                "reason_for_call": "You want to get a financial product recommendation",
-                "known_info": "You are Emma Thompson.\nYour user id is emma_thompson_2. You are a 21 year old woman based in the UK. You are studying and daddy pays you 10k a month as a stipend. Your living expenses are 1k a month. You have 100k in the bank. You have some ISA allowance left. Although you are uncomfortable with the terminology, you don't mind variable interest rates and you can easily afford to lose 20% of your income in one year. You will pick your own investments over a managed fund. Your dad says you should be getting 8% return a year and you want to make him happy. You are concise and don't reveal much unless asked directly.",
+                "reason_for_call": "You want to explore options for your savings",
+                "known_info": "You are Maria Garcia.\nYour user id is maria_garcia_003. \nYou are a 45 year old woman based in the UK who has been diligent about saving. Financial details: You have 12 months of income saved (more than 6 months). You do not have any investment accounts. You cannot tolerate a 20% decline in savings. You do not need access to savings in the next 3 years. You cannot tolerate any decline in savings. You need instant access to savings. You have never held any investment products in the last 3 years. You do not put money into investments regularly. You have never held high-risk investment products in the last 3 years. You are not a Club Lloyds member. You do not want more help managing investments. You do not regularly seek professional advice. You are concise and don't reveal much unless asked directly.",
                 "unknown_info": null
             }
         },
@@ -150,7 +151,7 @@
                     "env_type": "user",
                     "func_name": "set_current_user_id",
                     "arguments": {
-                        "user_id": "emma_thompson_2"
+                        "user_id": "maria_garcia_003"
                     }
                 }
             ],
@@ -163,8 +164,8 @@
                     "requestor": "assistant",
                     "name": "update_recommended_product",
                     "arguments": {
-                        "user_id": "emma_thompson_2",
-                        "product_name": "Share Dealing Account"
+                        "user_id": "maria_garcia_003",
+                        "product_name": "Ready Made Pension"
                     },
                     "info": null,
                     "compare_args": null
@@ -175,16 +176,17 @@
                     "env_type": "user",
                     "func_name": "assert_recommendation",
                     "arguments": {
-                        "user_id": "emma_thompson_2",
-                        "expected_product": "Share Dealing Account"
-                    }
+                        "user_id": "maria_garcia_003",
+                        "expected_product": "Ready Made Pension"
+                    },
+                    "message": null
                 }
             ],
+            "communicate_info": [],
             "reward_basis": [
                 "ACTION",
                 "ENV_ASSERTION"
             ],
-            "communicate_info": [],
             "nl_assertions": null
         },
         "annotations": null
@@ -192,17 +194,17 @@
     {
         "id": "3",
         "description": {
-            "purpose": "Test agent recommends monthly saver when user thinks they want Fixed Rate Cash ISA but lacks ISA allowance",
+            "purpose": "Testing OpenToInvestingSegment - ExcessSavingsSituation with high risk appetite",
             "relevant_policies": null,
-            "notes": null
+            "notes": "User is 38 with 10 months income saved, high risk appetite, no current investments"
         },
         "user_scenario": {
-            "persona": "You think you want a Fixed Rate Cash ISA because you prefer fixed rates and have heard ISAs are good. \nYou are concise and don't reveal much unless asked directly.",
+            "persona": "You are interested in starting to invest and are comfortable with risk. You understand that higher returns come with accepting potential losses. \nYou are concise and don't reveal much unless asked directly.",
             "instructions": {
-                "task_instructions": "You want a recommendation for a financial product, once you recieve one, your goal is complete.",
+                "task_instructions": "You want a recommendation for a financial product, once you receive one, your goal is complete.",
                 "domain": "financial-advice",
-                "reason_for_call": "You want to get a financial product recommendation",
-                "known_info": "You are James Wilson.\nYour user id is james_wilson_3. \nYou are a 35 year old man based in the UK. You have covered your essentials and have 3 months of income saved, but you have already used your full ISA allowance for the year. You prefer fixed-rate products and are not comfortable with variable rates. You have £5,000 to invest. You are concise and don't reveal much unless asked directly.",
+                "reason_for_call": "You want to start investing with a high-risk, high-return approach",
+                "known_info": "You are David Brown.\nYour user id is david_brown_004. \nYou are a 38 year old man based in the UK interested in starting to invest. Financial details: You have 10 months of income saved (more than 6 months). You do not currently have any investment accounts. You can tolerate a 20% decline in savings in one year. You do not need access to savings in the next 3 years. You can tolerate some decline in savings. You do not need instant access to savings. You have never held any investment products in the last 3 years. You do not put money into investments regularly as you have no investments yet. You have never held high-risk investment products in the last 3 years. You are not a Club Lloyds member. You would not like more help managing investments as you prefer independence. You do not regularly seek professional advice. You are concise and don't reveal much unless asked directly.",
                 "unknown_info": null
             }
         },
@@ -213,7 +215,7 @@
                     "env_type": "user",
                     "func_name": "set_current_user_id",
                     "arguments": {
-                        "user_id": "james_wilson_3"
+                        "user_id": "david_brown_004"
                     }
                 }
             ],
@@ -226,8 +228,8 @@
                     "requestor": "assistant",
                     "name": "update_recommended_product",
                     "arguments": {
-                        "user_id": "james_wilson_3",
-                        "product_name": "Monthly Saver"
+                        "user_id": "david_brown_004",
+                        "product_name": "Self Invested Personal Pension"
                     },
                     "info": null,
                     "compare_args": null
@@ -238,16 +240,17 @@
                     "env_type": "user",
                     "func_name": "assert_recommendation",
                     "arguments": {
-                        "user_id": "james_wilson_3",
-                        "expected_product": "Monthly Saver"
-                    }
+                        "user_id": "david_brown_004",
+                        "expected_product": "Self Invested Personal Pension"
+                    },
+                    "message": null
                 }
             ],
+            "communicate_info": [],
             "reward_basis": [
                 "ACTION",
                 "ENV_ASSERTION"
             ],
-            "communicate_info": [],
             "nl_assertions": null
         },
         "annotations": null
@@ -255,17 +258,17 @@
     {
         "id": "4",
         "description": {
-            "purpose": "Test agent recommends Fixed Rate Cash ISA when user thinks they want share dealing account but has low risk tolerance",
+            "purpose": "Testing SupportedInvestingSegment - IrregularInvestorSituation with medium risk",
             "relevant_policies": null,
-            "notes": null
+            "notes": "User is 42 with investments but irregular contributions, wants help managing"
         },
         "user_scenario": {
-            "persona": "You think you want a share dealing account because you've heard about people making money from stocks. \nYou are concise and don't reveal much unless asked directly.",
+            "persona": "You have some investment experience but don't invest regularly. You would like professional help managing your investments. \nYou are concise and don't reveal much unless asked directly.",
             "instructions": {
-                "task_instructions": "You want a recommendation for a financial product, once you recieve one, your goal is complete.",
+                "task_instructions": "You want a recommendation for a financial product, once you receive one, your goal is complete.",
                 "domain": "financial-advice",
-                "reason_for_call": "You want to get a financial product recommendation",
-                "known_info": "You are Sarah Martinez.\nYour user id is sarah_martinez_4. \nYou are a 28 year old woman based in the UK. You have covered your essentials and have 3 months of income saved. You have remaining ISA allowance. You prefer fixed-rate products and are not comfortable with variable rates. You cannot tolerate losing 20% of your income in one year. You have £10,000 to invest. You are concise and don't reveal much unless asked directly.",
+                "reason_for_call": "You want help with managing your investments more effectively",
+                "known_info": "You are Emma Wilson.\nYour user id is emma_wilson_005. \nYou are a 42 year old woman based in the UK with some investing experience. Financial details: You have 8 months of income saved (more than 6 months). You currently have investment accounts with standard mutual funds and bonds. You cannot tolerate a 20% decline in savings. You need access to savings in the next 3 years. You can tolerate some decline in savings but not large ones. You do not need instant access to savings. You have held investment products in the last 3 years including mutual funds. You do not put money into investments on a regular cadence - only occasionally. You have never held high-risk investment products in the last 3 years. You are not a Club Lloyds member. You would like more help managing investments. You do not regularly seek professional advice currently but are interested in support. You are concise and don't reveal much unless asked directly.",
                 "unknown_info": null
             }
         },
@@ -276,7 +279,7 @@
                     "env_type": "user",
                     "func_name": "set_current_user_id",
                     "arguments": {
-                        "user_id": "sarah_martinez_4"
+                        "user_id": "emma_wilson_005"
                     }
                 }
             ],
@@ -289,8 +292,8 @@
                     "requestor": "assistant",
                     "name": "update_recommended_product",
                     "arguments": {
-                        "user_id": "sarah_martinez_4",
-                        "product_name": "Fixed Rate Cash ISA"
+                        "user_id": "emma_wilson_005",
+                        "product_name": "Ready Made Investment"
                     },
                     "info": null,
                     "compare_args": null
@@ -301,16 +304,17 @@
                     "env_type": "user",
                     "func_name": "assert_recommendation",
                     "arguments": {
-                        "user_id": "sarah_martinez_4",
-                        "expected_product": "Fixed Rate Cash ISA"
-                    }
+                        "user_id": "emma_wilson_005",
+                        "expected_product": "Ready Made Investment"
+                    },
+                    "message": null
                 }
             ],
+            "communicate_info": [],
             "reward_basis": [
                 "ACTION",
                 "ENV_ASSERTION"
             ],
-            "communicate_info": [],
             "nl_assertions": null
         },
         "annotations": null
@@ -318,17 +322,17 @@
     {
         "id": "5",
         "description": {
-            "purpose": "Test agent recommends monthly saver when user thinks they want share dealing account but lacks sufficient savings",
+            "purpose": "Testing SupportedInvestingSegment - IrregularInvestorSituation and LowRiskShouldBeHighSituation",
             "relevant_policies": null,
-            "notes": null
+            "notes": "User is 50, has low-risk investments but high risk appetite - mismatch situation"
         },
         "user_scenario": {
-            "persona": "You always introduce yourself with your full name and are concise and don't reveal much unless asked directly. You think you want a share dealing account because you want high returns and heard about people making money from stocks.",
+            "persona": "You have investments but they're too conservative for your actual risk tolerance. You'd like professional help to better align your portfolio with your goals. \nYou are concise and don't reveal much unless asked directly.",
             "instructions": {
-                "task_instructions": "You want a recommendation for a financial product, once you recieve one, your goal is complete.",
+                "task_instructions": "You want a recommendation for a financial product, once you receive one, your goal is complete.",
                 "domain": "financial-advice",
-                "reason_for_call": "You want to get a financial product recommendation",
-                "known_info": "You are Michael Chen.\nYour user id is michael_chen_5. \nYou are a 32 year old man based in the UK. You have covered your essentials but only have 1 month of income saved. You are comfortable with variable rates and can tolerate losing 20% of your income in one year. You want to pick your own investments and are looking for growth over 6% a year. You have £2,000 to invest. You are concise and don't reveal much unless asked directly.",
+                "reason_for_call": "You want to make your investment portfolio more aggressive with professional guidance",
+                "known_info": "You are James Anderson.\nYour user id is james_anderson_006. \nYou are a 50 year old man based in the UK with conservative investments that don't match your risk tolerance. Financial details: You have 15 months of income saved (more than 6 months). You currently have investment accounts with conservative bonds and savings products. You can tolerate a 20% decline in savings. You do not need access to savings in the next 3 years. You can tolerate declines in savings. You do not need instant access to savings. You have held investment products in the last 3 years but only low-risk ones. You do not put money into investments regularly - just occasionally rebalance. You have never held high-risk investment products in the last 3 years. You are not a Club Lloyds member. You would like more help managing investments to align your portfolio with your actual risk appetite. You regularly seek professional advice for your investments. You are concise and don't reveal much unless asked directly.",
                 "unknown_info": null
             }
         },
@@ -339,7 +343,7 @@
                     "env_type": "user",
                     "func_name": "set_current_user_id",
                     "arguments": {
-                        "user_id": "michael_chen_5"
+                        "user_id": "james_anderson_006"
                     }
                 }
             ],
@@ -352,8 +356,8 @@
                     "requestor": "assistant",
                     "name": "update_recommended_product",
                     "arguments": {
-                        "user_id": "michael_chen_5",
-                        "product_name": "Monthly Saver"
+                        "user_id": "james_anderson_006",
+                        "product_name": "Ready Made Investment ISA"
                     },
                     "info": null,
                     "compare_args": null
@@ -364,16 +368,17 @@
                     "env_type": "user",
                     "func_name": "assert_recommendation",
                     "arguments": {
-                        "user_id": "michael_chen_5",
-                        "expected_product": "Monthly Saver"
-                    }
+                        "user_id": "james_anderson_006",
+                        "expected_product": "Ready Made Investment ISA"
+                    },
+                    "message": null
                 }
             ],
+            "communicate_info": [],
             "reward_basis": [
                 "ACTION",
                 "ENV_ASSERTION"
             ],
-            "communicate_info": [],
             "nl_assertions": null
         },
         "annotations": null
@@ -381,17 +386,17 @@
     {
         "id": "6",
         "description": {
-            "purpose": "Test agent recommends share dealing account when user thinks they want Fixed Rate Cash ISA but is actually high risk",
+            "purpose": "Testing SelfSufficientInvestingSegment - IrregularInvestorSituation with independent management preference",
             "relevant_policies": null,
-            "notes": null
+            "notes": "User is 33, invests irregularly but prefers self-management, medium risk"
         },
         "user_scenario": {
-            "persona": "You always introduce yourself with your full name. You think you want a Fixed Rate Cash ISA because you want something safe and have heard ISAs are tax-efficient. \nYou are concise and don't reveal much unless asked directly.",
+            "persona": "You have investment experience and prefer to manage things yourself. You don't regularly seek professional advice and like to be hands-on with your investments. \nYou are concise and don't reveal much unless asked directly.",
             "instructions": {
-                "task_instructions": "You want a recommendation for a financial product, once you recieve one, your goal is complete.",
+                "task_instructions": "You want a recommendation for a financial product, once you receive one, your goal is complete.",
                 "domain": "financial-advice",
-                "reason_for_call": "ou want to get a financial product recommendation",
-                "known_info": "You are David Thompson.\nYour user id is david_thompson_6. \nYou are a 50 year old man based in the UK. You have covered your essentials and have 6 months of income saved. You have remaining ISA allowance. You can tolerate losing 20% of your income in one year. You want to pick your own investments and are looking for growth over 8% a year. You have £50,000 to invest. You are concise and don't reveal much unless asked directly.",
+                "reason_for_call": "You want a product that gives you control over your investments",
+                "known_info": "You are Alex Turner.\nYour user id is alex_turner_007. \nYou are a 33 year old man based in the UK who prefers to manage your own investments independently. Financial details: You have 7 months of income saved (more than 6 months). You currently have investment accounts with index funds and ETFs. You cannot tolerate a 20% decline in savings. You need access to savings in the next 3 years for a potential house purchase. You can tolerate some decline in savings but want to be cautious. You do not need instant access to savings. You have held investment products in the last 3 years including various ETFs and index funds. You do not put money into investments regularly - contribute sporadically when you have extra cash. You have never held high-risk investment products in the last 3 years. You are not a Club Lloyds member. You do not want more help managing investments as you enjoy doing it yourself. You do not regularly seek professional advice - prefer to research independently. You are concise and don't reveal much unless asked directly.",
                 "unknown_info": null
             }
         },
@@ -402,7 +407,7 @@
                     "env_type": "user",
                     "func_name": "set_current_user_id",
                     "arguments": {
-                        "user_id": "david_thompson_6"
+                        "user_id": "alex_turner_007"
                     }
                 }
             ],
@@ -415,8 +420,8 @@
                     "requestor": "assistant",
                     "name": "update_recommended_product",
                     "arguments": {
-                        "user_id": "david_thompson_6",
-                        "product_name": "Share Dealing Account"
+                        "user_id": "alex_turner_007",
+                        "product_name": "Share Dealing ISA"
                     },
                     "info": null,
                     "compare_args": null
@@ -427,16 +432,17 @@
                     "env_type": "user",
                     "func_name": "assert_recommendation",
                     "arguments": {
-                        "user_id": "david_thompson_6",
-                        "expected_product": "Share Dealing Account"
-                    }
+                        "user_id": "alex_turner_007",
+                        "expected_product": "Share Dealing ISA"
+                    },
+                    "message": null
                 }
             ],
+            "communicate_info": [],
             "reward_basis": [
                 "ACTION",
                 "ENV_ASSERTION"
             ],
-            "communicate_info": [],
             "nl_assertions": null
         },
         "annotations": null
@@ -444,17 +450,17 @@
     {
         "id": "7",
         "description": {
-            "purpose": "Test agent recommends Fixed Rate Cash ISA when user thinks they want monthly saver but actually qualifies for ISA",
+            "purpose": "Testing HyperEngagedInvestingSegment - InappropriateInvestingSituation and HighRiskShouldBeLowSituation",
             "relevant_policies": null,
-            "notes": null
+            "notes": "User is 29 with only 2 months savings but holds high-risk products - dangerous mismatch"
         },
         "user_scenario": {
-            "persona": "You always introduce yourself with your full name. You think you want a monthly saver because you want to save a fixed amount each month and think it's the safest option. \nYou are concise and don't reveal much unless asked directly.",
+            "persona": "You are very active in investing and hold crypto and other high-risk products, but you're actually very risk-averse and need access to your money. You haven't realized the mismatch. \nYou are concise and don't reveal much unless asked directly.",
             "instructions": {
-                "task_instructions": "You want a recommendation for a financial product, once you recieve one, your goal is complete.",
+                "task_instructions": "You want a recommendation for a financial product, once you receive one, your goal is complete.",
                 "domain": "financial-advice",
-                "reason_for_call": "ou want to get a financial product recommendation",
-                "known_info": "You are Lisa Roberts.\nYour user id is lisa_roberts_7. \nYou are a 38 year old woman based in the UK. You have covered your essentials and have 4 months of income saved. You have remaining ISA allowance. You prefer fixed-rate products and are not comfortable with variable rates. You cannot tolerate losing 20% of your income in one year. You have £15,000 to invest initially. You are concise and don't reveal much unless asked directly.",
+                "reason_for_call": "You want advice on your financial situation",
+                "known_info": "You are Lisa Chen.\nYour user id is lisa_chen_008. \nYou are a 29 year old woman based in the UK with risky investments that don't match your conservative risk tolerance. Financial details: You have only 2 months of income saved (not 6+ months). You currently have investment accounts including crypto and CFDs. You cannot tolerate a 20% decline in savings. You need access to savings in the next 3 years. You cannot tolerate any decline in savings - get very anxious about losses. You need instant access to savings for emergencies. You have held high-risk investment products in the last 3 years including Bitcoin, Ethereum, and CFD trading accounts. You do not put money into investments regularly - make impulsive trades. You have held high-risk investment products in the last 3 years. You are not a Club Lloyds member. You do not want more help managing investments - believe you can manage on your own despite poor risk alignment. You do not regularly seek professional advice. You are concise and don't reveal much unless asked directly.",
                 "unknown_info": null
             }
         },
@@ -465,7 +471,7 @@
                     "env_type": "user",
                     "func_name": "set_current_user_id",
                     "arguments": {
-                        "user_id": "lisa_roberts_7"
+                        "user_id": "lisa_chen_008"
                     }
                 }
             ],
@@ -478,134 +484,19 @@
                     "requestor": "assistant",
                     "name": "update_recommended_product",
                     "arguments": {
-                        "user_id": "lisa_roberts_7",
-                        "product_name": "Fixed Rate Cash ISA"
-                    },
-                    "info": null,
-                    "compare_args": null
-                }
-            ],
-            "env_assertions": [
-                {
-                    "env_type": "user",
-                    "func_name": "assert_recommendation",
-                    "arguments": {
-                        "user_id": "lisa_roberts_7",
-                        "expected_product": "Fixed Rate Cash ISA"
-                    }
-                }
-            ],
-            "reward_basis": [
-                "ACTION",
-                "ENV_ASSERTION"
-            ],
-            "communicate_info": [],
-            "nl_assertions": null
-        },
-        "annotations": null
-    },
-    {
-        "id": "8",
-        "description": {
-            "purpose": "Test agent recommends monthly saver when user thinks they want share dealing account but prefers managed funds",
-            "relevant_policies": null,
-            "notes": null
-        },
-        "user_scenario": {
-            "persona": "You always introduce yourself with your full name. You think you want a share dealing account because you want good returns, but you actually prefer having experts manage your investments. \nYou are concise and don't reveal much unless asked directly.",
-            "instructions": {
-                "task_instructions": "You want a recommendation for a financial product, once you recieve one, your goal is complete.",
-                "domain": "financial-advice",
-                "reason_for_call": "You want to get a financial product recommendation",
-                "known_info": "You are Robert Davis.\nYour user id is robert_davis_8. \nYou are a 42 year old man based in the UK. You have covered your essentials and have 5 months of income saved. You can tolerate losing 20% of your income in one year. You prefer managed funds over picking your own investments. You are looking for growth over 7% a year. You have £25,000 to invest. You are concise and don't reveal much unless asked directly.",
-                "unknown_info": null
-            }
-        },
-        "initial_state": {
-            "initialization_data": null,
-            "initialization_actions": [
-                {
-                    "env_type": "user",
-                    "func_name": "set_current_user_id",
-                    "arguments": {
-                        "user_id": "robert_davis_8"
-                    }
-                }
-            ],
-            "message_history": null
-        },
-        "evaluation_criteria": {
-            "actions": [
-                {
-                    "action_id": "update_recommendation_0",
-                    "requestor": "assistant",
-                    "name": "update_recommended_product",
-                    "arguments": {
-                        "user_id": "robert_davis_8",
+                        "user_id": "lisa_chen_008",
                         "product_name": "Monthly Saver"
                     },
                     "info": null,
                     "compare_args": null
-                }
-            ],
-            "env_assertions": [
+                },
                 {
-                    "env_type": "user",
-                    "func_name": "assert_recommendation",
-                    "arguments": {
-                        "user_id": "robert_davis_8",
-                        "expected_product": "Monthly Saver"
-                    }
-                }
-            ],
-            "reward_basis": [
-                "ACTION",
-                "ENV_ASSERTION"
-            ],
-            "communicate_info": [],
-            "nl_assertions": null
-        },
-        "annotations": null
-    },
-    {
-        "id": "9",
-        "description": {
-            "purpose": "Test agent recommends share dealing account when user thinks they want monthly saver but actually has high risk tolerance and growth needs",
-            "relevant_policies": null,
-            "notes": null
-        },
-        "user_scenario": {
-            "persona": "You always introduce yourself with your full name. You think you want a monthly saver because it sounds safe and simple, but you actually want high returns. \nYou are concise and don't reveal much unless asked directly.",
-            "instructions": {
-                "task_instructions": "You want a recommendation for a financial product, once you recieve one, your goal is complete.",
-                "domain": "financial-advice",
-                "reason_for_call": "ou want to get a financial product recommendation",
-                "known_info": "You are Jennifer Adams.\nYour user id is jennifer_adams_9. \nYou are a 29 year old woman based in the UK. You have covered your essentials and have 4 months of income saved. You can tolerate losing 20% of your income in one year. You want to pick your own investments and are looking for growth over 8% a year. You have remaining ISA allowance but are comfortable with variable rates. You have £30,000 to invest. You are concise and don't reveal much unless asked directly.",
-                "unknown_info": null
-            }
-        },
-        "initial_state": {
-            "initialization_data": null,
-            "initialization_actions": [
-                {
-                    "env_type": "user",
-                    "func_name": "set_current_user_id",
-                    "arguments": {
-                        "user_id": "jennifer_adams_9"
-                    }
-                }
-            ],
-            "message_history": null
-        },
-        "evaluation_criteria": {
-            "actions": [
-                {
-                    "action_id": "update_recommendation_0",
+                    "action_id": "update_recommendation_1",
                     "requestor": "assistant",
                     "name": "update_recommended_product",
                     "arguments": {
-                        "user_id": "jennifer_adams_9",
-                        "product_name": "Share Dealing Account"
+                        "user_id": "lisa_chen_008",
+                        "product_name": "Easy Saver"
                     },
                     "info": null,
                     "compare_args": null
@@ -616,16 +507,26 @@
                     "env_type": "user",
                     "func_name": "assert_recommendation",
                     "arguments": {
-                        "user_id": "jennifer_adams_9",
-                        "expected_product": "Share Dealing Account"
-                    }
+                        "user_id": "lisa_chen_008",
+                        "expected_product": "Monthly Saver"
+                    },
+                    "message": null
+                },
+                {
+                    "env_type": "user",
+                    "func_name": "assert_recommendation",
+                    "arguments": {
+                        "user_id": "lisa_chen_008",
+                        "expected_product": "Easy Saver"
+                    },
+                    "message": null
                 }
             ],
+            "communicate_info": [],
             "reward_basis": [
                 "ACTION",
                 "ENV_ASSERTION"
             ],
-            "communicate_info": [],
             "nl_assertions": null
         },
         "annotations": null

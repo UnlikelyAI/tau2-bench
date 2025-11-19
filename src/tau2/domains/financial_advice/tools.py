@@ -25,6 +25,13 @@ class FinancialAdviceTools(ToolKitBase):  # Tools
             "Share Dealing Account",
             "Fixed Rate Cash ISA",
             "Monthly Saver",
+            "Club Lloyds Advantage Saver ISA",
+            "Ready Made Pension",
+            "Self Invested Personal Pension",
+            "Ready Made Investment",
+            "Ready Made Investment ISA",
+            "Share Dealing ISA",
+            "Easy Saver",
         ],
     ) -> str:
         """
@@ -43,6 +50,13 @@ class FinancialAdviceTools(ToolKitBase):  # Tools
             "Share Dealing Account",
             "Fixed Rate Cash ISA",
             "Monthly Saver",
+            "Club Lloyds Advantage Saver ISA",
+            "Ready Made Pension",
+            "Self Invested Personal Pension",
+            "Ready Made Investment",
+            "Ready Made Investment ISA",
+            "Share Dealing ISA",
+            "Easy Saver",
         ]
 
         if product_name not in valid_products:
