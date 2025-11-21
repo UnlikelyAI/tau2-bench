@@ -45,8 +45,8 @@ class User(BaseModelNoExtra):
     address: UserAddress = Field(description="User's address")
     email: str = Field(description="User's email address")
     dob: str = Field(description="Date of birth in YYYY-MM-DD format")
-    recommended_product: str = Field(
-        default="", description="Current product recommendation (empty initially)"
+    recommended_products: List[str] = Field(
+        default_factory=list, description="List of product recommendations"
     )
 
 
@@ -75,9 +75,15 @@ class FinancialAdviceDB(DB):
         self.users[user.user_id] = user
 
     def update_user_recommendation(self, product_name: str) -> bool:
-        """Update the recommended product for a user."""
+        """Add a product recommendation to the user's list of recommended products."""
         if self.current_user_id in self.users:
-            self.users[self.current_user_id].recommended_product = product_name
+            if (
+                product_name
+                not in self.users[self.current_user_id].recommended_products
+            ):
+                self.users[self.current_user_id].recommended_products.append(
+                    product_name
+                )
             return True
         return False
 
