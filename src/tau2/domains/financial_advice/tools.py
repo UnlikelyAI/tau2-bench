@@ -82,9 +82,6 @@ class FinancialAdviceTools(ToolKitBase):  # Tools
         # Add the recommended product
         success = self.db.update_user_recommendation(product_name)
 
-        user = self.db.users[self.db.current_user_id]
-        print(user.recommended_products)
-
         if not success:
             raise ValueError(
                 f"Failed to update recommendation for user {self.db.current_user_id}"
