@@ -51,16 +51,22 @@ class FinancialAdviceTools(ToolKitBase):  # Tools
 
         # Validate product name against known products
         valid_products = [
-            "Share Dealing Account",
-            "Fixed Rate Cash ISA",
-            "Monthly Saver",
-            "Club Lloyds Advantage Saver ISA",
-            "Ready Made Pension",
-            "Self Invested Personal Pension",
-            "Ready Made Investment",
-            "Ready Made Investment ISA",
-            "Share Dealing ISA",
-            "Easy Saver",
+                "Monthly Saver",
+    "Easy Saver",
+    "Cash ISA Saver",
+    "Club Lloyds Advantage Saver",
+    "Club Lloyds Advantage Saver ISA",
+    "Club Lloyds Monthly Saver",
+    "Club Lloyds Saver",
+    "Fixed Rate Cash ISA",
+        "Share Dealing ISA",
+    "Online Fixed Bonds",
+    "Ready Made Pension",
+    "Ready Made Investment",
+    "Ready Made Investment ISA",
+    "Self-Invested Personal Pension",
+    "Share Dealing Account",
+    "Lend a Hand Fixed Savings Account"
         ]
 
         if product_name not in valid_products:
