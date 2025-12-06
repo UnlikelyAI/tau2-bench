@@ -594,7 +594,7 @@
         "annotations": null
     },
     {
-        "id": "6",
+        "id": "9",
         "description": {
             "purpose": "",
             "relevant_policies": null,
@@ -645,6 +645,930 @@
                         "user_id": "david_brown_004",
                         "expected_products": [
                             "Ready Made Investment"
+                        ]
+                    },
+                    "message": null
+                }
+            ],
+            "communicate_info": [],
+            "reward_basis": [
+                "ACTION",
+                "ENV_ASSERTION"
+            ],
+            "nl_assertions": null
+        },
+        "annotations": null
+    },
+    {
+        "id": "10",
+        "description": {
+            "purpose": "",
+            "relevant_policies": null,
+            "notes": ""
+        },
+        "user_scenario": {
+            "persona": "You speak in a very direct way and communicate the information you have as if you are finanically literate.",
+            "instructions": {
+                "task_instructions": "You want a recommendation for a financial product, once you receive one, your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
+                "domain": "financial-advice",
+                "reason_for_call": "You want advice on your financial situation",
+                "known_info": "You are James Anderson.\nYour user id is james_anderson_006. income 40k and saved 100k. Holds government bonds. Has no other investments. Does not put money into investment products on a regular cadence. Would keep money in an investment product if it went down anything up to 15%, otherwise would have to take out. age 19. be a UK resident for tax. not a US citizen",
+                "unknown_info": null
+            }
+        },
+        "initial_state": {
+            "initialization_data": null,
+            "initialization_actions": [
+                {
+                    "env_type": "user",
+                    "func_name": "set_current_user_id",
+                    "arguments": {
+                        "user_id": "james_anderson_006"
+                    }
+                }
+            ],
+            "message_history": null
+        },
+        "evaluation_criteria": {
+            "actions": [
+                {
+                    "action_id": "update_recommendation_0",
+                    "requestor": "assistant",
+                    "name": "update_recommended_product",
+                    "arguments": {
+                        "user_id": "james_anderson_006",
+                        "product_name": "Ready Made Investment"
+                    },
+                    "info": null,
+                    "compare_args": null
+                }
+            ],
+            "env_assertions": [
+                {
+                    "env_type": "user",
+                    "func_name": "assert_recommendations",
+                    "arguments": {
+                        "user_id": "james_anderson_006",
+                        "expected_products": [
+                            "Ready Made Investment"
+                        ]
+                    },
+                    "message": null
+                }
+            ],
+            "communicate_info": [],
+            "reward_basis": [
+                "ACTION",
+                "ENV_ASSERTION"
+            ],
+            "nl_assertions": null
+        },
+        "annotations": null
+    },
+    {
+        "id": "11",
+        "description": {
+            "purpose": "",
+            "relevant_policies": null,
+            "notes": ""
+        },
+        "user_scenario": {
+            "persona": "You speak in a very direct way and communicate the information you have as if you are finanically literate.",
+            "instructions": {
+                "task_instructions": "You want a recommendation for a financial product, once you have a recommendation in the database (check using check_recommendations), your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
+                "domain": "financial-advice",
+                "reason_for_call": "You want advice on your financial situation",
+                "known_info": "You are David Brown.\nYour user id is david_brown_004. income 20k and saved 10k. Holds cryptocurrency. Does not put money into investment products on a regular cadence. Would not like more help managing investments. age 19. be a UK resident for tax. not a US citizen",
+                "unknown_info": null
+            }
+        },
+        "initial_state": {
+            "initialization_data": null,
+            "initialization_actions": [
+                {
+                    "env_type": "user",
+                    "func_name": "set_current_user_id",
+                    "arguments": {
+                        "user_id": "david_brown_004"
+                    }
+                }
+            ],
+            "message_history": null
+        },
+        "evaluation_criteria": {
+            "actions": [
+                {
+                    "action_id": "update_recommendation_0",
+                    "requestor": "assistant",
+                    "name": "update_recommended_product",
+                    "arguments": {
+                        "user_id": "david_brown_004",
+                        "product_name": "Share dealing"
+                    },
+                    "info": null,
+                    "compare_args": null
+                }
+            ],
+            "env_assertions": [
+                {
+                    "env_type": "user",
+                    "func_name": "assert_recommendations",
+                    "arguments": {
+                        "user_id": "david_brown_004",
+                        "expected_products": [
+                            "Share dealing"
+                        ]
+                    },
+                    "message": null
+                }
+            ],
+            "communicate_info": [],
+            "reward_basis": [
+                "ACTION",
+                "ENV_ASSERTION"
+            ],
+            "nl_assertions": null
+        },
+        "annotations": null
+    },
+    {
+        "id": "12",
+        "description": {
+            "purpose": "",
+            "relevant_policies": null,
+            "notes": ""
+        },
+        "user_scenario": {
+            "persona": "You speak in a very direct way and communicate the information you have as if you are finanically literate.",
+            "instructions": {
+                "task_instructions": "You want a recommendation for a financial product, once you receive one, your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
+                "domain": "financial-advice",
+                "reason_for_call": "You want advice on your financial situation",
+                "known_info": "You are Emma Wilson.\nYour user id is emma_wilson_005. Family member bill wants to get a mortgage and you want to help them get a mortgage. You have more than 10% of the property value in a savings account and you won't need it for at least 5 years",
+                "unknown_info": null
+            }
+        },
+        "initial_state": {
+            "initialization_data": null,
+            "initialization_actions": [
+                {
+                    "env_type": "user",
+                    "func_name": "set_current_user_id",
+                    "arguments": {
+                        "user_id": "emma_wilson_005"
+                    }
+                }
+            ],
+            "message_history": null
+        },
+        "evaluation_criteria": {
+            "actions": [
+                {
+                    "action_id": "update_recommendation_0",
+                    "requestor": "assistant",
+                    "name": "update_recommended_product",
+                    "arguments": {
+                        "user_id": "emma_wilson_005",
+                        "product_name": "Lend a Hand Fixed Savings Account"
+                    },
+                    "info": null,
+                    "compare_args": null
+                }
+            ],
+            "env_assertions": [
+                {
+                    "env_type": "user",
+                    "func_name": "assert_recommendations",
+                    "arguments": {
+                        "user_id": "emma_wilson_005",
+                        "expected_products": [
+                            "Lend a Hand Fixed Savings Account"
+                        ]
+                    },
+                    "message": null
+                }
+            ],
+            "communicate_info": [],
+            "reward_basis": [
+                "ACTION",
+                "ENV_ASSERTION"
+            ],
+            "nl_assertions": null
+        },
+        "annotations": null
+    },
+    {
+        "id": "13",
+        "description": {
+            "purpose": "",
+            "relevant_policies": null,
+            "notes": ""
+        },
+        "user_scenario": {
+            "persona": "You speak in a very direct way and communicate the information you have as if you are finanically literate.",
+            "instructions": {
+                "task_instructions": "You want a recommendation for a financial product, once you have a recommendation in the database (check using check_recommendations), your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
+                "domain": "financial-advice",
+                "reason_for_call": "You want advice on your financial situation",
+                "known_info": "You are Maria Garcia.\nYour user id is maria_garcia_003. You have crypto currency, you need to be able to access your savings on the same day because you sometimes can't pay the rent.",
+                "unknown_info": null
+            }
+        },
+        "initial_state": {
+            "initialization_data": null,
+            "initialization_actions": [
+                {
+                    "env_type": "user",
+                    "func_name": "set_current_user_id",
+                    "arguments": {
+                        "user_id": "maria_garcia_003"
+                    }
+                }
+            ],
+            "message_history": null
+        },
+        "evaluation_criteria": {
+            "actions": [
+                {
+                    "action_id": "update_recommendation_0",
+                    "requestor": "assistant",
+                    "name": "update_recommended_product",
+                    "arguments": {
+                        "user_id": "maria_garcia_003",
+                        "product_name": "Easy Saver"
+                    },
+                    "info": null,
+                    "compare_args": null
+                }
+            ],
+            "env_assertions": [
+                {
+                    "env_type": "user",
+                    "func_name": "assert_recommendations",
+                    "arguments": {
+                        "user_id": "maria_garcia_003",
+                        "expected_products": [
+                            "Easy Saver"
+                        ]
+                    },
+                    "message": null
+                }
+            ],
+            "communicate_info": [],
+            "reward_basis": [
+                "ACTION",
+                "ENV_ASSERTION"
+            ],
+            "nl_assertions": null
+        },
+        "annotations": null
+    },
+    {
+        "id": "14",
+        "description": {
+            "purpose": "",
+            "relevant_policies": null,
+            "notes": ""
+        },
+        "user_scenario": {
+            "persona": "You speak in a very direct way and communicate the information you have as if you are finanically literate.",
+            "instructions": {
+                "task_instructions": "You want a recommendation for a financial product, once you have a recommendation in the database (check using check_recommendations), your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
+                "domain": "financial-advice",
+                "reason_for_call": "You want advice on your financial situation",
+                "known_info": "You are David Brown.\nYour user id is david_brown_004. income 20k and saved 10k. Holds a bit of litecoin and bitcoin. Don't need instant access to savings, can lock investments in for at least a couple of months. Don't mind if investments fall 10%, know you need to keep them in to see long term gains. Seeks professional advice managing investments twice a year or more. age 19. be a UK resident for tax. not a US citizen. Have not put any money into an ISA this year.",
+                "unknown_info": null
+            }
+        },
+        "initial_state": {
+            "initialization_data": null,
+            "initialization_actions": [
+                {
+                    "env_type": "user",
+                    "func_name": "set_current_user_id",
+                    "arguments": {
+                        "user_id": "david_brown_004"
+                    }
+                }
+            ],
+            "message_history": null
+        },
+        "evaluation_criteria": {
+            "actions": [
+                {
+                    "action_id": "update_recommendation_0",
+                    "requestor": "assistant",
+                    "name": "update_recommended_product",
+                    "arguments": {
+                        "user_id": "david_brown_004",
+                        "product_name": "Ready Made Investment ISA"
+                    },
+                    "info": null,
+                    "compare_args": null
+                }
+            ],
+            "env_assertions": [
+                {
+                    "env_type": "user",
+                    "func_name": "assert_recommendations",
+                    "arguments": {
+                        "user_id": "david_brown_004",
+                        "expected_products": [
+                            "Ready Made Investment ISA"
+                        ]
+                    },
+                    "message": null
+                }
+            ],
+            "communicate_info": [],
+            "reward_basis": [
+                "ACTION",
+                "ENV_ASSERTION"
+            ],
+            "nl_assertions": null
+        },
+        "annotations": null
+    },
+    {
+        "id": "15",
+        "description": {
+            "purpose": "",
+            "relevant_policies": null,
+            "notes": ""
+        },
+        "user_scenario": {
+            "persona": "You speak in a very direct way and communicate the information you have as if you are finanically literate.",
+            "instructions": {
+                "task_instructions": "You want a recommendation for a financial product, once you receive one, your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
+                "domain": "financial-advice",
+                "reason_for_call": "You want advice on your financial situation",
+                "known_info": "You are James Anderson.\nYour user id is james_anderson_006. income 20k and saved 10k. Been doing some peer to peer lending in the last couple of months. Don't need instant access to savings, can lock investments in for at least a couple of months. Don't mind if investments fall 10%, know you need to keep them in to see long term gains. Seeks professional advice managing investments twice a year or more. age 19. be a UK resident for tax. not a US citizen. Have maxed out ISA allowance this year.",
+                "unknown_info": null
+            }
+        },
+        "initial_state": {
+            "initialization_data": null,
+            "initialization_actions": [
+                {
+                    "env_type": "user",
+                    "func_name": "set_current_user_id",
+                    "arguments": {
+                        "user_id": "james_anderson_006"
+                    }
+                }
+            ],
+            "message_history": null
+        },
+        "evaluation_criteria": {
+            "actions": [
+                {
+                    "action_id": "update_recommendation_0",
+                    "requestor": "assistant",
+                    "name": "update_recommended_product",
+                    "arguments": {
+                        "user_id": "james_anderson_006",
+                        "product_name": "Ready Made Investment"
+                    },
+                    "info": null,
+                    "compare_args": null
+                }
+            ],
+            "env_assertions": [
+                {
+                    "env_type": "user",
+                    "func_name": "assert_recommendations",
+                    "arguments": {
+                        "user_id": "james_anderson_006",
+                        "expected_products": [
+                            "Ready Made Investment"
+                        ]
+                    },
+                    "message": null
+                }
+            ],
+            "communicate_info": [],
+            "reward_basis": [
+                "ACTION",
+                "ENV_ASSERTION"
+            ],
+            "nl_assertions": null
+        },
+        "annotations": null
+    },
+    {
+        "id": "16",
+        "description": {
+            "purpose": "",
+            "relevant_policies": null,
+            "notes": ""
+        },
+        "user_scenario": {
+            "persona": "You speak in a very direct way and communicate the information you have as if you are finanically literate.",
+            "instructions": {
+                "task_instructions": "You want a recommendation for a financial product, once you have a recommendation in the database (check using check_recommendations), your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
+                "domain": "financial-advice",
+                "reason_for_call": "You want advice on your financial situation",
+                "known_info": "You are David Brown.\nYour user id is david_brown_004. income 100k and saved 100k. Been doing some peer to peer lending in the last couple of months. Don't need instant access to savings, can lock investments in for at least a couple of months. Don't mind if investments fall 10%, know you need to keep them in to see long term gains. Seeks professional advice managing investments never. age 19. be a UK resident for tax. not a US citizen. Have maxed out ISA allowance this year.",
+                "unknown_info": null
+            }
+        },
+        "initial_state": {
+            "initialization_data": null,
+            "initialization_actions": [
+                {
+                    "env_type": "user",
+                    "func_name": "set_current_user_id",
+                    "arguments": {
+                        "user_id": "david_brown_004"
+                    }
+                }
+            ],
+            "message_history": null
+        },
+        "evaluation_criteria": {
+            "actions": [
+                {
+                    "action_id": "update_recommendation_0",
+                    "requestor": "assistant",
+                    "name": "update_recommended_product",
+                    "arguments": {
+                        "user_id": "david_brown_004",
+                        "product_name": "Share dealing"
+                    },
+                    "info": null,
+                    "compare_args": null
+                }
+            ],
+            "env_assertions": [
+                {
+                    "env_type": "user",
+                    "func_name": "assert_recommendations",
+                    "arguments": {
+                        "user_id": "david_brown_004",
+                        "expected_products": [
+                            "Share dealing"
+                        ]
+                    },
+                    "message": null
+                }
+            ],
+            "communicate_info": [],
+            "reward_basis": [
+                "ACTION",
+                "ENV_ASSERTION"
+            ],
+            "nl_assertions": null
+        },
+        "annotations": null
+    },
+    {
+        "id": "17",
+        "description": {
+            "purpose": "",
+            "relevant_policies": null,
+            "notes": ""
+        },
+        "user_scenario": {
+            "persona": "You speak in a very direct way and communicate the information you have as if you are finanically literate.",
+            "instructions": {
+                "task_instructions": "You want a recommendation for a financial product, once you receive one, your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
+                "domain": "financial-advice",
+                "reason_for_call": "You want advice on your financial situation",
+                "known_info": "You are Emma Wilson.\nYour user id is emma_wilson_005. income 100k and saved 100k. Been doing some peer to peer lending in the last couple of months. Don't need instant access to savings, can lock investments in for at least a couple of months. Don't mind if investments fall 10%, know you need to keep them in to see long term gains. Seeks professional advice managing investments never. age 19. be a UK resident for tax. not a US citizen. Have ISA allowance left this year.",
+                "unknown_info": null
+            }
+        },
+        "initial_state": {
+            "initialization_data": null,
+            "initialization_actions": [
+                {
+                    "env_type": "user",
+                    "func_name": "set_current_user_id",
+                    "arguments": {
+                        "user_id": "emma_wilson_005"
+                    }
+                }
+            ],
+            "message_history": null
+        },
+        "evaluation_criteria": {
+            "actions": [
+                {
+                    "action_id": "update_recommendation_0",
+                    "requestor": "assistant",
+                    "name": "update_recommended_product",
+                    "arguments": {
+                        "user_id": "emma_wilson_005",
+                        "product_name": "Share dealing ISA"
+                    },
+                    "info": null,
+                    "compare_args": null
+                }
+            ],
+            "env_assertions": [
+                {
+                    "env_type": "user",
+                    "func_name": "assert_recommendations",
+                    "arguments": {
+                        "user_id": "emma_wilson_005",
+                        "expected_products": [
+                            "Share dealing ISA"
+                        ]
+                    },
+                    "message": null
+                }
+            ],
+            "communicate_info": [],
+            "reward_basis": [
+                "ACTION",
+                "ENV_ASSERTION"
+            ],
+            "nl_assertions": null
+        },
+        "annotations": null
+    },
+    {
+        "id": "18",
+        "description": {
+            "purpose": "",
+            "relevant_policies": null,
+            "notes": ""
+        },
+        "user_scenario": {
+            "persona": "You speak in a very direct way and communicate the information you have as if you are finanically literate.",
+            "instructions": {
+                "task_instructions": "You want a recommendation for a financial product, once you have a recommendation in the database (check using check_recommendations), your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
+                "domain": "financial-advice",
+                "reason_for_call": "You want advice on your financial situation",
+                "known_info": "You are Maria Garcia.\nYour user id is maria_garcia_003. You sometimes can't pay rent and need to get all your money out. You have some stocks you owne but keep having to sell them to pay rent. You are 55 and a UK resident.",
+                "unknown_info": null
+            }
+        },
+        "initial_state": {
+            "initialization_data": null,
+            "initialization_actions": [
+                {
+                    "env_type": "user",
+                    "func_name": "set_current_user_id",
+                    "arguments": {
+                        "user_id": "maria_garcia_003"
+                    }
+                }
+            ],
+            "message_history": null
+        },
+        "evaluation_criteria": {
+            "actions": [
+                {
+                    "action_id": "update_recommendation_0",
+                    "requestor": "assistant",
+                    "name": "update_recommended_product",
+                    "arguments": {
+                        "user_id": "maria_garcia_003",
+                        "product_name": "Easy Saver"
+                    },
+                    "info": null,
+                    "compare_args": null
+                }
+            ],
+            "env_assertions": [
+                {
+                    "env_type": "user",
+                    "func_name": "assert_recommendations",
+                    "arguments": {
+                        "user_id": "maria_garcia_003",
+                        "expected_products": [
+                            "Easy Saver"
+                        ]
+                    },
+                    "message": null
+                }
+            ],
+            "communicate_info": [],
+            "reward_basis": [
+                "ACTION",
+                "ENV_ASSERTION"
+            ],
+            "nl_assertions": null
+        },
+        "annotations": null
+    },
+    {
+        "id": "19",
+        "description": {
+            "purpose": "",
+            "relevant_policies": null,
+            "notes": ""
+        },
+        "user_scenario": {
+            "persona": "You speak in a very direct way and communicate the information you have as if you are finanically literate.",
+            "instructions": {
+                "task_instructions": "You want a recommendation for a financial product, once you have a recommendation in the database (check using check_recommendations), your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
+                "domain": "financial-advice",
+                "reason_for_call": "You want advice on your financial situation",
+                "known_info": "You are David Brown.\nYour user id is david_brown_004. You sometimes can't pay rent and need to get all your money out. You have some stocks you owne but keep having to sell them to pay rent. You are 21 and a UK resident. You have a club lloyds account your dad pays for",
+                "unknown_info": null
+            }
+        },
+        "initial_state": {
+            "initialization_data": null,
+            "initialization_actions": [
+                {
+                    "env_type": "user",
+                    "func_name": "set_current_user_id",
+                    "arguments": {
+                        "user_id": "david_brown_004"
+                    }
+                }
+            ],
+            "message_history": null
+        },
+        "evaluation_criteria": {
+            "actions": [
+                {
+                    "action_id": "update_recommendation_0",
+                    "requestor": "assistant",
+                    "name": "update_recommended_product",
+                    "arguments": {
+                        "user_id": "david_brown_004",
+                        "product_name": "Club Lloyds Saver"
+                    },
+                    "info": null,
+                    "compare_args": null
+                }
+            ],
+            "env_assertions": [
+                {
+                    "env_type": "user",
+                    "func_name": "assert_recommendations",
+                    "arguments": {
+                        "user_id": "david_brown_004",
+                        "expected_products": [
+                            "Club Lloyds Saver"
+                        ]
+                    },
+                    "message": null
+                }
+            ],
+            "communicate_info": [],
+            "reward_basis": [
+                "ACTION",
+                "ENV_ASSERTION"
+            ],
+            "nl_assertions": null
+        },
+        "annotations": null
+    },
+    {
+        "id": "20",
+        "description": {
+            "purpose": "",
+            "relevant_policies": null,
+            "notes": ""
+        },
+        "user_scenario": {
+            "persona": "You speak in a very direct way and communicate the information you have as if you are finanically literate.",
+            "instructions": {
+                "task_instructions": "You want a recommendation for a financial product, once you receive one, your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
+                "domain": "financial-advice",
+                "reason_for_call": "You want advice on your financial situation",
+                "known_info": "You are James Anderson.\nYour user id is james_anderson_006. You are 77 a uk resident. You have been putting all your 100k in savings in a stocks ISA and have maxed that out and then the rest in bonds. You seek professional advice once every couple of months. You are happy with this set up. You would like to maximise your gains and understand that losing 30% of your investment can happen and wouldn't sell a product if that did happen. you don't need access to your money for 5 years.",
+                "unknown_info": null
+            }
+        },
+        "initial_state": {
+            "initialization_data": null,
+            "initialization_actions": [
+                {
+                    "env_type": "user",
+                    "func_name": "set_current_user_id",
+                    "arguments": {
+                        "user_id": "james_anderson_006"
+                    }
+                }
+            ],
+            "message_history": null
+        },
+        "evaluation_criteria": {
+            "actions": [
+                {
+                    "action_id": "update_recommendation_0",
+                    "requestor": "assistant",
+                    "name": "update_recommended_product",
+                    "arguments": {
+                        "user_id": "james_anderson_006",
+                        "product_name": "Ready Made Investment"
+                    },
+                    "info": null,
+                    "compare_args": null
+                }
+            ],
+            "env_assertions": [
+                {
+                    "env_type": "user",
+                    "func_name": "assert_recommendations",
+                    "arguments": {
+                        "user_id": "james_anderson_006",
+                        "expected_products": [
+                            "Ready Made Investment"
+                        ]
+                    },
+                    "message": null
+                }
+            ],
+            "communicate_info": [],
+            "reward_basis": [
+                "ACTION",
+                "ENV_ASSERTION"
+            ],
+            "nl_assertions": null
+        },
+        "annotations": null
+    },
+    {
+        "id": "21",
+        "description": {
+            "purpose": "",
+            "relevant_policies": null,
+            "notes": ""
+        },
+        "user_scenario": {
+            "persona": "You speak in a very direct way and communicate the information you have as if you are finanically literate.",
+            "instructions": {
+                "task_instructions": "You want a recommendation for a financial product, once you have a recommendation in the database (check using check_recommendations), your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
+                "domain": "financial-advice",
+                "reason_for_call": "You want advice on your financial situation",
+                "known_info": "You are David Brown.\nYour user id is david_brown_004. You are 77 a uk resident. You have been putting all your 100k in savings in stocks on trading 212 (not in an ISA) and then in a savings account and you have some bonds. You seek professional advice once every couple of months. You are happy with this set up. You would like to maximise your gains and understand that losing 30% of your investment can happen and wouldn't sell a product if that did happen. you don't need access to your money for 5 years.",
+                "unknown_info": null
+            }
+        },
+        "initial_state": {
+            "initialization_data": null,
+            "initialization_actions": [
+                {
+                    "env_type": "user",
+                    "func_name": "set_current_user_id",
+                    "arguments": {
+                        "user_id": "david_brown_004"
+                    }
+                }
+            ],
+            "message_history": null
+        },
+        "evaluation_criteria": {
+            "actions": [
+                {
+                    "action_id": "update_recommendation_0",
+                    "requestor": "assistant",
+                    "name": "update_recommended_product",
+                    "arguments": {
+                        "user_id": "david_brown_004",
+                        "product_name": "Ready Made Investment ISA"
+                    },
+                    "info": null,
+                    "compare_args": null
+                }
+            ],
+            "env_assertions": [
+                {
+                    "env_type": "user",
+                    "func_name": "assert_recommendations",
+                    "arguments": {
+                        "user_id": "david_brown_004",
+                        "expected_products": [
+                            "Ready Made Investment ISA"
+                        ]
+                    },
+                    "message": null
+                }
+            ],
+            "communicate_info": [],
+            "reward_basis": [
+                "ACTION",
+                "ENV_ASSERTION"
+            ],
+            "nl_assertions": null
+        },
+        "annotations": null
+    },
+    {
+        "id": "22",
+        "description": {
+            "purpose": "",
+            "relevant_policies": null,
+            "notes": ""
+        },
+        "user_scenario": {
+            "persona": "You speak in a very direct way and communicate the information you have as if you are finanically literate.",
+            "instructions": {
+                "task_instructions": "You want a recommendation for a financial product, once you receive one, your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
+                "domain": "financial-advice",
+                "reason_for_call": "You want advice on your financial situation",
+                "known_info": "You are Emma Wilson.\nYour user id is emma_wilson_005. You are 77 a uk resident. You have been putting all your 100k in savings in stocks on trading 212 (not in an ISA) and then in a savings account and you have some bonds. You seek professional advice once every couple of years but read a lot of financial material independently, from chat rooms. You are happy with this set up. You would like to maximise your gains and understand that losing 30% of your investment can happen and wouldn't sell a product if that did happen. you don't need access to your money for 5 years.",
+                "unknown_info": null
+            }
+        },
+        "initial_state": {
+            "initialization_data": null,
+            "initialization_actions": [
+                {
+                    "env_type": "user",
+                    "func_name": "set_current_user_id",
+                    "arguments": {
+                        "user_id": "emma_wilson_005"
+                    }
+                }
+            ],
+            "message_history": null
+        },
+        "evaluation_criteria": {
+            "actions": [
+                {
+                    "action_id": "update_recommendation_0",
+                    "requestor": "assistant",
+                    "name": "update_recommended_product",
+                    "arguments": {
+                        "user_id": "emma_wilson_005",
+                        "product_name": "Share dealing ISA"
+                    },
+                    "info": null,
+                    "compare_args": null
+                }
+            ],
+            "env_assertions": [
+                {
+                    "env_type": "user",
+                    "func_name": "assert_recommendations",
+                    "arguments": {
+                        "user_id": "emma_wilson_005",
+                        "expected_products": [
+                            "Share dealing ISA"
+                        ]
+                    },
+                    "message": null
+                }
+            ],
+            "communicate_info": [],
+            "reward_basis": [
+                "ACTION",
+                "ENV_ASSERTION"
+            ],
+            "nl_assertions": null
+        },
+        "annotations": null
+    },
+    {
+        "id": "23",
+        "description": {
+            "purpose": "",
+            "relevant_policies": null,
+            "notes": ""
+        },
+        "user_scenario": {
+            "persona": "You speak in a very direct way and communicate the information you have as if you are finanically literate.",
+            "instructions": {
+                "task_instructions": "You want a recommendation for a financial product, once you have a recommendation in the database (check using check_recommendations), your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
+                "domain": "financial-advice",
+                "reason_for_call": "You want advice on your financial situation",
+                "known_info": "You are Maria Garcia.\nYour user id is maria_garcia_003. You are 77 a uk resident and you don't have any ISA allownace left. You have been putting all your 100k in savings in a cash ISA and then in a savings account and you have some bonds. You seek professional advice once every couple of years but read a lot of financial material independently, from chat rooms. You are happy with this set up. You would like to maximise your gains and understand that losing 30% of your investment can happen and wouldn't sell a product if that did happen. you don't need access to your money for 5 years.",
+                "unknown_info": null
+            }
+        },
+        "initial_state": {
+            "initialization_data": null,
+            "initialization_actions": [
+                {
+                    "env_type": "user",
+                    "func_name": "set_current_user_id",
+                    "arguments": {
+                        "user_id": "maria_garcia_003"
+                    }
+                }
+            ],
+            "message_history": null
+        },
+        "evaluation_criteria": {
+            "actions": [
+                {
+                    "action_id": "update_recommendation_0",
+                    "requestor": "assistant",
+                    "name": "update_recommended_product",
+                    "arguments": {
+                        "user_id": "maria_garcia_003",
+                        "product_name": "Share dealing"
+                    },
+                    "info": null,
+                    "compare_args": null
+                }
+            ],
+            "env_assertions": [
+                {
+                    "env_type": "user",
+                    "func_name": "assert_recommendations",
+                    "arguments": {
+                        "user_id": "maria_garcia_003",
+                        "expected_products": [
+                            "Share dealing"
                         ]
                     },
                     "message": null
