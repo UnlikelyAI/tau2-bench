@@ -54,6 +54,16 @@ class FinancialAdviceUserTools(ToolKitBase):
         self.db.current_user_id = user_id
         return f"Current user ID set to {user_id}"
 
+
+    @is_tool(ToolType.READ)
+    def check_recommendations(self,user_id: str) -> list[str]:
+        """
+        Check if the user has any recommendations.
+        """
+        user = self._get_user(user_id)
+        return user.recommended_products
+
+
     def assert_recommendations(
         self, user_id: str, expected_products: List[str], **kwargs
     ) -> bool:
