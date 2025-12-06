@@ -78,7 +78,7 @@
                 "task_instructions": "You want a recommendation for a financial product, once you have a recommendation in the database (check using check_recommendations), your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
                 "domain": "financial-advice",
                 "reason_for_call": "You want advice on your financial situation",
-                "known_info": "You are John Williams.\nYour user id is john_williams_002. You are a risk-averse or liquidity-focused individual who currently possesses no investments and has avoided that market for over 36 months, holds a financial buffer smaller than half a year’s earnings while saving under 250 monthly, and is unable to utilize an ISA wrapper or Club Lloyds and Premier banking tiers.",
+                "known_info": "You are John Williams.\nYour user id is john_williams_002. You are a risk-averse or liquidity-focused individual who currently possesses no investments and has avoided that market for over 36 months, holds a financial buffer smaller than half a year’s earnings while saving under 250 monthly, I don't have Club Lloyds or Premier banking tiers. You have used your ISA allowance already. You are a UK citizen and you have a bank account with Lloyds.",
                 "unknown_info": null
             }
         },
@@ -144,7 +144,7 @@
                 "task_instructions": "You want a recommendation for a financial product, once you have a recommendation in the database (check using check_recommendations), your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
                 "domain": "financial-advice",
                 "reason_for_call": "You want advice on your financial situation",
-                "known_info": "You are Maria Garcia.\nYour user id is maria_garcia_003. You are a non-Club and non-Premier customer who currently holds no investments and hasn't for three years, requires zero risk to principal or on-demand access to funds, possesses a financial buffer covering fewer than six months of wages, and has fully exhausted or is ineligible for a tax-free ISA wrapper despite having a monthly surplus exceeding 250.",
+                "known_info": "You are Maria Garcia.\nYour user id is maria_garcia_003. You are a non-Club and non-Premier customer who currently holds no investments and hasn't for three years, requires zero risk to principal or on-demand access to funds, possesses a financial buffer covering fewer than six months of wages, and has fully exhausted ISA wrapper allowance despite having a monthly surplus exceeding 250.",
                 "unknown_info": null
             }
         },
