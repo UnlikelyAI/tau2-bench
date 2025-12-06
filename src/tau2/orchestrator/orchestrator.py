@@ -327,6 +327,8 @@ class Orchestrator:
                     tool_msg = self.environment.get_response(tool_call)
                     tool_msgs.append(tool_msg)
 
+                # TODO - this hacky fix actually results in two tool calls since agent content and tool messages are basically mixed together - works well enough for evaluation
+
                 # Add agent message with tool_calls to trajectory
                 agent_msg.validate()
                 self.trajectory.append(agent_msg)

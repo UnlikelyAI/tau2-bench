@@ -99,12 +99,12 @@ class FinancialAdviceTools(ToolKitBase):  # Tools
         else:
             message = f"Successfully added '{product_name}' to recommendations for {self.db.current_user_id}."
 
-        print(message)
-
         # Show all current recommendations
         all_recommendations = user.recommended_products
         if len(all_recommendations) > 1:
             message += f" Total recommended products: {', '.join(all_recommendations)}"
+
+        print(message)
 
         return message
 

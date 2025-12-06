@@ -301,7 +301,7 @@
                     "name": "update_recommended_product",
                     "arguments": {
                         "user_id": "emma_wilson_005",
-                        "product_name": "Club Lloyds monthly Saver"
+                        "product_name": "Club Lloyds Monthly Saver"
                     },
                     "info": null,
                     "compare_args": null
@@ -314,7 +314,7 @@
                     "arguments": {
                         "user_id": "emma_wilson_005",
                         "expected_products": [
-                            "Club Lloyds monthly Saver"
+                            "Club Lloyds Monthly Saver"
                         ]
                     },
                     "message": null
