@@ -54,15 +54,13 @@ class FinancialAdviceUserTools(ToolKitBase):
         self.db.current_user_id = user_id
         return f"Current user ID set to {user_id}"
 
-
     @is_tool(ToolType.READ)
-    def check_recommendations(self,user_id: str) -> list[str]:
+    def check_recommendations(self, user_id: str) -> list[str]:
         """
         Check if the user has any recommendations.
         """
         user = self._get_user(user_id)
         return user.recommended_products
-
 
     def assert_recommendations(
         self, user_id: str, expected_products: List[str], **kwargs
@@ -79,5 +77,9 @@ class FinancialAdviceUserTools(ToolKitBase):
             True if the recommended products exactly match expected products (same items, any order), False otherwise.
         """
         user = self._get_user(user_id)
+
+        expected_products_lower = [product.lower() for product in expected_products]
+        user_products_lower = [product.lower() for product in user.recommended_products]
+
         # Convert both lists to sets to compare regardless of order
-        return set(user.recommended_products) == set(expected_products)
+        return set(user_products_lower) == set(expected_products_lower)

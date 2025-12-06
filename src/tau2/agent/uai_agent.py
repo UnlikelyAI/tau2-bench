@@ -54,6 +54,8 @@ class UAIAgent(LocalAgent[UAIAgentState]):
     UAI agent implementation
     """
 
+    STOP_TOKEN = "###STOP###"
+
     def __init__(self, tools: list[Tool], domain_policy: str):
         super().__init__(tools, domain_policy)
 
@@ -113,9 +115,15 @@ class UAIAgent(LocalAgent[UAIAgentState]):
             raise Exception("Session ID is None")
 
         state.session_id = response_data.session_id
-        state.messages.append(assistant_message)
 
         return assistant_message, state
+
+    @classmethod
+    def is_stop(cls, message: AssistantMessage) -> bool:
+        """Check if the message is a stop message."""
+        if message.content is None:
+            return False
+        return cls.STOP_TOKEN in message.content
 
     def get_init_state(
         self, message_history: Optional[list[Message]] = None
