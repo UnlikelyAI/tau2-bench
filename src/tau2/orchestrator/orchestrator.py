@@ -101,12 +101,12 @@ class Orchestrator:
 
         if self.solo_mode:
             assert self.environment.solo_mode, "Environment should be in solo mode"
-            assert isinstance(self.agent, LLMSoloAgent), (
-                "Agent must be a LLMSoloAgent in solo mode"
-            )
-            assert isinstance(self.user, DummyUser), (
-                "User must be a DummyUser in solo mode"
-            )
+            assert isinstance(
+                self.agent, LLMSoloAgent
+            ), "Agent must be a LLMSoloAgent in solo mode"
+            assert isinstance(
+                self.user, DummyUser
+            ), "User must be a DummyUser in solo mode"
 
         # Initialize Environment state
         self._initialize_environment(
@@ -319,16 +319,44 @@ class Orchestrator:
             agent_msg, self.agent_state = self.agent.generate_next_message(
                 self.message, self.agent_state
             )
-            agent_msg.validate()
-            if self.agent.is_stop(agent_msg):
-                self.done = True
-                self.termination_reason = TerminationReason.AGENT_STOP
-            self.trajectory.append(agent_msg)
-            self.message = agent_msg
-            self.from_role = Role.AGENT
-            if agent_msg.is_tool_call():
-                self.to_role = Role.ENV
+
+            # Process tool calls immediately if present
+            if agent_msg.tool_calls is not None:
+                tool_msgs = []
+                for tool_call in agent_msg.tool_calls:
+                    tool_msg = self.environment.get_response(tool_call)
+                    tool_msgs.append(tool_msg)
+
+                # Add agent message with tool_calls to trajectory
+                agent_msg.validate()
+                self.trajectory.append(agent_msg)
+
+                # Add tool messages to trajectory so they can be replayed during evaluation
+                self.trajectory.extend(tool_msgs)
+
+                # Send tool messages to user (not the agent message with tool_calls)
+                # Package multiple tool messages into a MultiToolMessage
+                if self.agent.is_stop(agent_msg):
+                    self.done = True
+                    self.termination_reason = TerminationReason.AGENT_STOP
+
+                if len(tool_msgs) > 1:
+                    self.message = MultiToolMessage(
+                        role="tool",
+                        tool_messages=tool_msgs,
+                    )
+                else:
+                    self.message = tool_msgs[0]
+                self.from_role = Role.ENV
+                self.to_role = Role.USER
             else:
+                agent_msg.validate()
+                if self.agent.is_stop(agent_msg):
+                    self.done = True
+                    self.termination_reason = TerminationReason.AGENT_STOP
+                self.trajectory.append(agent_msg)
+                self.message = agent_msg
+                self.from_role = Role.AGENT
                 self.to_role = Role.USER
         # AGENT/USER -> ENV
         elif self.from_role in [Role.AGENT, Role.USER] and self.to_role == Role.ENV:
@@ -338,9 +366,9 @@ class Orchestrator:
             for tool_call in self.message.tool_calls:
                 tool_msg = self.environment.get_response(tool_call)
                 tool_msgs.append(tool_msg)
-            assert len(self.message.tool_calls) == len(tool_msgs), (
-                "Number of tool calls and tool messages should be the same"
-            )
+            assert len(self.message.tool_calls) == len(
+                tool_msgs
+            ), "Number of tool calls and tool messages should be the same"
             self.trajectory.extend(tool_msgs)
             if (
                 len(tool_msgs) > 1

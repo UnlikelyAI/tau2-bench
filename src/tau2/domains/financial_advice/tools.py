@@ -51,22 +51,22 @@ class FinancialAdviceTools(ToolKitBase):  # Tools
 
         # Validate product name against known products
         valid_products = [
-                "Monthly Saver",
-    "Easy Saver",
-    "Cash ISA Saver",
-    "Club Lloyds Advantage Saver",
-    "Club Lloyds Advantage Saver ISA",
-    "Club Lloyds Monthly Saver",
-    "Club Lloyds Saver",
-    "Fixed Rate Cash ISA",
-        "Share Dealing ISA",
-    "Online Fixed Bonds",
-    "Ready Made Pension",
-    "Ready Made Investment",
-    "Ready Made Investment ISA",
-    "Self-Invested Personal Pension",
-    "Share Dealing Account",
-    "Lend a Hand Fixed Savings Account"
+            "Monthly Saver",
+            "Easy Saver",
+            "Cash ISA Saver",
+            "Club Lloyds Advantage Saver",
+            "Club Lloyds Advantage Saver ISA",
+            "Club Lloyds Monthly Saver",
+            "Club Lloyds Saver",
+            "Fixed Rate Cash ISA",
+            "Share Dealing ISA",
+            "Online Fixed Bonds",
+            "Ready Made Pension",
+            "Ready Made Investment",
+            "Ready Made Investment ISA",
+            "Self Invested Personal Pension",
+            "Share Dealing Account",
+            "Lend a Hand Fixed Savings Account",
         ]
 
         if product_name not in valid_products:
@@ -98,6 +98,8 @@ class FinancialAdviceTools(ToolKitBase):  # Tools
             message = f"Product '{product_name}' was already recommended for {self.db.current_user_id}."
         else:
             message = f"Successfully added '{product_name}' to recommendations for {self.db.current_user_id}."
+
+        print(message)
 
         # Show all current recommendations
         all_recommendations = user.recommended_products
