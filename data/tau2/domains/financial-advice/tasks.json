@@ -276,7 +276,7 @@
                 "task_instructions": "You want a recommendation for a financial product, once you receive one, your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
                 "domain": "financial-advice",
                 "reason_for_call": "You want advice on your financial situation",
-                "known_info": "You are Emma Wilson.\nYour user id is emma_wilson_005. You are a Club or Premier Lloyds customer who has remained out of the investment market for at least thirty-six months and holds fewer than six months of accrued earnings, requiring either immediate liquidity or absolute capital security for your monthly disposable surplus of under 250 because you are currently unable to utilize a tax-free savings wrapper.",
+                "known_info": "You are Emma Wilson.\nYour user id is emma_wilson_005. You are a Club or Premier Lloyds customer who has remained out of the investment market for at least thirty-six months and holds fewer than six months of accrued earnings, requiring either immediate liquidity or absolute capital security for your monthly disposable surplus of under 250. You have used your ISA allowance already.",
                 "unknown_info": null
             }
         },
@@ -315,6 +315,336 @@
                         "user_id": "emma_wilson_005",
                         "expected_products": [
                             "Club Lloyds monthly Saver"
+                        ]
+                    },
+                    "message": null
+                }
+            ],
+            "communicate_info": [],
+            "reward_basis": [
+                "ACTION",
+                "ENV_ASSERTION"
+            ],
+            "nl_assertions": null
+        },
+        "annotations": null
+    },
+    {
+        "id": "5",
+        "description": {
+            "purpose": "",
+            "relevant_policies": null,
+            "notes": ""
+        },
+        "user_scenario": {
+            "persona": "You speak in a very direct way and communicate the information you have as if you are finanically literate.",
+            "instructions": {
+                "task_instructions": "You want a recommendation for a financial product, once you receive one, your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
+                "domain": "financial-advice",
+                "reason_for_call": "You want advice on your financial situation",
+                "known_info": "You are James Anderson.\nYour user id is james_anderson_006. Has less than 6 months of income saved. Holds no investment products and hasn't for at least 10 years.Lloyds Premier current account holder. Is eligible for ISA. Has ISA allowance left. Needs instant access to savings. Can save 600 a month. aged 18 or over, a UK resident for tax.",
+                "unknown_info": null
+            }
+        },
+        "initial_state": {
+            "initialization_data": null,
+            "initialization_actions": [
+                {
+                    "env_type": "user",
+                    "func_name": "set_current_user_id",
+                    "arguments": {
+                        "user_id": "james_anderson_006"
+                    }
+                }
+            ],
+            "message_history": null
+        },
+        "evaluation_criteria": {
+            "actions": [
+                {
+                    "action_id": "update_recommendation_0",
+                    "requestor": "assistant",
+                    "name": "update_recommended_product",
+                    "arguments": {
+                        "user_id": "james_anderson_006",
+                        "product_name": "Club Lloyds Advantage Saver ISA"
+                    },
+                    "info": null,
+                    "compare_args": null
+                }
+            ],
+            "env_assertions": [
+                {
+                    "env_type": "user",
+                    "func_name": "assert_recommendations",
+                    "arguments": {
+                        "user_id": "james_anderson_006",
+                        "expected_products": [
+                            "Club Lloyds Advantage Saver ISA"
+                        ]
+                    },
+                    "message": null
+                }
+            ],
+            "communicate_info": [],
+            "reward_basis": [
+                "ACTION",
+                "ENV_ASSERTION"
+            ],
+            "nl_assertions": null
+        },
+        "annotations": null
+    },
+    {
+        "id": "6",
+        "description": {
+            "purpose": "",
+            "relevant_policies": null,
+            "notes": ""
+        },
+        "user_scenario": {
+            "persona": "You speak in a very direct way and communicate the information you have as if you are finanically literate.",
+            "instructions": {
+                "task_instructions": "You want a recommendation for a financial product, once you have a recommendation in the database (check using check_recommendations), your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
+                "domain": "financial-advice",
+                "reason_for_call": "You want advice on your financial situation",
+                "known_info": "You are David Brown.\nYour user id is david_brown_004. Has less than 6 months of income saved. Holds no investment products and hasn't for at least 10 years. Lloyds Premier current account holder. Is eligible for ISA. Has ISA allowance left. Would keep money in investments if they dropped as much as 40%, knows leaving money in is the right thing to do",
+                "unknown_info": null
+            }
+        },
+        "initial_state": {
+            "initialization_data": null,
+            "initialization_actions": [
+                {
+                    "env_type": "user",
+                    "func_name": "set_current_user_id",
+                    "arguments": {
+                        "user_id": "david_brown_004"
+                    }
+                }
+            ],
+            "message_history": null
+        },
+        "evaluation_criteria": {
+            "actions": [
+                {
+                    "action_id": "update_recommendation_0",
+                    "requestor": "assistant",
+                    "name": "update_recommended_product",
+                    "arguments": {
+                        "user_id": "david_brown_004",
+                        "product_name": "Fixed rate cash ISA"
+                    },
+                    "info": null,
+                    "compare_args": null
+                }
+            ],
+            "env_assertions": [
+                {
+                    "env_type": "user",
+                    "func_name": "assert_recommendations",
+                    "arguments": {
+                        "user_id": "david_brown_004",
+                        "expected_products": [
+                            "Fixed rate cash ISA"
+                        ]
+                    },
+                    "message": null
+                }
+            ],
+            "communicate_info": [],
+            "reward_basis": [
+                "ACTION",
+                "ENV_ASSERTION"
+            ],
+            "nl_assertions": null
+        },
+        "annotations": null
+    },
+    {
+        "id": "7",
+        "description": {
+            "purpose": "",
+            "relevant_policies": null,
+            "notes": ""
+        },
+        "user_scenario": {
+            "persona": "You speak in a very direct way and communicate the information you have as if you are finanically literate.",
+            "instructions": {
+                "task_instructions": "You want a recommendation for a financial product, once you receive one, your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
+                "domain": "financial-advice",
+                "reason_for_call": "You want advice on your financial situation",
+                "known_info": "You are Emma Wilson.\nYour user id is emma_wilson_005. You are a Club or Premier Lloyds customer who has remained out of the investment market for at least thirty-six months and holds fewer than six months of accrued earnings, requiring either immediate liquidity or absolute capital security for your monthly disposable surplus of under 250 because you are currently unable to utilize a tax-free savings wrapper.",
+                "unknown_info": null
+            }
+        },
+        "initial_state": {
+            "initialization_data": null,
+            "initialization_actions": [
+                {
+                    "env_type": "user",
+                    "func_name": "set_current_user_id",
+                    "arguments": {
+                        "user_id": "emma_wilson_005"
+                    }
+                }
+            ],
+            "message_history": null
+        },
+        "evaluation_criteria": {
+            "actions": [
+                {
+                    "action_id": "update_recommendation_0",
+                    "requestor": "assistant",
+                    "name": "update_recommended_product",
+                    "arguments": {
+                        "user_id": "emma_wilson_005",
+                        "product_name": "Online Fixed Bonds"
+                    },
+                    "info": null,
+                    "compare_args": null
+                }
+            ],
+            "env_assertions": [
+                {
+                    "env_type": "user",
+                    "func_name": "assert_recommendations",
+                    "arguments": {
+                        "user_id": "emma_wilson_005",
+                        "expected_products": [
+                            "Online Fixed Bonds"
+                        ]
+                    },
+                    "message": null
+                }
+            ],
+            "communicate_info": [],
+            "reward_basis": [
+                "ACTION",
+                "ENV_ASSERTION"
+            ],
+            "nl_assertions": null
+        },
+        "annotations": null
+    },
+    {
+        "id": "8",
+        "description": {
+            "purpose": "",
+            "relevant_policies": null,
+            "notes": ""
+        },
+        "user_scenario": {
+            "persona": "You speak in a very direct way and communicate the information you have as if you are finanically literate.",
+            "instructions": {
+                "task_instructions": "You want a recommendation for a financial product, once you have a recommendation in the database (check using check_recommendations), your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
+                "domain": "financial-advice",
+                "reason_for_call": "You want advice on your financial situation",
+                "known_info": "You are Maria Garcia.\nYour user id is maria_garcia_003. 6 months or more of income saved. Holds no investment products. Not contributing full employer match on pension. Has not held an investment product in the last 3 years. Would keep money in investments if they dropped as much as 10%, knows leaving money in is the right thing to do. age 43. be a UK resident for tax. not a US citizen. can pay 500 a month into savings",
+                "unknown_info": null
+            }
+        },
+        "initial_state": {
+            "initialization_data": null,
+            "initialization_actions": [
+                {
+                    "env_type": "user",
+                    "func_name": "set_current_user_id",
+                    "arguments": {
+                        "user_id": "maria_garcia_003"
+                    }
+                }
+            ],
+            "message_history": null
+        },
+        "evaluation_criteria": {
+            "actions": [
+                {
+                    "action_id": "update_recommendation_0",
+                    "requestor": "assistant",
+                    "name": "update_recommended_product",
+                    "arguments": {
+                        "user_id": "maria_garcia_003",
+                        "product_name": "Ready Made Pension"
+                    },
+                    "info": null,
+                    "compare_args": null
+                }
+            ],
+            "env_assertions": [
+                {
+                    "env_type": "user",
+                    "func_name": "assert_recommendations",
+                    "arguments": {
+                        "user_id": "maria_garcia_003",
+                        "expected_products": [
+                            "Ready Made Pension"
+                        ]
+                    },
+                    "message": null
+                }
+            ],
+            "communicate_info": [],
+            "reward_basis": [
+                "ACTION",
+                "ENV_ASSERTION"
+            ],
+            "nl_assertions": null
+        },
+        "annotations": null
+    },
+    {
+        "id": "6",
+        "description": {
+            "purpose": "",
+            "relevant_policies": null,
+            "notes": ""
+        },
+        "user_scenario": {
+            "persona": "You speak in a very direct way and communicate the information you have as if you are finanically literate.",
+            "instructions": {
+                "task_instructions": "You want a recommendation for a financial product, once you have a recommendation in the database (check using check_recommendations), your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
+                "domain": "financial-advice",
+                "reason_for_call": "You want advice on your financial situation",
+                "known_info": "You are David Brown.\nYour user id is david_brown_004. income 100k and saved 200k. Holds no investment products. Contributing full employer match on pension. Has not held an investment product in the last 3 years. Would keep money in investments if they dropped as much as 10%, knows leaving money in is the right thing to do. age 43. be a UK resident for tax. not a US citizen. can pay 500 a month into savings",
+                "unknown_info": null
+            }
+        },
+        "initial_state": {
+            "initialization_data": null,
+            "initialization_actions": [
+                {
+                    "env_type": "user",
+                    "func_name": "set_current_user_id",
+                    "arguments": {
+                        "user_id": "david_brown_004"
+                    }
+                }
+            ],
+            "message_history": null
+        },
+        "evaluation_criteria": {
+            "actions": [
+                {
+                    "action_id": "update_recommendation_0",
+                    "requestor": "assistant",
+                    "name": "update_recommended_product",
+                    "arguments": {
+                        "user_id": "david_brown_004",
+                        "product_name": "Ready Made Investment"
+                    },
+                    "info": null,
+                    "compare_args": null
+                }
+            ],
+            "env_assertions": [
+                {
+                    "env_type": "user",
+                    "func_name": "assert_recommendations",
+                    "arguments": {
+                        "user_id": "david_brown_004",
+                        "expected_products": [
+                            "Ready Made Investment"
                         ]
                     },
                     "message": null
