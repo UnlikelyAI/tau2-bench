@@ -104,8 +104,6 @@ class FinancialAdviceTools(ToolKitBase):  # Tools
         if len(all_recommendations) > 1:
             message += f" Total recommended products: {', '.join(all_recommendations)}"
 
-        print(message)
-
         return message
 
 

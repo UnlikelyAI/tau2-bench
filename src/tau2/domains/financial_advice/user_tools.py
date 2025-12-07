@@ -81,5 +81,9 @@ class FinancialAdviceUserTools(ToolKitBase):
         expected_products_lower = [product.lower() for product in expected_products]
         user_products_lower = [product.lower() for product in user.recommended_products]
 
+        print(f"User ID: {user_id}")
+        print(f"Expected products: {expected_products_lower}")
+        print(f"User products: {user_products_lower}")
+
         # Convert both lists to sets to compare regardless of order
         return set(user_products_lower) == set(expected_products_lower)
