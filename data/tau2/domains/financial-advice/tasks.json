@@ -37,7 +37,7 @@
                     "name": "update_recommended_product",
                     "arguments": {
                         "user_id": "david_brown_004",
-                        "product_name": "Fixed rate cash ISA"
+                        "product_name": "Fixed Rate Cash ISA"
                     },
                     "info": null,
                     "compare_args": null
@@ -50,7 +50,7 @@
                     "arguments": {
                         "user_id": "david_brown_004",
                         "expected_products": [
-                            "Fixed rate cash ISA"
+                            "Fixed Rate Cash ISA"
                         ]
                     },
                     "message": null
