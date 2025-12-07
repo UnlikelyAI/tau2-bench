@@ -763,7 +763,7 @@
                     "name": "update_recommended_product",
                     "arguments": {
                         "user_id": "david_brown_004",
-                        "product_name": "Share dealing"
+                        "product_name": "Share Dealing Account"
                     },
                     "info": null,
                     "compare_args": null
@@ -776,7 +776,7 @@
                     "arguments": {
                         "user_id": "david_brown_004",
                         "expected_products": [
-                            "Share dealing"
+                            "Share Dealing Account"
                         ]
                     },
                     "message": null
@@ -1093,7 +1093,7 @@
                     "name": "update_recommended_product",
                     "arguments": {
                         "user_id": "david_brown_004",
-                        "product_name": "Share dealing"
+                        "product_name": "Share Dealing Account"
                     },
                     "info": null,
                     "compare_args": null
@@ -1106,7 +1106,7 @@
                     "arguments": {
                         "user_id": "david_brown_004",
                         "expected_products": [
-                            "Share dealing"
+                            "Share Dealing Account"
                         ]
                     },
                     "message": null
@@ -1555,7 +1555,7 @@
                     "name": "update_recommended_product",
                     "arguments": {
                         "user_id": "maria_garcia_003",
-                        "product_name": "Share dealing"
+                        "product_name": "Share Dealing Account"
                     },
                     "info": null,
                     "compare_args": null
@@ -1568,7 +1568,7 @@
                     "arguments": {
                         "user_id": "maria_garcia_003",
                         "expected_products": [
-                            "Share dealing"
+                            "Share Dealing Account"
                         ]
                     },
                     "message": null
