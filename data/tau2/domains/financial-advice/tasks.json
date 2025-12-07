@@ -474,7 +474,7 @@
                 "task_instructions": "You want a recommendation for a financial product, once you receive one, your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
                 "domain": "financial-advice",
                 "reason_for_call": "You want advice on your financial situation",
-                "known_info": "You are Emma Wilson.\nYour user id is emma_wilson_005. You are a Club or Premier Lloyds customer who has remained out of the investment market for at least thirty-six months and holds fewer than six months of accrued earnings, requiring either immediate liquidity or absolute capital security for your monthly disposable surplus of under 250 because you are currently unable to utilize a tax-free savings wrapper.",
+                "known_info": "You are Emma Wilson.\nYour user id is emma_wilson_005. You have remained out of the investment market for at least thirty-six months and holds fewer than six months of accrued earnings, requiring either immediate liquidity or absolute capital security for your monthly disposable surplus of £600 because you are currently unable to utilize a tax-free savings wrapper.",
                 "unknown_info": null
             }
         },
@@ -804,7 +804,7 @@
                 "task_instructions": "You want a recommendation for a financial product, once you receive one, your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
                 "domain": "financial-advice",
                 "reason_for_call": "You want advice on your financial situation",
-                "known_info": "You are Emma Wilson.\nYour user id is emma_wilson_005. Family member bill wants to get a mortgage and you want to help them get a mortgage. You have more than 10% of the property value in a savings account and you won't need it for at least 5 years",
+                "known_info": "You are Emma Wilson.\nYour user id is emma_wilson_005. Family member bill wants to get a mortgage and you want to help them get a mortgage. You have more than 10% of the property value in a savings account and you won't need it for at least 5 years. Bills dad pays for him to have a lloyds premier account",
                 "unknown_info": null
             }
         },
@@ -936,7 +936,7 @@
                 "task_instructions": "You want a recommendation for a financial product, once you have a recommendation in the database (check using check_recommendations), your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
                 "domain": "financial-advice",
                 "reason_for_call": "You want advice on your financial situation",
-                "known_info": "You are David Brown.\nYour user id is david_brown_004. income 20k and saved 10k. Holds a bit of litecoin and bitcoin. Don't need instant access to savings, can lock investments in for at least a couple of months. Don't mind if investments fall 10%, know you need to keep them in to see long term gains. Seeks professional advice managing investments twice a year or more. age 19. be a UK resident for tax. not a US citizen. Have not put any money into an ISA this year.",
+                "known_info": "You are David Brown.\nYour user id is david_brown_004. income 20k and saved 10k. Holds a bit of litecoin and bitcoin. Don't need instant access to savings, can lock investments in for at least a couple of months. Don't mind if investments fall 10%, know you need to keep them in to see long term gains. During a recent market correct you did sell some stocks after a 15% decline. Seeks professional advice managing investments twice a year or more. age 19. be a UK resident for tax. not a US citizen. Have not put any money into an ISA this year.",
                 "unknown_info": null
             }
         },
