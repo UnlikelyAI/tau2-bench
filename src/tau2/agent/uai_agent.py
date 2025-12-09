@@ -61,6 +61,7 @@ class UAIAgent(LocalAgent[UAIAgentState]):
 
         self.client = Client(
             base_url="http://localhost:8026/api/v1",
+            # base_url="https://api.orchestration.test.unlikely.ai/api/v1",
             timeout=120,
         )
 
