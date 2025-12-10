@@ -12,7 +12,7 @@
                 "task_instructions": "You want a recommendation for a financial product, once you have a recommendation in the database (check using check_recommendations), your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
                 "domain": "financial-advice",
                 "reason_for_call": "You want advice on your financial situation",
-                "known_info": "You are Sarah Johnson.\nYour user id is sarah_johnson_001. \nYou are a 28 year old woman resident in the UK who has just started your career. You hold a club lloyds account. You have investments that you contribute to regularly, and you need to be able to take your money out at a days notice. You do not have ISA allowance left.",
+                "known_info": "You are Sarah Johnson.\nYour user id is sarah_johnson_001. \nYou are a 28 year old woman resident in the UK who has just started your career. You hold a club lloyds account. You have investments that you contribute to regularly. You need to be able to take all of your savings out at a days notice. You need access to all your savings within the next 3 years. You do not have ISA allowance left. You would like more regular help with managing your investments.",
                 "unknown_info": null
             }
         },
