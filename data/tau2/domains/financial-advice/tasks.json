@@ -978,6 +978,17 @@
                         ]
                     },
                     "message": null
+                },
+                {
+                    "env_type": "user",
+                    "func_name": "assert_recommendations",
+                    "arguments": {
+                        "user_id": "david_brown_004",
+                        "expected_products": [
+                            "Ready Made Investment"
+                        ]
+                    },
+                    "message": null
                 }
             ],
             "communicate_info": [],
@@ -1040,7 +1051,8 @@
                     "arguments": {
                         "user_id": "james_anderson_006",
                         "expected_products": [
-                            "Ready Made Investment"
+                            "Ready Made Investment",
+                            "Ready Made Pension"
                         ]
                     },
                     "message": null
@@ -1266,7 +1278,7 @@
                 "task_instructions": "You want a recommendation for a financial product, once you have a recommendation in the database (check using check_recommendations), your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
                 "domain": "financial-advice",
                 "reason_for_call": "You want advice on your financial situation",
-                "known_info": "You are David Brown.\nYour user id is david_brown_004. You sometimes can't pay rent and need to get all your money out. You have some stocks you owne but keep having to sell them to pay rent. You are 21 and a UK resident. You have a club lloyds account your dad pays for",
+                "known_info": "You are David Brown.\nYour user id is david_brown_004. You sometimes can't pay rent and need to get all your money out. You have some stocks you owne but keep having to sell them to pay rent. You are 21 and a UK resident. You have a club lloyds account your dad pays for. You do not hold any high risk investments.",
                 "unknown_info": null
             }
         },
@@ -1398,7 +1410,7 @@
                 "task_instructions": "You want a recommendation for a financial product, once you have a recommendation in the database (check using check_recommendations), your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
                 "domain": "financial-advice",
                 "reason_for_call": "You want advice on your financial situation",
-                "known_info": "You are David Brown.\nYour user id is david_brown_004. You are 77 a uk resident. You have been putting all your 100k in savings in stocks on trading 212 (not in an ISA) and then in a savings account and you have some bonds. You seek professional advice once every couple of months. You are happy with this set up. You would like to maximise your gains and understand that losing 30% of your investment can happen and wouldn't sell a product if that did happen. you don't need access to your money for 5 years.",
+                "known_info": "You are David Brown.\nYour user id is david_brown_004. You are 77 a uk resident. You have been putting all your 100k in savings in stocks on trading 212 (not in an ISA) and then in a savings account and you have some bonds. You seek professional advice once every couple of months. You are happy with this set up. You would like to maximise your gains and understand that losing 30% of your investment can happen and wouldn't sell a product if that did happen. you don't need access to your money for 5 years. You invest regularly. You have ISA allowance remaining.",
                 "unknown_info": null
             }
         },
@@ -1464,7 +1476,7 @@
                 "task_instructions": "You want a recommendation for a financial product, once you receive one, your goal is complete. Start each conversation with 'hello, I am looking for some advice on my financial situation'",
                 "domain": "financial-advice",
                 "reason_for_call": "You want advice on your financial situation",
-                "known_info": "You are Emma Wilson.\nYour user id is emma_wilson_005. You are 77 a uk resident. You have been putting all your 100k in savings in stocks on trading 212 (not in an ISA) and then in a savings account and you have some bonds. You seek professional advice once every couple of years but read a lot of financial material independently, from chat rooms. You are happy with this set up. You would like to maximise your gains and understand that losing 30% of your investment can happen and wouldn't sell a product if that did happen. you don't need access to your money for 5 years.",
+                "known_info": "You are Emma Wilson.\nYour user id is emma_wilson_005. You are 77 a uk resident. You have been putting all your 100k in savings in stocks on trading 212 (not in an ISA) and then in a savings account and you have some bonds. You seek professional advice once every couple of years but read a lot of financial material independently, from chat rooms. You are happy with this set up. You would like to maximise your gains and understand that losing 30% of your investment can happen and wouldn't sell a product if that did happen. you don't need access to your money for 5 years. You invest regularly. You have ISA allowance remaining.",
                 "unknown_info": null
             }
         },
@@ -1489,7 +1501,7 @@
                     "name": "update_recommended_product",
                     "arguments": {
                         "user_id": "emma_wilson_005",
-                        "product_name": "Share dealing ISA"
+                        "product_name": "Share Dealing ISA"
                     },
                     "info": null,
                     "compare_args": null
@@ -1502,7 +1514,7 @@
                     "arguments": {
                         "user_id": "emma_wilson_005",
                         "expected_products": [
-                            "Share dealing ISA"
+                            "Share Dealing ISA"
                         ]
                     },
                     "message": null

@@ -1,0 +1,17 @@
+---
+# https://taskfile.dev
+version: "3"
+
+vars:
+  REPO_ROOT: { sh: git rev-parse --show-toplevel }
+
+tasks:
+  install-deps:
+    desc: Install dependencies needed for tau2 modules
+    cmds:
+      - cd {{.REPO_ROOT}}/tau2 && uv sync
+
+  run:
+    desc: Run the tau2 evaluation
+    cmds:
+      - cd {{.REPO_ROOT}} && uv run tau2 run --domain financial-advice --agent uai_agent --user-llm gpt-4.1 --num-trials 5 --max-concurrency 30 --max-steps 50 {{.CLI_ARGS}}
